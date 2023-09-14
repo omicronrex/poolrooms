@@ -1,0 +1,10 @@
+|rmInit
+|rmTitle
+|rmMenu
+|rmOptions
++Game
+	|rmDifficulty
+	|rmHub
+	|rmTemplate
+	|rmPool0
+	|rmPool1

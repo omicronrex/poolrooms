@@ -1,0 +1,37 @@
+|tile_IWBTG
+|tile_Colors
+|tile_Rainbow
+|tile_Crimson
+|tile_corner
+|bgGameMakerBlock
++IWBTG
+	|bgMegaman
+	|bgFortress
+	|bgTree
+	|bgTree2
+	|bgTree3
+	|bgBackdrop1
+	|bgBackdrop2
+	|bgBackdrop3
++thumbs
+	|bgThumbDefault
+	|bgThumbClear
+	|bgThumbBroken
++autotiler
+	|bgMarkMazes32
+	|bgMarkMazes16
+	|bgBrownBlock32
+	|bgGuyPipes32
+	|bgFunnySlopeFill
+	|bgFunnySlopeTop
+	|bgFreeformRedblock
+	|bgFreeformGrasstop
++teapot room
+	|bgFire
+	|bgTeapot
++Pool
+	|tilePool
+	|bgTitle
+	|bgNoise1
+	|bgNoise2
+	|bgNoise3
