@@ -43,6 +43,14 @@ if (global.water_level!=y+16) {
     sound_play("00CB_000D")
     check=1
 }
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_stop("floodLOOP2")
+sound_stop("drainGlugA_2")
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -51,7 +59,7 @@ applies_to=self
 */
 draw_sprite(sprValve,0,x+16,y+16)
 texture_set_interpolation(1)
-draw_sprite_ext_fixed(sprValve,1,x+17,y+17,1,1,valve,$80,1)
-draw_sprite_ext_fixed(sprValve,1,x+15,y+15,1,1,valve,$8080ff,1)
-draw_sprite_ext_fixed(sprValve,1,x+16,y+16,1,1,valve,$ff,1)
+draw_sprite_ext_fixed(sprValve,1,-0.5+x+17,-0.5+y+17,1,1,valve,$80,1)
+draw_sprite_ext_fixed(sprValve,1,-0.5+x+15,-0.5+y+15,1,1,valve,$8080ff,1)
+draw_sprite_ext_fixed(sprValve,1,-0.5+x+16,-0.5+y+16,1,1,valve,$ff,1)
 texture_set_interpolation(0)
