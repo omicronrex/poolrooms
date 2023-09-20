@@ -1,6 +1,0 @@
-connection=1
-closed=1
-precision=4
-background=rmPool0
-snap_x=16
-snap_y=16
