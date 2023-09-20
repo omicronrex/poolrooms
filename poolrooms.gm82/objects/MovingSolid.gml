@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 hdeficit=0
+vdeficit=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -14,11 +15,13 @@ applies_to=self
 //due to player's rounding, it's impossible to move the player only part of a pixel
 //so we store and make use of deficit counters
 hspeed+=hdeficit
+vspeed+=vdeficit
 hdeficit=hspeed-round(hspeed)
+vdeficit=vspeed-round(vspeed)
 
 with (Player) if (instance_place(x,y+2*vflip,other.id)) {
     other.solid=0
-    move_player(x+round(other.hspeed),y+other.vspeed,1)
+    move_player(x+round(other.hspeed),y+round(other.vspeed),1)
     other.solid=1
 }
 #define Step_1

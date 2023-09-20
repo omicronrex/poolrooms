@@ -32,6 +32,7 @@
 +Pool
 	|tilePool
 	|bgTitle
+	|bgTitleMask
 	|bgNoise1
 	|bgNoise2
 	|bgNoise3

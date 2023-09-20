@@ -357,3 +357,11 @@
 +pool
 	|sprPartRing
 	|sprPartSphere
+	|sprBox
+	|sprValve
+	|sprPoolSpike
+	|sprValveMask
+	|sprSave
+	|sprHashigoPool
+	|sprIchiHashigo
+	|sprPlank

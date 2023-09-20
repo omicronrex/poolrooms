@@ -13,6 +13,14 @@ with (argument3) {
         a=place_free(x+hspeed,y+vspeed)
         x-=dx
         y-=dy
+
+        if (!a && point_distance(0,0,dx,dy)<20) {
+            //small distance - let's just move towards it instead
+            move_contact_solid_hv(dx,0)
+            move_contact_solid_hv(0,dy)
+            dx=dx-x
+            dy=dy-y
+        }
     }
     else a=1
     if (a) {

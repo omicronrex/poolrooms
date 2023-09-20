@@ -25,11 +25,13 @@ for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_n
     }
 } file_find_close()
 
+sound_add_directory("data\streamed",".ogg",3,2)
+
 repeat (c) {c-=1
     //sfx (uncompressed, multi instance)
     sound_add_directory(folders[c],".wav",0,1)
     //compressed sfx (decompress on load)
-    sound_add_directory(folders[c],".ogg",3,2)
+    sound_add_directory(folders[c],".ogg",0,2)
     sound_add_directory(folders[c],".mp3",3,2)
 }
 

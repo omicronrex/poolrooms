@@ -110,6 +110,8 @@ input_h=0 input_v=0
 
 input_clear()
 input_consume()
+
+hydrolitis=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -327,7 +329,7 @@ if (!frozen) {
             } else {
                 if (slipper) {
                     //ice physics
-                    hspeed=inch(hspeed,maxSpeed*input_h,slipper.slip)
+                    hspeed=approach(hspeed,maxSpeed*input_h,slipper.slip)
                 } else {
                     if (global.use_momentum_values && !ladder) {
                         //mario mode
@@ -343,12 +345,12 @@ if (!frozen) {
             //the input is neutral
             if (slipper) {
                 //slide to a stop
-                hspeed=inch(hspeed,0,slipper.slip)
+                hspeed=approach(hspeed,0,slipper.slip)
             } else {
                 if (global.use_momentum_values && !ladder) {
                     //mario mode friction
-                    if (onPlatform) hspeed=inch(hspeed,0,mm_ground_fric)
-                    else hspeed=inch(hspeed,0,mm_air_fric)
+                    if (onPlatform) hspeed=approach(hspeed,0,mm_ground_fric)
+                    else hspeed=approach(hspeed,0,mm_air_fric)
                 } else {
                     //stop moving
                     hspeed=0
@@ -505,8 +507,7 @@ if (instance_place(x,y,Water1) || instance_place(x,y,Water3)) {
 if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater)) {
     if (vspeed*vflip>2) vspeed=2*vflip
     if (!onwater) {
-        sound_play(choose("splashMed_1","splashMedium_4"))
-        snd=sound_loop_ex("SO_SFX-UnderWaterSub",0)
+        snd=sound_loop_ex("rainRumble1",0)
         sound_set_pos(snd,random(1),unit_unitary)
         sound_volume(snd,1)
         instance_create(x,PoolWater.y,WaterSplash1)
@@ -515,8 +516,7 @@ if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_p
     onwater=1
 } else {
     if (onwater) {
-        sound_play(choose("splashLarge_1","splashLarge_5"))
-        sound_stop("SO_SFX-UnderWaterSub")
+        sound_stop("rainRumble1")
         instance_create(x,PoolWater.y,WaterSplash2)
     }
     onwater=0
@@ -545,6 +545,13 @@ if (vvvvvv) {
     if (vflip== 1 && vspeed!=0) vspeed= maxVspeed
     if (vflip==-1 && vspeed!=0) vspeed=-maxVspeed
 }
+
+if (y>PoolWater.y+608) hydrolitis=min(1,hydrolitis+1/500*(y-PoolWater.y)/608)
+if (y<PoolWater.y+32) hydrolitis=max(0,hydrolitis-1/200)
+
+if (hydrolitis==1) kill_player()
+
+sound_volume(sndDrown,min(1,hydrolitis*2))
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -623,6 +630,11 @@ if (dotkid) {
 //so we add gravity before checking for collisions
 vspeed+=gravity
 
+/*with (MovingSolid) {
+    x+=hspeed
+    y+=vspeed
+}  */
+
 if (!place_free(x+hspeed,y+vspeed)) {
     //there is a collision
     if (!place_free(x+hspeed,y)) {
@@ -671,6 +683,11 @@ if (!place_free(x+hspeed,y+vspeed)) {
 vsplatform=0
 //we subtract gravity because we added it before  
 vspeed-=gravity
+
+/*with (MovingSolid) {
+    x-=hspeed
+    y-=vspeed
+} */
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424
@@ -810,7 +827,7 @@ if (walljump!=0) {
         if (walljump>0) sound_play_slomo("sndJump")
         else sound_play_slomo("sndDJump")
     }
-    walljump=inch(walljump,0,1)
+    walljump=approach(walljump,0,1)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -827,34 +844,21 @@ action_id=603
 applies_to=self
 */
 if (!dead) {
-    if (vflip==-1) platformOffset=sprite_get_yoffset(mask_index)
-    else platformOffset=sprite_get_height(mask_index)-sprite_get_yoffset(mask_index)
+    platformOffsetBot=bbox_bottom+1-round(y)
+    platformOffsetTop=round(y)-bbox_top
+
     if (dotkid) checkOffset=-vspeed/2
     else checkOffset=0
 
-    if (object_other_is_child_of(LiftBlock)) {
-        //it's a solid lift block
-        x-=hspeed
-        y-=vspeed
-
-        if (instance_place(x+hspeed,y,other.id)) {
-            repeat (floor(abs(hspeed))) {if (instance_place(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
-            hspeed=0
-            y+=vspeed
-            break
-        } else x+=hspeed
-
-        if (vspeed<=other.vspeed) {if (instance_place(x,y+vspeed,other.id)) {
-            repeat (floor(abs(vspeed))) {if (instance_place(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
-            vspeed=max(vspeed,other.vspeed)
-        } else y+=vspeed} else y+=vspeed
-    }
+    platformOffsetH=round(x)-bbox_left+1
+    if (dotkid) checkOffsetH=-hspeed/2
+    else checkOffsetH=0
 
     onPlatform=true
 
     if (vflip==1) {
         //platforms, normal gravity
-        
+
         //find top of the platform using a binary search
         oy=y
         search=16
@@ -870,7 +874,7 @@ if (!dead) {
         if (y-vspeed/2+checkOffset<=ytop) {
             //check for platform snap
             if (other.snap || vspeed-other.vspeed>=0) {
-                y=ytop-platformOffset
+                y=ytop-platformOffsetBot
                 if (!place_free(x,y)) {
                     //crushed!
                     if (other.vspeed<0) {
@@ -881,7 +885,7 @@ if (!dead) {
                     //land on it
                     vspeed=max(0,other.vspeed/dt/slomo)
                     player_land(1)
-                    with (other) event_trigger(tr_platland)   
+                    with (other) event_trigger(tr_platland)
                 }
             }
             vsplatform=max(0,other.vspeed)
@@ -889,7 +893,7 @@ if (!dead) {
         }
     } else {
         //upside down platforms
-        
+
         //find bottom of the platform using a binary search
         oy=y
         search=-16
@@ -905,7 +909,7 @@ if (!dead) {
         if (y-vspeed/2+checkOffset>=ytop) {
             if (other.snap || vspeed-other.vspeed<=0) {
                 //check for platform snap
-                y=ytop+platformOffset
+                y=ytop+platformOffsetTop
                 if (!place_free(x,y)) {
                     //crushed!
                     if (other.vspeed>0) {
@@ -916,12 +920,168 @@ if (!dead) {
                     //land on it
                     vspeed=min(0,other.vspeed/dt/slomo)
                     player_land(1)
-                    with (other) event_trigger(tr_platland)   
+                    with (other) event_trigger(tr_platland)
                 }
             }
             vsplatform=min(0,other.vspeed)
             walljumpboost=0
         }
+    }
+
+    if (object_other_is_child_of(PlatformSolid)) {
+        //round its coordinates to prevent crush bugs
+        other.storex=other.x
+        other.storey=other.y
+
+        other.x=round(other.x)
+        other.y=round(other.y)
+
+        //peform ceiling collision before we try walls
+        if (vflip==-1) {
+            //hit top of the block
+            if (y<mean(other.bbox_top,other.bbox_bottom+1)) {
+                //find top of the platform using a binary search
+                oy=y
+                search=16
+                repeat (5) {
+                    if (instance_place(x,y,other.id)) y-=search
+                    else y+=search
+                    search/=2
+                }
+                if (instance_place(x,y,other.id)) y-=1
+                ytop=bbox_bottom+1
+                y=oy
+
+                if (y-vspeed/2+checkOffset<=ytop) {
+                    //check for platform snap
+                    if (other.snap || vspeed-other.vspeed>=0) {
+                        y=ytop-platformOffsetBot
+                        if (!place_free(x,y)) {
+                            //crushed!
+                            if (other.vspeed<0) {
+                                check_crush()
+                            } else y=oy
+                        } else {
+                            //land on it
+                            vspeed=max(0,other.vspeed/dt/slomo)
+                            player_hitceiling()
+                        }
+                    }
+                    vsplatform=max(0,other.vspeed)
+                }
+            }
+        } else {
+            //hit bottom of the block
+
+            if (y>mean(other.bbox_top,other.bbox_bottom+1)) {
+                //find bottom of the platform using a binary search
+                oy=y
+                search=-16
+                repeat (5) {
+                    if (instance_place(x,y,other.id)) y-=search
+                    else y+=search
+                    search/=2
+                }
+                if (instance_place(x,y,other.id)) y+=1
+                ytop=bbox_top
+                y=oy
+
+                if (y-vspeed/2+checkOffset>=ytop) {
+                    if (vspeed-other.vspeed<=0) {
+                        //check for platform snap
+                        y=ytop+platformOffsetTop
+                        if (!place_free(x,y)) {
+                            //crushed!
+                            if (other.vspeed>0) {
+                                check_crush()
+                            } else y=oy
+                        } else {
+                            //land on it
+                            vspeed=min(0,other.vspeed/dt/slomo)
+                            player_hitceiling()
+                        }
+                    }
+                    vsplatform=min(0,other.vspeed)
+                }
+            }
+        }
+
+        if (instance_place(x,y,other.id)) {
+            //if floor and ceiling failed, we're on the sides of the block
+            if (x<mean(other.bbox_left,other.bbox_right+1)) {
+                //find left of the platform using a binary search
+                ox=x
+                search=16
+                repeat (5) {
+                    if (instance_place(x,y,other.id)) x-=search
+                    else x+=search
+                    search/=2
+                }
+                if (instance_place(x,y,other.id)) x-=1
+                xtop=bbox_right+1
+                x=ox
+        
+                if (x-hspeed/2+checkOffsetH<=xtop) {              
+                    if (hspeed-other.hspeed>=0) {
+                        x=xtop-platformOffsetH
+                        if (!place_free(x,y)) {
+                            //crushed!
+                            if (other.hspeed<0) {
+                                check_crush()
+                            } else x=ox
+                        } else {
+                            //land on it
+                            hspeed=max(0,other.hspeed/dt/slomo)
+                            player_hitwall()                        
+                        }
+                    }
+                    hspeed=max(0,other.hspeed)   
+                }
+            } else {
+                //find right side of the platform using a binary search
+                ox=x
+                search=-16
+                repeat (5) {
+                    if (instance_place(x,y,other.id)) x-=search
+                    else x+=search
+                    search/=2
+                }
+                if (instance_place(x,y,other.id)) x+=1
+                xtop=bbox_left
+                x=ox
+        
+                if (x-hspeed/2+checkOffsetH>=xtop) {
+                    if (hspeed-other.hspeed<=0) {
+                        x=xtop+platformOffsetH
+                        if (!place_free(x,y)) {
+                            //crushed!
+                            if (other.hspeed>0) {
+                                check_crush()
+                            } else x=ox
+                        } else {
+                            //land on it
+                            hspeed=min(0,other.hspeed/dt/slomo)
+                            player_hitwall()
+                        }
+                    }
+                    hspeed=min(0,other.hspeed)
+                }                             
+            }
+        }
+        
+        //if, after all of this, you're still inside of it
+        if (instance_place(x+hspeed,y+vspeed,other.id)) {
+            other.solid=1
+            move_outside_solid(point_direction(mean(other.bbox_left,other.bbox_right+1),mean(other.bbox_top,other.bbox_bottom+1),x,y),max(speed,other.speed)+1)
+            if (instance_place(x+hspeed,y+vspeed,other.id)) check_crush()
+            other.solid=0
+        }
+
+        //did we get shoved into a wall?
+        if (!place_free(x,y)) check_crush()
+
+        other.x=other.storex
+        other.y=other.storey
     }
 }
 #define Other_0
@@ -990,6 +1150,8 @@ newspr=oldspr
 //some debug stuff
 deathlist=0
 flashing=0
+
+sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -997,6 +1159,8 @@ action_id=603
 applies_to=self
 */
 if (dead) instance_destroy()
+
+sound_stop("SO_SFX-Pulse")
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

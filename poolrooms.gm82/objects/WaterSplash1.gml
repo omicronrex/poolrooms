@@ -10,13 +10,16 @@ image_yscale=0
 repeat (20) instance_create_moving(x+gauss_range(-10,10),y,WaterSplashDrop,gauss_range(0,3),gauss_range(90-60,90+60))
 
 alarm[0]=20
+
+sound_play(choose("splashMed_1","splashMedium_4"))
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-instance_create(x,PoolWater.y,WaterSplash2)
+i=instance_create(x,PoolWater.y,WaterSplash2)
+i.silent=1
 instance_destroy()
 #define Step_0
 /*"/*'/**//* YYD ACTION

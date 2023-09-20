@@ -433,9 +433,17 @@
 	|WaterSplash2
 	|WaterSplashDrop
 	|Bubbles
+	|FloatBox
+	|Valve
+	|FloatSpike
+	|SavePool
+	|PoolLadder
+	|PoolLadderTop
+	|Plank
 |PlayerStart
 |Block
 |Platform
+|PlatformSolid
 |WallJumpL
 |WallJumpR
 |SpikeD

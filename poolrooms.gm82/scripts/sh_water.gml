@@ -1,19 +1,15 @@
-/*
-    water
-*/
-
 return shader_pixel_create_base64("
-    eJxlkj9oE1Ecxz/v3R09pHCzKBhwsUsgkQoZ2tB2EWkHrUcdhBKbBAOxVy5xf90L
-    zao4vIJTumRwFAvO6ebmeqObuye/965JxQcHv++f3+/33u93Spfln/IZOy+3tu8D
-    vwGlyzICBKPgF2CAAC2QM+GBT45TjvtccV8A7dP4WnFzx3nfj4orHKf/4fY6x4N+
-    NuxyeXkZsuoyRJdz0Bn3cv7nj7Jhlo8zlLuJfP50B6Nxlo8rzveRM3qf9ztHPU5G
-    h83DN+wNjvJslPXHtUcv1mpPd/d3a/tvO91eXtvJ3p0Mhr281qo3W/XWerP+uNFo
-    8ByigMQCbeDqej7fPP75pC18SGI37hxsnn9fb6+9Pt+QfsJHJPZ6PhdswFx9/HD3
-    2wM/JgPBbBmrSRVPVJzYm1jHidUyarSsYabhQjlNGUhnkdMCA4UJwIqmvGZ87PLM
-    tvMlzqfjwgpWJEZVeNkjnWlSh6WOAhNUGEKpNQmY2miBpyagrPy+l/i9vup0xT0T
-    LXTBqbunJhbehhCKJrymPFWkZllP3rHEysXpxSsItbt/aiLXb2q35PclMVJP3+ol
-    Nfz9ZS64N93Gct+Hi5lS5Utcilf2PbuZl6YwKi5s7HDs5hdSVG+IXX5EaRWlqwMr
-    izreK74VIzoUForTpY+JeGRHfscyn6nfd+x3V5bwF9QwpH8=
+    eJxlkj9oE2EYxn/fd3d4SPFmiWDAxS6BRCpkaEPbRaQdtB51EErMHwzEXrnE/esu
+    NKvicAWnZMngKBac083N9UY3d0/e77skFT84eJ/nef+/p3RR/Cmesv9id+8e8BtQ
+    uigCQDAKfgEG8NACeS888MlyynKfS+4LoF0YX0tuYTnn96Pkcsvpf7jD9umgnwy7
+    zGYznw0bIbq84/a4l/I/30mGSTpOULYT+dzrDkbjJB2XnKsjb/Qu7bc7Pc5GJ42T
+    1xwOOmkySvrj6sPnm9UnB0cH1aM37W4vre4nb88Gw15abdYazVpzq1F7VK/XeQaB
+    R5QBLeDqerHYOf35uCW8T5Rt3z7eufi+1dp8dbEt9YQPiLLrxUKwAXP18cPdb/fd
+    mgx487WtJqU9UWGULW0dRpmWVaPlDHMNl8pqykA8D6zmGciNB5loymnG2TbO7Fm/
+    yPrpMM8EKyKjSryuEc81scWSR4HxSgy+5Jp4TLNghafGoyj9XS3xd/qG1RUVE6x0
+    wbHtUxMKn/ngiya8pjhXxGadT+ZYY2fHly/B17b/2AS23jTbld+XyEg+faOW5HD9
+    y16wM93E0u+D1U4p48UuxFfuPV/uS5MbFeZZWO5L9ueT2xmW8QGFrem4O6s8sgeX
+    +5b1gzyDyrmb33ITyQ8VeztCd5+igL+CVZ6a
 ")
 
 /*
@@ -61,7 +57,7 @@ return shader_pixel_create_base64("
         if ((input.uv+(offset.y-0.1*distort.y)).y<surface.y) discard;
 
         //apply color fade effect
-        output.color = float4(lerp(diffuse.rgb+offset.r,float3(gray,gray,gray)*colorto,amount),1);
+        output.color = float4(lerp(diffuse.rgb+offset.r,float3(gray,gray,gray)*colorto,amount),diffuse.a);
 
         return output;
     }

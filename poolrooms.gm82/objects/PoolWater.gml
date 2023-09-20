@@ -7,10 +7,26 @@ applies_to=self
 time=0
 distortion=24
 
-image_xscale=room_width/32
+x=-32
+image_xscale=room_width/32+32
 image_yscale=room_height/32
 
-global.water_level=y
+onwater=savedata("onwater")
+if (savedata("wlevelRoom")==room) {
+    global.water_level=savedata("wlevel")
+    y=global.water_level
+    with (FloatBox) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
+
+    with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
+} else global.water_level=y
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
@@ -40,8 +56,7 @@ draw_set_blend_mode(bm_add)
 draw_set_blend_mode(0)
 surface_reset()
 
-x=0
-y=inch(lerp(y,global.water_level,1/100),global.water_level,1/10)
+y=approach(lerp(y,global.water_level,1/100),global.water_level,1/10)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -57,6 +72,14 @@ dy=median(-608,y-view_yview,608)
 
 s=surface_get("clone",global.APPwidth,global.APPheight)
 surface_copy(s,0,0,application_surface)
+
+if (room==rmTitle) {
+    surface_set_target(s)
+    draw_set_blend_mode(bm_subtract)
+    draw_background(bgTitleMask,0,0)
+    draw_set_blend_mode(0)
+    surface_set_target(application_surface)
+}
 
 shader_pixel_set(global.shader_water)
 
@@ -82,3 +105,5 @@ draw_primitive_end()
 texture_set_interpolation(0)
 
 shader_reset()
+
+with (Player) if (hydrolitis>0 && !dead) draw_healthbar(x-view_xview-50,y-view_yview-30,x-view_xview+50,y-view_yview-20,hydrolitis*100,0,$408000,$408000,0,1,1)

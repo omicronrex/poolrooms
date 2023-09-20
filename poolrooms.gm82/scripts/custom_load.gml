@@ -10,5 +10,3 @@ with (Player) {
 }
 
 //add your custom load code here
-
-onwater=savedata("onwater")

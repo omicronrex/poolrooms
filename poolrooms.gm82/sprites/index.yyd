@@ -352,3 +352,11 @@ sprTriggerInst
 
 sprPartRing
 sprPartSphere
+sprBox
+sprValve
+sprValveMask
+sprPoolSpike
+sprSave
+sprHashigoPool
+sprPlank
+sprIchiHashigo

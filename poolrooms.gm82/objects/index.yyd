@@ -427,3 +427,11 @@ WaterSplash2
 Bubbles
 PoolBgCube
 PoolBgCyl
+FloatBox
+PlatformSolid
+Valve
+FloatSpike
+SavePool
+PoolLadder
+Plank
+PoolLadderTop

@@ -25,7 +25,7 @@ When using "clone" mode, place the desired tile underneath the object.
 //field type: enum("border","grass","pipes","clone","clone scale") - default grass
 //field tileset: background
 //field grid - default 32
-//field depth - default 1000
+//field depth - default 999
 //field solid_border: bool - default false
 
 if (persistent) {
