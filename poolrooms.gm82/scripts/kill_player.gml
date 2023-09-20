@@ -56,6 +56,8 @@ else if (!dead) {
 
             sound_play_slomo("sndDeath")
 
+            Player.hydrolitis=0
+
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
 

@@ -523,7 +523,7 @@ if (bubbles) {
     repeat (1+bubbles/10) if (random(50)<bubbles) instance_create(x+gauss_range(-8,8),y+gauss_range(-12,12),Bubbles)
 }
 if (onwater) {
-    if (!irandom(8)) instance_create(x,y-8,Bubbles)
+    if (!irandom(8-8*hydrolitis)) instance_create(x,y-8,Bubbles)
     if (bbox_top+3>PoolWater.y) submerged=1 else submerged=0
 } else {
     submerged=0
@@ -553,6 +553,8 @@ if (vvvvvv) {
 
 if (y>PoolWater.y+608) hydrolitis=min(1,hydrolitis+1/500*(y-PoolWater.y)/608)
 if (y<PoolWater.y+32) hydrolitis=max(0,hydrolitis-1/200)
+
+hydrolitis=min(1,hydrolitis*1.001)
 
 if (hydrolitis==1) kill_player()
 
