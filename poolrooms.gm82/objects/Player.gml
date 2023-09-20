@@ -507,16 +507,12 @@ if (instance_place(x,y,Water1) || instance_place(x,y,Water3)) {
 if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater)) {
     if (vspeed*vflip>2) vspeed=2*vflip
     if (!onwater) {
-        snd=sound_loop_ex("rainRumble1",0)
-        sound_set_pos(snd,random(1),unit_unitary)
-        sound_volume(snd,1)
         instance_create(x,PoolWater.y,WaterSplash1)
         bubbles=50
     }
     onwater=1
 } else {
     if (onwater) {
-        sound_stop("rainRumble1")
         instance_create(x,PoolWater.y,WaterSplash2)
     }
     onwater=0
@@ -528,6 +524,15 @@ if (bubbles) {
 }
 if (onwater) {
     if (!irandom(8)) instance_create(x,y-8,Bubbles)
+    if (bbox_top+3>PoolWater.y) submerged=1 else submerged=0
+} else {
+    submerged=0
+}
+
+if (submerged) {
+    earsnd=min(1,earsnd+1/30)
+} else {
+    earsnd=max(0,earsnd-1/10)
 }
 
 //one way gates
@@ -552,6 +557,7 @@ if (y<PoolWater.y+32) hydrolitis=max(0,hydrolitis-1/200)
 if (hydrolitis==1) kill_player()
 
 sound_volume(sndDrown,min(1,hydrolitis*2))
+sound_volume(sndEar,earsnd)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -1151,7 +1157,7 @@ newspr=oldspr
 deathlist=0
 flashing=0
 
-sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
+earsnd=onwater
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -1159,8 +1165,6 @@ action_id=603
 applies_to=self
 */
 if (dead) instance_destroy()
-
-sound_stop("SO_SFX-Pulse")
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

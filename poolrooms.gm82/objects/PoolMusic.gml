@@ -31,7 +31,7 @@ if (vol<1) {
     sound_volume(global.music_instance,vol)
 }
 
-with (Player) if (onwater) other.damp=min(0.9,other.damp+0.05) else other.damp=max(0,other.damp-0.05)
+if (submerged) damp=min(0.9,damp+0.05) else damp=max(0,damp-0.05)
 
 sound_effect_options(e1,1,lerp(-1000,-2000,damp))
 sound_effect_options(e1,3,lerp(14,1,damp))
@@ -54,6 +54,9 @@ if (global.music!="pool" || sound_background_instance()!=global.music_instance) 
     global.music_instance=sound_loop_ex("pool",0)
     sound_set_pos(global.music_instance,random(1),unit_unitary)
     vol=0
+
+    sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
+    sndEar=sound_loop_ex("rainRumble1",0)
 }
 
 global.music="pool"

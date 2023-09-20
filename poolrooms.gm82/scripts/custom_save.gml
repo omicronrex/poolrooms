@@ -12,5 +12,6 @@ with (Player) {
 //add your custom save code here
 
 savedata("onwater",onwater)
+savedata("submerged",submerged)
 savedata("wlevel",global.water_level)
 savedata("wlevelRoom",room)

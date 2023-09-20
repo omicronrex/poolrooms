@@ -2,6 +2,6 @@
 
 global.shader_water=sh_water()
 
-globalvar onwater,bubbles;
+globalvar onwater,submerged,bubbles,sndDrown,sndEar;
 
 global.water_level=0

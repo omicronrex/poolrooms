@@ -39,7 +39,8 @@ if (save) {
     
     image_index=1
     image_speed=1/room_speed
-    sound_play("sndSave")    
+    sound_play("save"+string(irandom_range(1,6)))
+    sound_play("save")    
     
     savedata_save(false,name)
     
