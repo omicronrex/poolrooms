@@ -434,6 +434,7 @@
 	|WaterSplashDrop
 	|Bubbles
 	|FloatBox
+	|Floater
 	|Valve
 	|FloatSpike
 	|SavePool
