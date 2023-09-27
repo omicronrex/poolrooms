@@ -27,7 +27,7 @@ if (!place_free(x,y+1) && PoolWater.y>y+32) {
 }
 
 if (hspeed!=0) if (!place_free(x+hspeed,y)) {
-    move_contact_solid_hv(x+hspeed,0)
+    move_contact_solid_hv(hspeed,0)
     hspeed=0
 }
 
