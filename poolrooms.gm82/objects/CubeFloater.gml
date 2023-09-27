@@ -47,7 +47,7 @@ action_id=603
 applies_to=self
 */
 if (other.y>bbox_top+4) {
-    sound_play_ex("537897__belanhud__balloon-pop-one",1,0.5)
+    sound_play_ex("537897__belanhud__balloon-pop-one",1,random_range(0.5,0.7))
     repeat (8) instance_create(x+random(32),y+random(32),FloaterFragment)
     instance_destroy()
 }
