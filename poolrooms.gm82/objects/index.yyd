@@ -359,7 +359,7 @@ ActiveIngame
 ActualYokuBlock
 YokuGroup
 BackgroundDaemon
-MovingSolid
+
 AlignIndicator
 Autotiler
 
@@ -428,7 +428,7 @@ Bubbles
 PoolBgCube
 PoolBgCyl
 FloatBox
-PlatformSolid
+MovingSolid
 Valve
 FloatSpike
 SavePool

@@ -9,6 +9,7 @@
 	|Trigger
 	|Triggered
 	|TriggerLock
+	|MovingSolid
 	|Button
 	|ButtonShoot
 	|Boss
@@ -25,7 +26,6 @@
 	|KeyParent
 	|KeyBlockParent
 	|SlopeParent
-	|MovingSolid
 	|SuperVehicle
 +System
 	+User Interface
@@ -444,7 +444,6 @@
 |PlayerStart
 |Block
 |Platform
-|PlatformSolid
 |WallJumpL
 |WallJumpR
 |SpikeD
