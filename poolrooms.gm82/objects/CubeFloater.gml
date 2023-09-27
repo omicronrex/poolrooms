@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ygo=PoolWater.y-8+choose(-1,1)
+ygo=PoolWater.y-16+choose(-1,1)
 
 if (y<ygo) vspeed+=0.2 else vspeed=vspeed*0.95-0.15
 
@@ -27,6 +27,15 @@ lib_id=1
 action_id=604
 invert=0
 */
+#define Collision_Bullet
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_play_ex("537897__belanhud__balloon-pop-one",1,0.5)
+repeat (6) instance_create(x+random(32),y+random(32),FloaterFragment)
+instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -25,6 +25,15 @@ if (savedata("wlevelRoom")==room) {
             }
         } until (abs(y-(PoolWater.y-16))<16)
     }
+    with (Floater) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo move_contact_solid(180-90*sign(y-(PoolWater.y-16)),32) break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
 
     with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
 } else global.water_level=y

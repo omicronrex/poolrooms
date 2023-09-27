@@ -360,9 +360,14 @@
 	|sprBox
 	|sprValve
 	|sprPoolSpike
+	|sprPoolSpikeDown
 	|sprValveMask
 	|sprSave
 	|sprHashigoPool
 	|sprIchiHashigo
 	|sprPlank
 	|sprFloater
+	|sprCubeFloat
+	|sprDickMove
+	|sprDickCoin
+|sprFragFloat

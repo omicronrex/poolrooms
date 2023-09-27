@@ -426,6 +426,7 @@
 	|PoolMusic
 	|PoolWater
 	|PoolBackground
+	|WaterBullet
 	|PoolBgCube
 	|PoolBgCyl
 	|NextLevel
@@ -435,12 +436,16 @@
 	|Bubbles
 	|FloatBox
 	|Floater
+	|CubeFloater
+	|FloaterFragment
 	|Valve
 	|FloatSpike
+	|FallSpike
 	|SavePool
 	|PoolLadder
 	|PoolLadderTop
 	|Plank
+	|DickMove
 |PlayerStart
 |Block
 |Platform
