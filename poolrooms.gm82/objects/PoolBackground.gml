@@ -8,9 +8,13 @@ fogcol=color_reverse($b8af86)
 
 tex=background_get_texture(tilePool)
 
+random_set_seed(savedatap("bg seed")+room)
+
 repeat (room_width*room_height/20000) instance_create(irandom_range(0,room_width),irandom_range(0,room_height),PoolBgCube)
 
 repeat (room_width/150) instance_create(irandom_range(0,room_width),0,PoolBgCyl)
+
+randomize()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
