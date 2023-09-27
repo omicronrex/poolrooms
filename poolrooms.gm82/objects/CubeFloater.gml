@@ -46,9 +46,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play_ex("537897__belanhud__balloon-pop-one",1,0.5)
-repeat (8) instance_create(x+random(32),y+random(32),FloaterFragment)
-instance_destroy()
+if (other.y>bbox_top+4) {
+    sound_play_ex("537897__belanhud__balloon-pop-one",1,0.5)
+    repeat (8) instance_create(x+random(32),y+random(32),FloaterFragment)
+    instance_destroy()
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
