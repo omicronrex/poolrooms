@@ -16,7 +16,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (instance_place(x,y-4,Player)) {
+if (instance_place(x,y-4,Player) && y<PoolWater.y) {
     if (!woah && abs(Player.x-x)>32) woah=20
     if (woah==180) {
         sound_play_ex("119793__lmbubec__springboard-a",1,0.3)

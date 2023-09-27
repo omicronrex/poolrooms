@@ -16,36 +16,38 @@ submerged=savedata("submerged")
 if (savedata("wlevelRoom")==room) {
     global.water_level=savedata("wlevel")
     y=global.water_level
-    with (FloatBox) {
-        do {
-            yo=y
-            y=approach(y,PoolWater.y-16,32)
-            if (!place_free(x,y)) {
-                y=yo break
-            }
-        } until (abs(y-(PoolWater.y-16))<16)
-    }
-    with (CubeFloater) {
-        do {
-            yo=y
-            y=approach(y,PoolWater.y-16,32)
-            if (!place_free(x,y)) {
-                y=yo break
-            }
-        } until (abs(y-(PoolWater.y-16))<16)
-    }
-    with (Floater) {
-        do {
-            yo=y
-            y=approach(y,PoolWater.y-16,32)
-            if (!place_free(x,y)) {
-                y=yo move_contact_solid(180-90*sign(y-(PoolWater.y-16)),32) break
-            }
-        } until (abs(y-(PoolWater.y-16))<16)
-    }
-
-    with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
 } else global.water_level=y
+
+with (FloatBox) {
+    do {
+        yo=y
+        y=approach(y,PoolWater.y-16,32)
+        if (!place_free(x,y)) {
+            y=yo break
+        }
+    } until (abs(y-(PoolWater.y-16))<16)
+}
+with (CubeFloater) {
+    do {
+        yo=y
+        y=approach(y,PoolWater.y-16,32)
+        if (!place_free(x,y)) {
+            y=yo break
+        }
+    } until (abs(y-(PoolWater.y-16))<16)
+}
+with (Floater) {
+    do {
+        yo=y
+        y=approach(y,PoolWater.y-16,32)
+        if (!place_free(x,y)) {
+            y=yo move_contact_solid(180-90*sign(y-(PoolWater.y-16)),32) break
+        }
+    } until (abs(y-(PoolWater.y-16))<16)
+}
+
+with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
+with (FallSpike) y=median(ystart-32,PoolWater.y-16,ystart)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604

@@ -359,15 +359,18 @@
 	|sprPartSphere
 	|sprBox
 	|sprValve
+	|sprValveLever
 	|sprPoolSpike
 	|sprPoolSpikeDown
 	|sprValveMask
+	|sprValveLeverRE
 	|sprSave
 	|sprHashigoPool
 	|sprIchiHashigo
+	|sprStraightup
 	|sprPlank
 	|sprFloater
 	|sprCubeFloat
 	|sprDickMove
+	|sprFragFloat
 	|sprDickCoin
-|sprFragFloat

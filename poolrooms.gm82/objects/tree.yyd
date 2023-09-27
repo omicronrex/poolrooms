@@ -444,8 +444,10 @@
 	|SavePool
 	|PoolLadder
 	|PoolLadderTop
+	|PoolStraight
 	|Plank
 	|DickMove
+	|ValveLever
 |PlayerStart
 |Block
 |Platform
