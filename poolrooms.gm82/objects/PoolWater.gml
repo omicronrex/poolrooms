@@ -25,6 +25,15 @@ if (savedata("wlevelRoom")==room) {
             }
         } until (abs(y-(PoolWater.y-16))<16)
     }
+    with (CubeFloater) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
     with (Floater) {
         do {
             yo=y
