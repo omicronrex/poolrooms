@@ -72,3 +72,5 @@ if (global.debug_overlay) {
         }
     }
 }
+
+while (instance_number(Bubbles)>400) instance_destroy_id(instance_some(Bubbles))
