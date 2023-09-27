@@ -266,3 +266,4 @@ draw_window_caption
 script265
 sh_water
 
+sound_play_pitch

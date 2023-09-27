@@ -16,7 +16,7 @@ if (check) {
     valve+=a
     if (abs(y+16-PoolWater.y)<8) {
         with (Valve) check=0
-        sound_play("00C4_0008")
+        sound_play_pitch("00C4_0008")
         sound_stop("floodLOOP2")
         sound_stop("drainGlugA_2")
     }
@@ -28,7 +28,7 @@ action_id=603
 applies_to=self
 */
 if (global.water_level!=y+16) {
-    with (valve) check=0
+    with (Valve) check=0
     sound_stop("floodLOOP2")
     sound_stop("drainGlugA_2")
 
@@ -40,7 +40,7 @@ if (global.water_level!=y+16) {
         sound_play("floodLOOP2")
     }
     global.water_level=y+16
-    sound_play("00CB_000D")
+    sound_play_pitch("00CB_000D")
     check=1
 }
 #define Other_5

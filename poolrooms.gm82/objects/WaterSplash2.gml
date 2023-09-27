@@ -14,5 +14,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!silent) sound_play(choose("splashLarge_1","splashLarge_5"))
+if (!silent) if (inside_view()) sound_play_pitch(choose("splashLarge_1","splashLarge_5"))
 instance_destroy()

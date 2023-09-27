@@ -255,4 +255,5 @@
 	|shader_rainbow
 +pool
 	|sh_water
-|script265
+	|script265
+	|sound_play_pitch

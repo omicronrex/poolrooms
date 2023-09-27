@@ -11,7 +11,7 @@ repeat (20) instance_create_moving(x+gauss_range(-10,10),y,WaterSplashDrop,gauss
 
 alarm[0]=20
 
-sound_play(choose("splashMed_1","splashMedium_4"))
+if (inside_view()) sound_play_pitch(choose("splashMed_1","splashMedium_4"))
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
