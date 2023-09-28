@@ -447,7 +447,9 @@
 	|PoolStraight
 	|Plank
 	|DickMove
+	|DickCoin
 	|ValveLever
+	|Blink
 |PlayerStart
 |Block
 |Platform
