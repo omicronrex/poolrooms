@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ygo=PoolWater.y-16+choose(-2,2)
+ygo=PoolWater.y-18+choose(-2,2)
 
 if (y<ygo) vspeed+=0.15 else vspeed=vspeed*0.96-0.08
 

@@ -28,7 +28,7 @@ if (bbox_top>PoolWater.y) {
 
 hspeed=0
 if (!place_free(x,y+1) && PoolWater.y>y+32) {
-    xmove=sign(x+16-Player.x)
+    xmove=sign(x+16-Player.x)*2
     if (instance_place(x-xmove,y,Player)) if (!instance_place(x+hspeed,y+16,object_index)) {
         hspeed=xmove
     }

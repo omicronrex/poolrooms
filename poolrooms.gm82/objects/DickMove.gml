@@ -14,11 +14,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!active) if (Player.vspeed<0 && instance_place(xstart,y-Player.vspeed*2,Player) && !instance_place(xstart,y,Player)) {
+if (!active) if (Player.vspeed<0 && instance_place(xstart,y-Player.vspeed+1,Player) && !instance_place(xstart,y,Player)) {
     x=xstart
     active=1
     sound_play("bump")
     instance_create(x,y,DickCoin)
+    with (Player) {y+=vspeed move_outside_solid(270,abs(vspeed)) vspeed=0}
 }
 
 if (active) {
