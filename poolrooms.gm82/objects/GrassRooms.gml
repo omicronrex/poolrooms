@@ -14,7 +14,7 @@ applies_to=self
 */
 if (!active) {
     freeze_player()
-    savedatap("woohoo",1)
+    settings("woohoo",1)
     angle=0
     rot=0
     active=1

@@ -25,7 +25,6 @@ savedatap("skin",global.player_skin)
 savedatap("weapon",global.player_weapon)
 
 savedatap("bg seed",irandom(1000000))
-savedatap("woohoo",0)
 
 ds_map_clear(global.persistmap)
 
