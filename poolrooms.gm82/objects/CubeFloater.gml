@@ -8,6 +8,13 @@ time=random(100)
 stuck=0
 sndd=0
 ballon=0
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (sndd) sound_stop(sndd)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
