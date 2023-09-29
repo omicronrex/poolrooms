@@ -10,17 +10,9 @@ with (argument3) {
         x+=dx
         y+=dy
         instance_activate_around_player()
-        a=place_free(x+hspeed,y+vspeed)
+        a=place_free(x+hspeed,y+vspeed+gravity)
         x-=dx
         y-=dy
-
-        if (!a && point_distance(0,0,dx,dy)<20) {
-            //small distance - let's just move towards it instead
-            move_contact_solid_hv(dx,0)
-            move_contact_solid_hv(0,dy)
-            dx=dx-x
-            dy=dy-y
-        }
     }
     else a=1
     if (a) {
