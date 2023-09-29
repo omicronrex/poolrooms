@@ -67,3 +67,5 @@ action_id=603
 applies_to=self
 */
 damp=0
+
+sound_stop("drag")
