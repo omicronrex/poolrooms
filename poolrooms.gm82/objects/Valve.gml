@@ -40,7 +40,9 @@ if (global.water_level!=y+16) {
         sound_play("floodLOOP2")
     }
     global.water_level=y+16
-    sound_play_pitch("00CB_000D")
+
+    sound_play_ex("save"+string(irandom_range(1,6)),1,random_range(0.4,0.6))
+
     check=1
 }
 #define Other_5

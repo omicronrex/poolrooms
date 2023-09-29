@@ -150,7 +150,7 @@
     //pause all audio on pause
     global.pause_sound_on_game_pause=true
     //stop sound effects when changing rooms
-    global.stop_sounds_on_room_change=false
+    global.stop_sounds_on_room_change=true
 
 
 //game behavior

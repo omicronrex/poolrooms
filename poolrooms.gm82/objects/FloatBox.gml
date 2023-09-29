@@ -6,6 +6,7 @@ applies_to=self
 */
 time=random(100)
 stuck=0
+sndd=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -28,16 +29,17 @@ if (bbox_top>PoolWater.y) {
 
 hspeed=0
 if (!place_free(x,y+1) && PoolWater.y>y+32) {
-    xmove=sign(x+16-Player.x)*2
-    if (instance_place(x-xmove,y,Player)) if (!instance_place(x+hspeed,y+16,object_index)) {
+    xmove=Player.input_h*2
+    if (instance_place(x-xmove,y,Player) && place_free(x+xmove,y)) {
         hspeed=xmove
+        if (!sndd) sndd=sound_loop("drag")
     }
 }
 
-if (hspeed!=0) if (!place_free(x+hspeed,y)) {
+if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     move_contact_solid_hv(hspeed,0)
     hspeed=0
-}
+}} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
     if (vspeed>2 && bbox_bottom<PoolWater.y) {

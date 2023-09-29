@@ -6,6 +6,7 @@ applies_to=self
 */
 time=random(100)
 stuck=0
+ballon=0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
@@ -29,6 +30,19 @@ if (bbox_top>PoolWater.y) {
 } else {
     if (underwater) instance_create(x+16,PoolWater.y,WaterSplash2)
     underwater=0
+}
+
+if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5) {
+    if (!ballon) ballon=6
+    else {
+        if (Player.input_h!=0) ballon+=1
+        else ballon=5
+    }
+} else ballon=0
+
+if (ballon>5) {
+    ballon=1
+    sound_play_pitch("balloon_walk"+string(irandom_range(1,10)))
 }
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {

@@ -6,6 +6,7 @@ applies_to=self
 */
 spong=0
 snd=0
+sndd=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -17,8 +18,11 @@ if (bbox_bottom>PoolWater.y) {
     soak=approach(lerp(soak,1,0.03),1,0.002)
     vspeed=vspeed*0.98+0.08
     if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5) {
-        if (!spong) {spong=6 if (soak>0.1) snd=sound_play_ex("602902__everythingsounds__wring-out",soak)}
-        if (Player.input_h!=0) spong+=1
+        if (!spong) spong=6
+        else {
+            if (Player.input_h!=0) spong+=1
+            else spong=5
+        }
     } else spong=0
 } else {
     vspeed+=0.15
@@ -29,7 +33,11 @@ if (bbox_bottom>PoolWater.y) {
             instance_create_moving(x+32,random_range(bbox_top,bbox_bottom),WaterSplashDrop,random(4),random_range(-20,20))
         }
         if (!spong) {spong=6 if (soak>0.1) snd=sound_play_ex("602902__everythingsounds__wring-out",soak)}
-        if (Player.input_h!=0) spong+=1
+        else {
+            if (Player.input_h!=0) {
+                spong+=1
+            } else spong=5
+        }
     } else spong=0
 }
 
@@ -61,16 +69,17 @@ if (bbox_top>PoolWater.y) {
 
 hspeed=0
 if (!place_free(x,y+1)) {
-    xmove=sign(x+16-Player.x)*2
-    if (instance_place(x-xmove,y,Player)) if (!instance_place(x+hspeed,y+16,object_index)) {
+    xmove=Player.input_h
+    if (instance_place(x-xmove,y,Player) && place_free(x+xmove,y)) {
         hspeed=xmove
+        if (!sndd) sndd=sound_loop_ex("drag",1,0.7)
     }
 }
 
-if (hspeed!=0) if (!place_free(x+hspeed,y)) {
+if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     move_contact_solid_hv(hspeed,0)
     hspeed=0
-}
+}} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
     if (vspeed>2 && bbox_bottom<PoolWater.y) {
