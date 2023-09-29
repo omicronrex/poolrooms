@@ -20,10 +20,10 @@ vspeed=random_range(-2,-1)
 #define Other_40
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=203
+action_id=603
 applies_to=self
-invert=0
 */
+if (x<view_xview-100 || x>view_xview+900 || y<view_yview-100 || y>view_yview+1000) instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

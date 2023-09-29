@@ -14,6 +14,8 @@ applies_to=self
 */
 if (check) {
     valve+=a
+    if (a<0) if (!irandom(4)) instance_create(x+16+random_range(-6,6),y+16+random_range(-6,6),Bubbles)
+    if (a>0) instance_create(view_xview+random(800),view_yview+608+gauss(200),Bubbles)
     if (abs(y+16-PoolWater.y)<8) {
         with (Valve) check=0
         sound_play_pitch("00C4_0008")

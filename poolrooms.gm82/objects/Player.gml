@@ -1062,6 +1062,8 @@ if (!dead) {
         if (flashing mod 5 > 2) exit
     }
 
+    image_blend=merge_color($ffffff,$60cc00,min(1,hydrolitis*2))
+
     script_execute(global.player_skin,"draw")
 
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

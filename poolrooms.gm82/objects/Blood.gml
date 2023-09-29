@@ -9,6 +9,20 @@ image_speed=0
 image_angle=random(360)
 
 attach=noone
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (bbox_top>PoolWater.y) {
+    friction=0.2
+    image_xscale=min(20,image_xscale+0.1)
+    image_yscale=image_xscale
+    image_alpha=max(0.1,image_alpha-0.003)
+} else {
+    if (image_xscale>1) image_alpha=max(0,image_alpha-0.05)
+}
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -31,7 +45,7 @@ if (attach) {
     } else {
         x=attach.x+lengthdir_x(offd,offa+attach.image_angle-offoa)
         y=attach.y+lengthdir_y(offd,offa+attach.image_angle-offoa)
-        recheck-=1
+        /*recheck-=1
         if (recheck==1) {
             recheck=50
             image_xscale=2
@@ -43,7 +57,7 @@ if (attach) {
             }
             image_xscale=1
             image_yscale=1
-        }
+        }  */
     }
 } else if irandom(1) {
     attach=instance_place(x+hspeed,y+vspeed,Block)
@@ -71,3 +85,12 @@ if (attach) {
         }
     }
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+texture_set_interpolation(1)
+draw_self()
+texture_set_interpolation(0)
