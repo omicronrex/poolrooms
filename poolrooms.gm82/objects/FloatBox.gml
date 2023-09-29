@@ -40,6 +40,9 @@ if (hspeed!=0) if (!place_free(x+hspeed,y)) {
 }
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
+    if (vspeed>2 && bbox_bottom<PoolWater.y) {
+        sound_play(choose("thud1","thud2","thud3"))
+    }
     move_contact_solid_hv(0,vspeed)
     vspeed=0
     stuck=10
@@ -63,4 +66,6 @@ applies_to=self
 */
 angle=4*sin(time/7)*cos(time/11)
 if (stuck) angle=0
-draw_sprite_ext(sprite_index,-1,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,$ffffff,1)
+texture_set_interpolation(1)
+draw_sprite_ext(sprite_index,-1,x+16*image_xscale+pivot_pos_x(-16*image_xscale,-16*image_yscale,angle),y+16*image_yscale+pivot_pos_y(-16*image_xscale,-16*image_yscale,angle),image_xscale,image_yscale,angle,$ffffff,1)
+texture_set_interpolation(0)
