@@ -15,16 +15,32 @@ repeat (room_width*room_height/20000) instance_create(irandom_range(0,room_width
 repeat (room_width/150) instance_create(irandom_range(0,room_width),0,PoolBgCyl)
 
 model1=d3d_model_create()
-
-d3d_model_wall(model1,32,32,0,room_width-32,32,1000,(room_width-64)/32,1000/32)
-d3d_model_wall(model1,32,32,0,32,room_height-32,1000,(room_height-64)/32,1000/32)
-d3d_model_wall(model1,32,room_height-32,0,room_width-32,room_height-32,1000,(room_width-64)/32,1000/32)
-d3d_model_wall(model1,room_width-32,32,0,room_width-32,room_height-32,1000,(room_height-64)/32,1000/32)
+model3=d3d_model_create()
 
 with (PoolBgCube) {
     d3d_model_block(other.model1,x-w,y-w,z-w,x+w,y+w,z+w,size*2,size*2)
     instance_destroy()
 }
+
+d3d_model_primitive_begin(model3,pr_trianglelist)
+
+with (Block) if (object_index==Block) {
+    w=image_xscale*32
+    h=image_yscale*32
+    d3d_model_wall(other.model1,x,y,0,x+w,y,1000,w/32,1000/32)
+    d3d_model_wall(other.model1,x,y,0,x,y+h,1000,h/32,1000/32)
+    d3d_model_wall(other.model1,x,y+h,0,x+w,y+h,1000,w/32,1000/32)
+    d3d_model_wall(other.model1,x+w,y,0,x+w,y+h,1000,h/32,1000/32)
+
+    d3d_model_vertex_texture(other.model3,x,y,0,0,0)
+    d3d_model_vertex_texture(other.model3,x+w,y,0,w/32,0)
+    d3d_model_vertex_texture(other.model3,x,y+h,0,0,h/32)
+    d3d_model_vertex_texture(other.model3,x,y+h,0,0,h/32)
+    d3d_model_vertex_texture(other.model3,x+w,y,0,w/32,0)
+    d3d_model_vertex_texture(other.model3,x+w,y+h,0,w/32,h/32)
+}
+
+d3d_model_primitive_end(model3)
 
 model2=d3d_model_create()
 
@@ -57,10 +73,10 @@ d3d_set_fog(1,fogcol,500,1500)
 
 texture_set_repeat(1)
 texture_set_interpolation(1)
-d3d_model_draw(model1,0,0,0,tex)
 d3d_transform_add_rotation_x(90)
 d3d_model_draw(model2,0,0,0,tex)
 d3d_transform_set_identity()
+d3d_model_draw(model1,0,0,0,tex)
 
 d3d_set_fog(0,0,0,0)
 d3d_end()
@@ -72,3 +88,9 @@ d3d_set_alphablend(1)
 texture_set_interpolation(0)
 
 camera_apply()
+
+with (FloatSpike) draw_self()
+with (FallSpike) draw_self()
+
+texture_set_repeat(1)
+d3d_model_draw(model3,-0.5,-0.5,0,tex)
