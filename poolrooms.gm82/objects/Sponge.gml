@@ -83,7 +83,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
     if (vspeed>2 && bbox_bottom<PoolWater.y) {
-        sound_play("Breakbone_03")
+        sound_play_pitch("Breakbone_03")
         repeat (60) instance_create_moving(random_range(bbox_left,bbox_right),bbox_bottom,WaterSplashDrop,random(4),random_range(0,180))
     }
     move_contact_solid_hv(0,vspeed)
