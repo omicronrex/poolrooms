@@ -7,6 +7,8 @@ applies_to=self
 time=random(100)
 stuck=0
 sndd=0
+
+tex=sprite_get_texture(sprite_index,0)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -53,6 +55,9 @@ if (vspeed!=0) if (!place_free(x,y+vspeed)) {
 if (stuck) stuck-=1
 
 time+=1
+
+angle=4*sin(time/7)*cos(time/11)
+if (stuck) angle=0
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -60,14 +65,3 @@ action_id=603
 applies_to=self
 */
 underwater=bbox_top>PoolWater.y
-#define Draw_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-angle=4*sin(time/7)*cos(time/11)
-if (stuck) angle=0
-texture_set_interpolation(1)
-draw_sprite_ext(sprite_index,-1,x+16*image_xscale+pivot_pos_x(-16*image_xscale,-16*image_yscale,angle),y+16*image_yscale+pivot_pos_y(-16*image_xscale,-16*image_yscale,angle),image_xscale,image_yscale,angle,$ffffff,1)
-texture_set_interpolation(0)

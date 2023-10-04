@@ -7,6 +7,8 @@ applies_to=self
 spong=0
 snd=0
 sndd=0
+
+tex=sprite_get_texture(sprite_index,0)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -97,12 +99,3 @@ applies_to=self
 */
 underwater=bbox_top>PoolWater.y
 soak=underwater
-#define Draw_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-texture_set_interpolation(1)
-draw_self()
-texture_set_interpolation(0)

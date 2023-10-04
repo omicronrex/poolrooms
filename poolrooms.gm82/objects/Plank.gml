@@ -20,19 +20,20 @@ action_id=603
 applies_to=self
 */
 if (instance_place(x,y-4,Player) && y<PoolWater.y) {
-    if (special==-1) {
-        if (y==ystart) {
-            sound_play_ex("woodbreak",1,0.3)
-            gravity=0.4
-        }
-    } else {
-        if (!woah && abs(Player.x-x)>32) woah=20
-        if (woah==180) {
-            sound_play_ex("119793__lmbubec__springboard-a",1,0.3)
-            Player.vspeed=-20*abs(Player.x-x)/96
-            if (special) {Player.vspeed=-30 lock_controls() special=-1}
-        }
+    if (!woah && abs(Player.x-x)>32) {
+        if (special==-1) {
+            if (y==ystart) {
+                sound_play_ex("woodbreak",1,0.3)
+                gravity=0.4
+            }
+        } else woah=20
     }
+    if (woah==180) {
+        sound_play_ex("119793__lmbubec__springboard-a",1,0.3)
+        Player.vspeed=-20*abs(Player.x-x)/96
+        if (special) {Player.vspeed=-30 lock_controls() special=-1}
+    }
+
 }
 
 if (woah) {

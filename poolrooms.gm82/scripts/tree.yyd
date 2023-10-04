@@ -46,6 +46,7 @@
 		|key_get_name
 		|get_path_speed
 		|inside_view
+		|inside_room
 		|filename_valid
 		|current_date_filename
 		|make_persistent

@@ -24,7 +24,7 @@ with (PoolBgCube) {
 
 d3d_model_primitive_begin(model3,pr_trianglelist)
 
-with (Block) if (object_index==Block) {
+with (Block) if (object_index==Block) if (inside_room()) {
     w=image_xscale*32
     h=image_yscale*32
     d3d_model_wall(other.model1,x,y,0,x+w,y,1000,w/32,1000/32)
@@ -77,6 +77,20 @@ d3d_transform_add_rotation_x(90)
 d3d_model_draw(model2,0,0,0,tex)
 d3d_transform_set_identity()
 d3d_model_draw(model1,0,0,0,tex)
+
+with (FloatBox) {
+    w=16*image_xscale
+    h=16*image_yscale
+    d3d_transform_set_rotation_z(angle)
+    d3d_transform_add_translation(x+w,y+h,0)
+    d3d_draw_block(-w,-h,0,w,h,32,tex,1,1)
+}
+d3d_transform_set_identity()
+with (Sponge) {
+    w=32*image_xscale
+    h=32*image_yscale
+    d3d_draw_block(x,y,0,x+w,y+h,32,tex,1,1)
+}
 
 d3d_set_fog(0,0,0,0)
 d3d_end()
