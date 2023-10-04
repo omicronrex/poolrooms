@@ -81,16 +81,19 @@ d3d_model_draw(model1,0,0,0,tex)
 with (FloatBox) {
     w=16*image_xscale
     h=16*image_yscale
-    d3d_transform_set_rotation_z(angle)
-    d3d_transform_add_translation(x+w,y+h,0)
-    d3d_draw_block(-w,-h,0,w,h,32,tex,1,1)
+    d3d_transform_set_rotation_x(90)
+    d3d_transform_add_rotation_z(angle)
+    d3d_transform_add_translation(x+w,y+h,16)
+    d3d_draw_cylinder(-w,-h,-16,w,h,16,tex,3,1,1,16)
 }
 d3d_transform_set_identity()
 with (Sponge) {
     w=32*image_xscale
     h=32*image_yscale
+    draw_set_color(image_blend)
     d3d_draw_block(x,y,0,x+w,y+h,32,tex,1,1)
 }
+draw_set_color($ffffff)
 
 d3d_set_fog(0,0,0,0)
 d3d_end()
