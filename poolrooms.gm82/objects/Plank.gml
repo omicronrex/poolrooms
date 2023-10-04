@@ -74,7 +74,7 @@ applies_to=self
 */
 //field special: bool
 
-if (special && settings("woohoo")) special=-1
+if (special && savedata("woohoo")) special=-1
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

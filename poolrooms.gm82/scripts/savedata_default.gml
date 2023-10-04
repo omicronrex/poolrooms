@@ -26,6 +26,8 @@ savedatap("weapon",global.player_weapon)
 
 savedatap("bg seed",irandom(1000000))
 
+savedatap("woohoo",0)
+
 ds_map_clear(global.persistmap)
 
 ds_grid_resize(global.statgrid,3,1)
