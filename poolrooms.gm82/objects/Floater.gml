@@ -32,7 +32,7 @@ if (bbox_top>PoolWater.y) {
     underwater=0
 }
 
-if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5) {
+if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5 && !Player.dead) {
     if (!ballon) ballon=6
     else {
         if (Player.input_h!=0) ballon+=1

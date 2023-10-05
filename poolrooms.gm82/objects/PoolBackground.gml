@@ -83,8 +83,8 @@ with (FloatBox) {
     h=16*image_yscale
     d3d_transform_set_rotation_x(90)
     d3d_transform_add_rotation_z(angle)
-    d3d_transform_add_translation(x+w,y+h,16)
-    d3d_draw_cylinder(-w,-h,-16,w,h,16,tex,3,1,1,16)
+    d3d_transform_add_translation(x+w,y+h,0)
+    d3d_draw_cylinder(-w,-h*2,-h,w,0,h,tex,3,1,1,16)
 }
 d3d_transform_set_identity()
 with (Sponge) {

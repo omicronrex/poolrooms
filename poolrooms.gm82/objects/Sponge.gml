@@ -19,7 +19,7 @@ oldsoak=soak
 if (bbox_bottom>PoolWater.y) {
     soak=approach(lerp(soak,1,0.03),1,0.002)
     vspeed=vspeed*0.98+0.08
-    if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5) {
+    if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5 && !Player.dead) {
         if (!spong) spong=6
         else {
             if (Player.input_h!=0) spong+=1
@@ -28,7 +28,7 @@ if (bbox_bottom>PoolWater.y) {
     } else spong=0
 } else {
     vspeed+=0.15
-    if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5) {
+    if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5 && !Player.dead) {
         soak=approach(lerp(soak,0,0.03),0,0.002)
         repeat (soak*10) {
             instance_create_moving(x,random_range(bbox_top,bbox_bottom),WaterSplashDrop,random(4),180+random_range(-20,20))
@@ -71,7 +71,7 @@ if (bbox_top>PoolWater.y) {
 
 hspeed=0
 if (!place_free(x,y+1)) {
-    xmove=Player.input_h
+    xmove=Player.input_h*!Player.dead
     if (instance_place(x-xmove,y,Player) && place_free(x+xmove,y)) {
         hspeed=xmove
         if (!sndd) sndd=sound_loop_ex("drag",1,0.7)

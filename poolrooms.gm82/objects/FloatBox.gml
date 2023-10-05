@@ -31,7 +31,7 @@ if (bbox_top>PoolWater.y) {
 
 hspeed=0
 if (!place_free(x,y+1) && PoolWater.y>y+32) {
-    xmove=Player.input_h*2
+    xmove=Player.input_h*2*!Player.dead
     if (instance_place(x-xmove,y,Player) && place_free(x+xmove,y)) {
         hspeed=xmove
         if (!sndd) sndd=sound_loop("drag")
