@@ -88,6 +88,7 @@ if (vspeed!=0) if (!place_free(x,y+vspeed)) {
         sound_play_pitch("Breakbone_03")
         repeat (60) instance_create_moving(random_range(bbox_left,bbox_right),bbox_bottom,WaterSplashDrop,random(4),random_range(0,180))
     }
+    y=round(y)
     move_contact_solid_hv(0,vspeed)
     vspeed=0
 }
