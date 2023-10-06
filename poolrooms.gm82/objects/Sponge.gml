@@ -9,6 +9,8 @@ snd=0
 sndd=0
 
 tex=sprite_get_texture(sprite_index,0)
+
+soak=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -56,9 +58,9 @@ y-=y+32*image_yscale-obot
 if (!place_free(x,y) && free) {
     soak=oldsoak
     image_yscale=1+soak
-    y=obot-32*image_yscale
+    y=floor(obot-32*image_yscale)
 }
-move_outside_solid(90,1)
+if (place_free(x,y-1)) move_outside_solid(90,1)
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
 if (bbox_top>PoolWater.y) {
@@ -99,4 +101,4 @@ action_id=603
 applies_to=self
 */
 underwater=bbox_top>PoolWater.y
-soak=underwater
+if (underwater && place_free(x,y-1)) soak=1
