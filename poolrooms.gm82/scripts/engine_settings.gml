@@ -46,7 +46,7 @@
 
 //difficulties
     //difficulty options:
-    add_difficulty("Pool")
+    add_difficulty("Lost")
     //add_difficulty("Hard")
     //add_difficulty("Very Hard")
     //add_difficulty("Impossible",true)
@@ -100,7 +100,7 @@
     //there is an optional player choice for this - check custom_options().
     global.save_valign=true
     //save the player exactly in the middle of save points
-    global.centered_saving=false
+    global.centered_saving=true
     //platform crush behavior
     //0: leave the player stuck in the wall
     //1: kill the player when pushed into a wall

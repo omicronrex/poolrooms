@@ -141,6 +141,8 @@ if (!setting) {
 }
 
 ycursor=approach(ycursor,ydraw+sel*ysep+52,16*dt)
+
+if (!irandom(8)) instance_create(xdraw-20,ycursor-8,Bubbles)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

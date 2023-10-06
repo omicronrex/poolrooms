@@ -94,13 +94,17 @@ dy=median(-608,y-view_yview,608)
 s=surface_get("clone",global.APPwidth,global.APPheight)
 surface_copy(s,0,0,application_surface)
 
+surface_set_target(s)
+
+draw_make_opaque()
+
 if (room==rmTitle) {
-    surface_set_target(s)
     draw_set_blend_mode(bm_subtract)
     draw_background(bgTitleMask,0,0)
     draw_set_blend_mode(0)
-    surface_set_target(application_surface)
 }
+
+surface_set_target(application_surface)
 
 shader_pixel_set(global.shader_water)
 

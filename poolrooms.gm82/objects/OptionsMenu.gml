@@ -45,6 +45,8 @@ if (global.key_pressed[key_shoot]) {
 } else {
     script_execute(ds_list_find_value(global.optlist,sel),opt_step)
 }
+
+if (!irandom(8)) instance_create(xcursor,ycursor-8,Bubbles)
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1

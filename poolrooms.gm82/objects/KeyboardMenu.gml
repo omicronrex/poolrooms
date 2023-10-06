@@ -89,6 +89,8 @@ if (!setting) for (i=0;i<key_sizeof;i+=1)
     keytext[i]=key_get_name(i)
 
 ycursor=approach(ycursor,ydraw+sel*ysep+52,16*dt)
+
+if (!irandom(8)) instance_create(xdraw-20,ycursor-8,Bubbles)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

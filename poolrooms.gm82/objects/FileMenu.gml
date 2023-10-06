@@ -226,7 +226,7 @@ draw_set_halign(0)
 
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
 draw_sprite(sprite_index,-1,dx,y+310+64)
-draw_sprite(sprDynamicPlatform,0,dx-17,y+319+64)
+draw_sprite(sprFloater,0,dx-17,y+319+64)
 
 //option info
 draw_set_color(global.text_color)

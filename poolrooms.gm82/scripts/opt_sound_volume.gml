@@ -19,7 +19,7 @@ switch (argument0) {
         if (object_index!=PauseMenu) shoottimer-=1
         if (shoottimer<0) {
             shoottimer=30/dt
-            instance_create_moving(xdraw-18,ycursor-2,Bullet,16*dt,0)
+            instance_create_moving(xdraw-18,ycursor-2,WaterBullet,16*dt,0)
             sound_play_option("sndShoot")
         }
     }break
