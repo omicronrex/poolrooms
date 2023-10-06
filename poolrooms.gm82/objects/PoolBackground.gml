@@ -49,6 +49,9 @@ with (PoolBgCyl) {
     instance_destroy()
 }
 
+with (Floater) cor=make_color_hsv(irandom(255),255,255)
+with (CubeFloater) cor=make_color_hsv(irandom(255),255,255)
+
 randomize()
 #define Other_5
 /*"/*'/**//* YYD ACTION

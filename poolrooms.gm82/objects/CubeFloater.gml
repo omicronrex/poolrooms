@@ -10,14 +10,6 @@ sndd=0
 ballon=0
 
 image_speed=0
-cor=irandom(image_number-1)
-
-color[0]=$ff00ff
-color[1]=$40ff
-color[2]=$ddff
-color[3]=$ff80
-color[4]=$ffff00
-color[5]=$ff0040
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -29,7 +21,7 @@ if (sndd) sound_stop(sndd)
 sound_play_ex("537897__belanhud__balloon-pop-one",0.8,random_range(0.6,0.7))
 repeat (8) {
     i=instance_create(x+random(32),y+random(32),FloaterFragment)
-    i.image_blend=color[cor]
+    i.image_blend=cor
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -122,4 +114,5 @@ applies_to=self
 */
 angle=6*sin(time/7)*cos(time/11)
 if (stuck) angle=0
-draw_sprite_ext(sprite_index,cor,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,$ffffff,1)
+draw_sprite_ext(sprite_index,1,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,cor,1)
+draw_sprite_ext(sprite_index,2,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,$ffffff,1)
