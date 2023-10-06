@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-time=0
+time=irandom(10000)
 distortion=24
 
 x=-32
