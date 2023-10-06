@@ -8,6 +8,9 @@ x=-999
 angle=0
 dy=0
 active=0
+
+tex=sprite_get_texture(sprite_index,1)
+image_speed=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -26,10 +29,3 @@ if (active) {
     angle=min(180,angle+180/8)
     dy=dsin(angle)*-12
 }
-#define Draw_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-draw_sprite(sprite_index,-1,x,y+dy)

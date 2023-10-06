@@ -77,6 +77,8 @@ d3d_transform_add_rotation_x(90)
 d3d_model_draw(model2,0,0,0,tex)
 d3d_transform_set_identity()
 d3d_model_draw(model1,0,0,0,tex)
+d3d_set_fog(0,0,0,0)
+
 
 with (FloatBox) {
     w=16*image_xscale
@@ -94,8 +96,10 @@ with (Sponge) {
     d3d_draw_block(x,y,0,x+w,y+h,32,tex,1,1)
 }
 draw_set_color($ffffff)
+texture_set_interpolation(0)
+with (DickMove) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
+texture_set_interpolation(1)
 
-d3d_set_fog(0,0,0,0)
 d3d_end()
 surface_set_target(application_surface)
 d3d_set_projection_ortho(0,0,800,608,0)
@@ -108,6 +112,7 @@ camera_apply()
 
 with (FloatSpike) draw_self()
 with (FallSpike) draw_self()
+with (DickMove) draw_self()
 
 texture_set_repeat(1)
 d3d_model_draw(model3,-0.5,-0.5,0,tex)
