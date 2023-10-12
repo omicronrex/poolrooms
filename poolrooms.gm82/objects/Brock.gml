@@ -16,10 +16,13 @@ if (y<PoolWater.y) vspeed+=0.15 else vspeed=vspeed*0.98+0.08
 vspeed=median(-7,vspeed,7)
 
 if (bbox_top>PoolWater.y) {
-    if (!underwater) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==1) instance_create(x+16,PoolWater.y,WaterSplash1)
+    underwater=2
+} else if (bbox_bottom>PoolWater.y) {
+    if (underwater==0) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==2) instance_create(x+16,PoolWater.y,WaterSplash2)
     underwater=1
 } else {
-    if (underwater) instance_create(x+16,PoolWater.y,WaterSplash2)
     underwater=0
 }
 
@@ -38,7 +41,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    if (vspeed>2 && bbox_bottom<PoolWater.y) {
+    if (vspeed>2) {
         sound_play_pitch("debris_stone_hard_07")
     }
     move_contact_solid_hv(0,vspeed)

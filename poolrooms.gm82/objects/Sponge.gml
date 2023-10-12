@@ -64,10 +64,13 @@ if (place_free(x,y-1)) move_outside_solid(90,1)
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
 if (bbox_top>PoolWater.y) {
-    if (!underwater) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==1) instance_create(x+16,PoolWater.y,WaterSplash1)
+    underwater=2
+} else if (bbox_bottom>PoolWater.y) {
+    if (underwater==0) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==2) instance_create(x+16,PoolWater.y,WaterSplash2)
     underwater=1
 } else {
-    if (underwater) instance_create(x+16,PoolWater.y,WaterSplash2)
     underwater=0
 }
 
@@ -86,9 +89,9 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    if (vspeed>2 && bbox_bottom<PoolWater.y) {
+    if (vspeed>2) {
         sound_play_pitch("Breakbone_03")
-        repeat (60) instance_create_moving(random_range(bbox_left,bbox_right),bbox_bottom,WaterSplashDrop,random(4),random_range(0,180))
+        if (bbox_bottom<PoolWater.y) repeat (60) instance_create_moving(random_range(bbox_left,bbox_right),bbox_bottom,WaterSplashDrop,random(4),random_range(0,180))
     }
     y=round(y)
     move_contact_solid_hv(0,vspeed)
