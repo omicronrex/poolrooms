@@ -11,6 +11,7 @@ sndd=0
 tex=sprite_get_texture(sprite_index,0)
 
 soak=0
+unsoaking=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -28,21 +29,24 @@ if (bbox_bottom>PoolWater.y) {
             else spong=5
         }
     } else spong=0
+    unsoaking=0
 } else {
     vspeed+=0.15
     if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5 && !Player.dead) {
         soak=approach(lerp(soak,0,0.03),0,0.002)
+        if (!unsoaking) if (soak>0.1) snd=sound_play_ex("602902__everythingsounds__wring-out",soak)
+        unsoaking=1
         repeat (soak*10) {
             instance_create_moving(x,random_range(bbox_top,bbox_bottom),WaterSplashDrop,random(4),180+random_range(-20,20))
             instance_create_moving(x+32,random_range(bbox_top,bbox_bottom),WaterSplashDrop,random(4),random_range(-20,20))
         }
-        if (!spong) {spong=6 if (soak>0.1) snd=sound_play_ex("602902__everythingsounds__wring-out",soak)}
+        if (!spong) spong=6
         else {
             if (Player.input_h!=0) {
                 spong+=1
             } else spong=5
         }
-    } else spong=0
+    } else {spong=0 unsoaking=0}
 }
 
 if (spong>5) {
