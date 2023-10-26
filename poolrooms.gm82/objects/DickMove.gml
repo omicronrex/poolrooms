@@ -21,7 +21,7 @@ if (!active) if (Player.vspeed<0 && instance_place(xstart,y-Player.vspeed+1,Play
     x=xstart
     active=1
     sound_play("bump")
-    instance_create(x,y,DickCoin)
+    instance_create(x,y-32,DickCoin)
     with (Player) {y+=vspeed move_outside_solid(270,abs(vspeed)) vspeed=0}
 }
 
