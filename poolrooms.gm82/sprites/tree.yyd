@@ -377,5 +377,7 @@
 	|sprBlink
 	|sprSponge
 	|sprBrock
-|sprFloorButton
-|sprButtonRoomEd
+	|sprFloorButton
+	|sprButtonRoomEd
+	|sprElevator
+	|sprElevatorTexture
