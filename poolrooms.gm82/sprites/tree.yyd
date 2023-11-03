@@ -361,6 +361,8 @@
 	|sprValve
 	|sprValveLever
 	|sprPoolSpike
+	|sprPoolSpikeR
+	|sprPoolSpikeL
 	|sprPoolSpikeDown
 	|sprValveMask
 	|sprValveLeverRE

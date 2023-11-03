@@ -7,6 +7,8 @@ applies_to=self
 press=0side=0
 vpress=0
 vside=0
+
+elevator=noone
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -24,8 +26,8 @@ with (Player) if (instance_place(x,y,other.id)) with (other) {
     side+=x+16-other.x
 }
 
-if (press) {side/=press press=1 Elevator.go=1}
-else Elevator.go=0
+if (press) {side/=press press=1 elevator.go=1}
+else elevator.go=0
 
 vpress=lerp(vpress,press,1/4)
 vside=lerp(vside,side,1/4)

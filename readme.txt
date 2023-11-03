@@ -1,17 +1,37 @@
 
-    Errsdgdfgsdhdf
-    ==============
-    Version 0.1
+    I Wanna Explore The Pool Rooms
+    ==============================
+    Version 0.1 - 03 November 2023
     
-  A game by renex
+  A game by renex for the Second Edition of the I Wanna Tourney
+  
+  Tested by LaWatson and my family
   
 --------------------------------------------------------------------------------
+ 
+todo
 
-- make like 8 more rooms
+- make like 4 more rooms
 - the cube floater should probably bounce on the players head instead of crushing him
 - give the mario block dots if you've seen it before
+- fix piston 3d texture
+- fix brock 3d block texture side orientations
+- fix the splash on restart
+- fix blocks on pistons on restart
 
 --------------------------------------------------------------------------------
 
-music by: Zerofuturism - https://linktr.ee/zerofuturism
-art by: Jared Pike - https://twitter.com/jaredpike
+Music by:
+    - Zerofuturism: https://linktr.ee/zerofuturism
+
+Title and prerendered art by:
+    - Jared Pike: https://twitter.com/jaredpike
+
+Sound effects obtained from:
+    - freesound.org
+    - Rain World
+    - Unreal Tournament 2004
+    - Super Mario 64
+    - Super Mario World
+    - Celeste
+    - Game Maker

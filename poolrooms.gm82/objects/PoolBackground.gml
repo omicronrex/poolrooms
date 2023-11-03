@@ -101,7 +101,8 @@ with (Sponge) {
 draw_set_color($ffffff)
 texture_set_interpolation(0)
 with (DickMove) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
-with (Elevator) if (go) d3d_draw_block(x,y,0,x+32,y+16,32,tex,1,1)
+with (Brock) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
+with (Elevator) if (y<ystart+32) d3d_draw_block(x,y,0,x+32,y+16,32,tex,1,1)
 texture_set_interpolation(1)
 
 d3d_end()
