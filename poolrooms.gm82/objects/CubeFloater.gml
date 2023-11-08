@@ -71,13 +71,20 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
 
-if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    move_contact_solid_hv(0,vspeed)
-    if (vspeed>0) {
-        if (vspeed>1) sound_play("balloon_land")
-        vspeed=-vspeed*0.4
-    } else vspeed=0
-    stuck=10
+if (vspeed!=0) {
+    if (!place_free(x,y+vspeed)) {
+        move_contact_solid_hv(0,vspeed)
+        if (vspeed>0) {
+            if (vspeed>1) sound_play("balloon_land")
+            vspeed=-vspeed*0.4
+        } else vspeed=0
+        stuck=10
+    }
+    if (instance_place(x,y+vspeed,Player)) {
+        sound_play("balloon_land")
+        vspeed=min(0,Player.vspeed)-2
+    }
+    if (vspeed<0) recursive_nudge()
 }
 
 if (stuck) stuck-=1

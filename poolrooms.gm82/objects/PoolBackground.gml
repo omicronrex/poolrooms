@@ -100,7 +100,7 @@ with (Sponge) {
 }
 draw_set_color($ffffff)
 texture_set_interpolation(0)
-with (DickMove) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
+with (DickMove) if (seen) d3d_draw_block(xstart,y+dy,0,xstart+32,y+dy+32,32,tex,1,1)
 with (Brock) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
 with (Elevator) if (y<ystart+32) d3d_draw_block(x,y,0,x+32,y+16,32,tex,1,1)
 texture_set_interpolation(1)
@@ -117,7 +117,7 @@ camera_apply()
 
 with (FloatSpike) draw_self()
 with (FallSpike) draw_self()
-with (DickMove) draw_self()
+with (DickMove) draw_sprite(sprite_index,0,x,y+dy)
 with (Butten) event_draw()
 with (Elevator) draw_self()
 
