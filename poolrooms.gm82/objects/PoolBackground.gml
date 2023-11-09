@@ -24,7 +24,7 @@ with (PoolBgCube) {
 
 d3d_model_primitive_begin(model3,pr_trianglelist)
 
-with (Block) if (object_index==Block) if (inside_room()) {
+with (Block) if ((object_index==Block && inside_room()) || object_index==OutsideBlock) {
     w=image_xscale*32
     h=image_yscale*32
     d3d_model_wall(other.model1,x,y,0,x+w,y,1000,w/32,1000/32)
