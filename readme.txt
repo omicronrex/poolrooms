@@ -17,7 +17,6 @@ todo
 - make like 4 more rooms
 - fix piston 3d texture
 - fix brock 3d block texture side orientations
-- fix blocks on pistons on restart
 - think up a conclusion that isn't "hurr almond water"
 - add tourney logo and branding
 

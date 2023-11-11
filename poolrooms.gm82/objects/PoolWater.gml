@@ -18,6 +18,8 @@ if (savedata("wlevelRoom")==room) {
     y=global.water_level
 } else global.water_level=y
 
+with (Elevator) y+=32
+
 with (FloatBox) {
     do {
         yo=y
@@ -35,6 +37,24 @@ with (CubeFloater) {
             y=yo break
         }
     } until (abs(y-(PoolWater.y-16))<16)
+}
+with (Brock) {
+    repeat (room_height/32) {
+        yo=y
+        y+=32
+        if (!place_free(x,y)) {
+            y=yo break
+        }
+    }
+}
+with (Sponge) {
+    repeat (room_height/32) {
+        yo=y
+        y+=32
+        if (!place_free(x,y)) {
+            y=yo break
+        }
+    }
 }
 with (Floater) {
     do {

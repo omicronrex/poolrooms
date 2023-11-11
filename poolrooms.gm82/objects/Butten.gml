@@ -38,6 +38,11 @@ action_id=603
 applies_to=self
 */
 //field elevator: instance
+
+event_step()
+
+vpress=press
+vside=side
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 time=random(100)
-stuck=0
+stuck=10
 sndd=0
 ballon=0
 underwater=0
