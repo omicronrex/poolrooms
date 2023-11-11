@@ -80,6 +80,16 @@ d3d_transform_add_rotation_x(90)
 d3d_model_draw(model2,0,0,0,tex)
 d3d_transform_set_identity()
 d3d_model_draw(model1,0,0,0,tex)
+
+
+d3d_transform_set_rotation_x(90)
+
+with (Elevator) if (y<ystart+32) {
+    d3d_model_draw(global.mod_pisten,x,-32,y,other.tex)
+}
+d3d_transform_set_identity()
+
+
 d3d_set_fog(0,0,0,0)
 
 
@@ -92,6 +102,7 @@ with (FloatBox) {
     d3d_draw_cylinder(-w,-h*2,-h,w,0,h,tex,3,1,1,16)
 }
 d3d_transform_set_identity()
+
 with (Sponge) {
     w=32*image_xscale
     h=32*image_yscale
@@ -101,10 +112,15 @@ with (Sponge) {
 draw_set_color($ffffff)
 texture_set_interpolation(0)
 with (DickMove) if (seen) d3d_draw_block(xstart,y+dy,0,xstart+32,y+dy+32,32,tex,1,1)
-with (Brock) d3d_draw_block(x,y,0,x+32,y+32,32,tex,1,1)
-with (Elevator) if (y<ystart+32) d3d_draw_block(x,y,0,x+32,y+16,32,tex,1,1)
-texture_set_interpolation(1)
 
+d3d_transform_set_rotation_x(90)
+with (Brock) d3d_draw_block(x,-32,y,x+32,0,y+32,tex,1,1)
+d3d_transform_set_identity()
+
+
+//--end 3d blocks--//
+
+texture_set_interpolation(1)
 d3d_end()
 surface_set_target(application_surface)
 d3d_set_projection_ortho(0,0,800,608,0)

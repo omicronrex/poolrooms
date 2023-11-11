@@ -7,7 +7,7 @@ applies_to=self
 sndd=0
 underwater=0
 
-tex=sprite_get_texture(sprite_index,1)
+tex=sprite_get_texture(sprite_index,0)
 image_speed=0
 #define Step_0
 /*"/*'/**//* YYD ACTION

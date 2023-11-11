@@ -6,7 +6,7 @@ applies_to=self
 */
 go=0
 
-tex=sprite_get_texture(sprElevatorTexture,0)
+sprite_index=sprElevator
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
