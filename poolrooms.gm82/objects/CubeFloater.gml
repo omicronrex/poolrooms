@@ -8,6 +8,7 @@ time=random(100)
 stuck=0
 sndd=0
 ballon=0
+underwater=0
 
 image_speed=0
 #define Destroy_0

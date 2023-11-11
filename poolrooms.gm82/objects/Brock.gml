@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 sndd=0
+underwater=0
 
 tex=sprite_get_texture(sprite_index,1)
 image_speed=0
@@ -57,4 +58,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-underwater=bbox_top>PoolWater.y
+if (bbox_bottom>PoolWater.y) underwater=1
+if (bbox_top>PoolWater.y) underwater=2

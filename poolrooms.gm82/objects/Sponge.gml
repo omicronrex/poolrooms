@@ -12,6 +12,7 @@ tex=sprite_get_texture(sprite_index,0)
 
 soak=0
 unsoaking=0
+underwater=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -107,5 +108,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-underwater=bbox_top>PoolWater.y
+if (bbox_bottom>PoolWater.y) underwater=1
+if (bbox_top>PoolWater.y) underwater=2
 if (underwater && place_free(x,y-1)) soak=1

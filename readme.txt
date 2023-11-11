@@ -2,12 +2,12 @@
 
     I Wanna Explore The Pool Rooms
     ==============================
-    Version 0.1 - 03 November 2023
+    Version 0.2 - 10 November 2023
 
     
   A game by renex for the Second Edition of the I Wanna Tourney
   
-  Tested by LaWatson and my family
+  Tested by LaWatson, MajokkoMetis and my family
   
   
 --------------------------------------------------------------------------------
@@ -17,9 +17,9 @@ todo
 - make like 4 more rooms
 - fix piston 3d texture
 - fix brock 3d block texture side orientations
-- fix the splash on restart
 - fix blocks on pistons on restart
 - think up a conclusion that isn't "hurr almond water"
+- add tourney logo and branding
 
 
 --------------------------------------------------------------------------------
