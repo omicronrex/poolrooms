@@ -7,6 +7,8 @@ applies_to=self
 sndd=0
 underwater=0
 clowning=0
+
+image_speed=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -29,12 +31,14 @@ if (bbox_top>PoolWater.y) {
 }
 
 hspeed=0
+image_index=0
 clowning=0
 if (!place_free(x,y+1) && !instance_place(x,y-1,MovingSolid)) {
     xmove=sign(Player.x-x)
         if (instance_place(Player.x-16,y,Player)) {
         hspeed=xmove
         clowning=1
+        image_index=1+(xmove>0)
     }
 }
 
@@ -42,6 +46,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     move_contact_solid_hv(hspeed,0)
     hspeed=0
     clowning=0
+    image_index=0
 }}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {

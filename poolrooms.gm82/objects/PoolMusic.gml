@@ -68,7 +68,7 @@ if (global.music!="pool" || sound_background_instance()!=global.music_instance) 
 
     sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
     sndEar=sound_loop_ex("rainRumble1",0)
-    sndClown=sound_loop_ex("clown",0)
+    sndClown=sound_loop_ex_layer("clown",0)
 }
 
 global.music="pool"
