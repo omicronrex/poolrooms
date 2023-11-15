@@ -20,6 +20,7 @@ sound_effect_options(e4,0,22000)
 //sound_effect_options(e4,0,22000)
 
 damp=0
+honk=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -30,6 +31,16 @@ if (vol<1) {
     vol=min(1,vol+1/100)
     sound_volume(global.music_instance,vol)
 }
+
+var clowned;
+clowned=0
+with (Clown) if (clowning) clowned=1
+
+if (clowned) {
+    honk=approach(honk,1,0.2)
+} else honk=approach(honk,0,0.2)
+
+sound_volume(sndClown,honk)
 
 if (submerged) damp=min(0.9,damp+0.05) else damp=max(0,damp-0.05)
 
@@ -57,6 +68,7 @@ if (global.music!="pool" || sound_background_instance()!=global.music_instance) 
 
     sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
     sndEar=sound_loop_ex("rainRumble1",0)
+    sndClown=sound_loop_ex("clown",0)
 }
 
 global.music="pool"

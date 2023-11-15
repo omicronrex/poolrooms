@@ -103,6 +103,14 @@ with (FloatBox) {
 }
 d3d_transform_set_identity()
 
+with (Clown) {
+    i=32 repeat (16) {
+        d3d_set_depth(i)
+        draw_self()
+    i-=2}
+}
+d3d_set_depth(0)
+
 with (Sponge) {
     w=32*image_xscale
     h=32*image_yscale
