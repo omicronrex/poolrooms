@@ -459,6 +459,9 @@
 	|Elevator
 	|OutsideBlock
 	|Clown
+	|Powered
+	|Toworney
+	|FadeIn
 |PlayerStart
 |Block
 |Platform

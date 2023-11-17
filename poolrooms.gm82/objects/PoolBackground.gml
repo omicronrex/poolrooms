@@ -4,6 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+flip=0
+
 fogcol=color_reverse($b8af86)
 
 tex=background_get_texture(tilePool)
@@ -61,6 +63,7 @@ applies_to=self
 */
 d3d_model_destroy(model1)
 d3d_model_destroy(model2)
+surface_forget("flippyhoo")
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -99,7 +102,7 @@ with (FloatBox) {
     d3d_transform_set_rotation_x(90)
     d3d_transform_add_rotation_z(angle)
     d3d_transform_add_translation(x+w,y+h,0)
-    d3d_draw_cylinder(-w,-h*2,-h,w,0,h,tex,3,1,1,16)
+    d3d_draw_cylinder(-w,-h/2,-h,w,0,h,tex,3,1,1,16)
 }
 d3d_transform_set_identity()
 

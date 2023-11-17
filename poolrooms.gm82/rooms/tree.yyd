@@ -1,4 +1,5 @@
 |rmInit
+|rmCapcom
 |rmTitle
 |rmMenu
 |rmOptions
@@ -18,3 +19,5 @@
 	|rmPool4
 	|rmPoolt4_5
 	|rmPool5
+	|rmPoolt5_6
+	|rmPool6

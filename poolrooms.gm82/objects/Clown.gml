@@ -33,7 +33,7 @@ if (bbox_top>PoolWater.y) {
 hspeed=0
 image_index=0
 clowning=0
-if (!place_free(x,y+1) && !instance_place(x,y-1,MovingSolid)) {
+if (!place_free(x,y+1) && inside_view() && !Player.dead /* && !instance_place(x,y-1,MovingSolid)*/) {
     xmove=sign(Player.x-x)
         if (instance_place(Player.x-16,y,Player)) {
         hspeed=xmove

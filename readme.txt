@@ -14,9 +14,8 @@
  
 todo
 
-- make like 3 more rooms
+- make like 1 more rooms
 - think up a conclusion that isn't "hurr almond water"
-- add tourney logo and branding
 
 
 --------------------------------------------------------------------------------

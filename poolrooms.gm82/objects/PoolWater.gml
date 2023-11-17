@@ -4,6 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+flip=0
+
 time=irandom(10000)
 distortion=24
 
@@ -98,6 +100,25 @@ draw_set_blend_mode(0)
 surface_reset()
 
 y=approach(lerp(y,global.water_level,1/100),global.water_level,1/10)
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field flip: bool
+
+if (flip) {
+    PoolBackground.tex=background_get_texture(tilePoolFlip)
+    flip_player(-1)
+}
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+flip_player(1)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -152,3 +173,14 @@ texture_set_interpolation(0)
 shader_reset()
 
 with (Player) if (hydrolitis>0 && !dead) draw_healthbar(x-view_xview-50,y-view_yview-30,x-view_xview+50,y-view_yview-20,hydrolitis*100,0,$408000,$408000,0,1,1)
+
+if (flip) {
+    surface_copy(s,0,0,application_surface)
+    surface_set_target(s)
+
+    draw_make_opaque()
+    surface_set_target(application_surface)
+
+    d3d_set_projection_ortho(0,0,global.APPwidth,global.APPheight,0)
+    draw_surface_ext(s,0,global.APPheight,1,-1,0,$ffffff,1)
+}
