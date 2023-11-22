@@ -112,6 +112,8 @@ input_clear()
 input_consume()
 
 hydrolitis=0
+
+fucked=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -251,6 +253,12 @@ if (!frozen) {
     //reset to default
     maxSpeed = maxSpeedDefault
     baseGrav = baseGravDefault
+
+    if (fucked) {
+        maxSpeed=0.5
+        jump=3
+        jump2=2
+    }
 
     //the beamstate variable contains a bitmask of what beams are currently active
     //check constants for the available beams, and the beam objects in gimmicks/see the moon
@@ -507,23 +515,23 @@ if (instance_place(x,y,Water1) || instance_place(x,y,Water3)) {
 if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater)) {
     if (vspeed*vflip>2) vspeed=2*vflip
     if (!onwater) {
-        instance_create(x,PoolWater.y,WaterSplash1)
+        instance_create_pirror(x,PoolWater.y,WaterSplash1)
         bubbles=50
     }
     onwater=1
 } else {
     if (onwater) {
-        instance_create(x,PoolWater.y,WaterSplash2)
+        instance_create_pirror(x,PoolWater.y,WaterSplash2)
     }
     onwater=0
 }
 
 if (bubbles) {
     bubbles-=1
-    repeat (1+bubbles/10) if (random(50)<bubbles) instance_create(x+gauss_range(-8,8),y+gauss_range(-12,12),Bubbles)
+    repeat (1+bubbles/10) if (random(50)<bubbles) instance_create_pirror(x+gauss_range(-8,8),y+gauss_range(-12,12),Bubbles)
 }
 if (onwater) {
-    if (!irandom(8-8*hydrolitis)) instance_create(x,y-8,Bubbles)
+    if (!irandom(8-8*hydrolitis)) instance_create_pirror(x,y-8,Bubbles)
     if (bbox_top+3>PoolWater.y) submerged=1 else submerged=0
 } else {
     submerged=0
@@ -551,15 +559,15 @@ if (vvvvvv) {
     if (vflip==-1 && vspeed!=0) vspeed=-maxVspeed
 }
 
+sound_volume(sndEar,earsnd)
+
+with (Pirror) if (active==2) exit
+
 if (y>PoolWater.y+608) hydrolitis=min(1,hydrolitis+1/500*(y-PoolWater.y)/608)
 if (y<PoolWater.y+32) hydrolitis=max(0,hydrolitis-1/200)
-
 hydrolitis=min(1,hydrolitis*1.001)
-
 if (hydrolitis==1) kill_player()
-
 sound_volume(sndDrown,min(1,hydrolitis*2))
-sound_volume(sndEar,earsnd)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -962,7 +970,7 @@ if (instance_place(x,y,ScreenWrap)) {
             } else if (roomTo!=room) {
                 //warp!
                 input_clear()
-                if (autosave) autosave_asap()
+                if (autosave) global.perform_autosave=true
                 if (warpX==noone && warpY==noone) {
                     warp_to(roomTo)
                 } else {

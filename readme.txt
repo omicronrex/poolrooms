@@ -2,12 +2,12 @@
 
     I Wanna Explore The Pool Rooms
     ==============================
-    Version 0.2 - 10 November 2023
+    Version 0.4 - 22 November 2023
 
     
   A game by renex for the Second Edition of the I Wanna Tourney
   
-  Tested by LaWatson, MajokkoMetis and my family
+  Tested by LaWatson, MajokkoMetis, Cocoa and my family
   
   
 --------------------------------------------------------------------------------
@@ -15,18 +15,25 @@
 todo
 
 - make like 1 more rooms
-- think up a conclusion that isn't "hurr almond water"
 
 
 --------------------------------------------------------------------------------
 
-Music by:
-    - Zerofuturism: https://linktr.ee/zerofuturism
-
-Title and prerendered art by:
+Title and prerendered background art by:
     - Jared Pike: https://twitter.com/jaredpike
 
-Sound effects obtained from:
+Miscellaneous art from:
+    - Primalmania
+    - Undertale
+    - Super Mario 64
+    - LittleBigPlanet
+    - Portrait of God
+
+Music by:
+    - Zerofuturism: https://linktr.ee/zerofuturism
+    - Anamanaguchi: http://www.anamanaguchi.com/
+
+Sound effects from:
     - freesound.org
     - Rain World
     - Unreal Tournament 2004

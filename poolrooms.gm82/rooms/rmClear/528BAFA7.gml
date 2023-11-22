@@ -1,0 +1,4 @@
+//gm82 fields begin
+text="I digress. In short, this Scape in particular truly amazes me.#The effect it has on those who experience it is intriguing;#while one feels peace and calmness permeating throughout,#another cannot help but notice a feeling of dread wash over#them as they notice its strange, lightless corners.##"+chr(34)+"What lurks behind them?"+chr(34)+" they likely wonder. ”Is it of blight,#of malice?” A grim scepter seems to wash over the soul,#despite the fact that they are safe.##An explorer may feel moribund, whilst another may feel tranquil.#This strange effect has never ceased to intrigue me. This#Scape is without blemish or defect; the "+chr(34)+"Poolrooms"+chr(34)+" are simply#stunning - an intricate design, a possibly infinite puzzle whose#pieces form something peculiar - indescribably strange, yet#indescribably perfect;##it can only be the handiwork of a God."
+font=fntFileSmall
+//gm82 fields end

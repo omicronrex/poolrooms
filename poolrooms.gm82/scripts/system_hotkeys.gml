@@ -1,5 +1,7 @@
 //most engine hotkeys are handled here
 
+with (Pirror) if (active==2 || active==3) exit
+
 //restart
 if (global.key_pressed[key_restart]) {
     if (is_ingame() && !global.pause) {

@@ -47,6 +47,10 @@
 //difficulties
     //difficulty options:
     add_difficulty("Lost")
+    add_difficulty("Lost")
+    add_difficulty("Gone")
+    add_difficulty("Found")
+    global.num_difficulties=1
     //add_difficulty("Hard")
     //add_difficulty("Very Hard")
     //add_difficulty("Impossible",true)

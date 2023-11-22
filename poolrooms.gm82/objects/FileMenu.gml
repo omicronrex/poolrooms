@@ -71,17 +71,18 @@ if (state="") {
         savedata_select(select)
         asksel=0
 
-        if (global.difficulty_room!=noone) {
-            input_clear()
-            savedata_load()
-        } else {
-            if (savedata("saved")) {
-                state="continue"
+            if (global.difficulty_room!=noone) {
+                input_clear()
+                savedata_load()
             } else {
-                state="new file"
+                if (savedata("saved")) {
+                    state="continue"
+                } else {
+                    state="new file"
+                }
+                input_clear()
             }
-            input_clear()
-        }
+
     }
 }
 
@@ -106,9 +107,12 @@ if (state="continue") {
                 show_message_left(lang("fileundo"))
             } else sound_play("sndShoot")
         } else {
-            input_clear()
             savedata_select(select)
-            savedata_load()
+            if (savedata("diff")!=2) {
+                input_clear()
+                savedata_select(select)
+                savedata_load()
+            }
         }
     }
 }
@@ -195,7 +199,8 @@ for (i=0;i<3;i+=1) {
             if (savedata("room")==global.difficulty_room) {
                 draw_background(bgThumbDefault,x+i*240,y)
             } else if (savedata("clear")) {
-                draw_background(bgThumbClear,x+i*240,y)
+                if (savedata("diff")==2) draw_background(bgThumbGod,x+i*240,y)
+                else draw_background(bgThumbClear,x+i*240,y)
             } else {
                 if (thumb[i]!=noone) {
                     texture_set_interpolation(1)

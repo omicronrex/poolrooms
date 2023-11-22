@@ -357,6 +357,7 @@
 +pool
 	|sprPartRing
 	|sprPartSphere
+	|sprLensFlare
 	|sprBox
 	|sprValve
 	|sprValveLever
@@ -384,5 +385,9 @@
 	|sprElevator
 	|sprElevatorRoom
 	|sprClownStatue
-|sprLogos
-|sprTourney
+	|sprGod
+	|sprLogos
+	|sprTourney
+	|sprEyeVeins
+	|sprPlayerEyes
+	|sprHeart

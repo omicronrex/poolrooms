@@ -256,6 +256,6 @@
 	|shader_rainbow
 +pool
 	|sh_water
-	|script265
 	|sound_play_pitch
 	|recursive_nudge
+	|instance_create_pirror

@@ -20,11 +20,11 @@ if (y<PoolWater.y) vspeed+=0.15 else vspeed=vspeed*0.98+0.08
 vspeed=median(-7,vspeed,7)
 
 if (bbox_top>PoolWater.y) {
-    if (underwater==1) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==1) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash1)
     underwater=2
 } else if (bbox_bottom>PoolWater.y) {
-    if (underwater==0) instance_create(x+16,PoolWater.y,WaterSplash1)
-    if (underwater==2) instance_create(x+16,PoolWater.y,WaterSplash2)
+    if (underwater==0) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash1)
+    if (underwater==2) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash2)
     underwater=1
 } else {
     underwater=0

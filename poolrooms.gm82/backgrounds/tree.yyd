@@ -16,6 +16,7 @@
 +thumbs
 	|bgThumbDefault
 	|bgThumbClear
+	|bgThumbGod
 	|bgThumbBroken
 +autotiler
 	|bgMarkMazes32
@@ -39,3 +40,5 @@
 	|bgNoise2
 	|bgNoise3
 	|bgGrassrooms
+	|bgEndFront
+	|bgEndBack

@@ -54,7 +54,7 @@ else if (!dead) {
 
             drop_items()
 
-            sound_play_slomo("sndDeath")
+            if (!instance_exists(Pirror)) sound_play_slomo("sndDeath")
 
             Player.hydrolitis=0
 
@@ -62,6 +62,8 @@ else if (!dead) {
             instance_create(view_xcenter,view_ycenter,GameOver)
 
             Player.dead=true
+
+            with (Pirror) if (active==3) event_user(0)
 
             savedatap("deaths",savedatap("deaths")+1)
         }

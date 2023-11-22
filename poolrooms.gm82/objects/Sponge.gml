@@ -69,11 +69,11 @@ if (place_free(x,y-1)) move_outside_solid(90,1)
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
 if (bbox_top>PoolWater.y) {
-    if (underwater==1) instance_create(x+16,PoolWater.y,WaterSplash1)
+    if (underwater==1) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash1)
     underwater=2
 } else if (bbox_bottom>PoolWater.y) {
-    if (underwater==0) instance_create(x+16,PoolWater.y,WaterSplash1)
-    if (underwater==2) instance_create(x+16,PoolWater.y,WaterSplash2)
+    if (underwater==0) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash1)
+    if (underwater==2) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash2)
     underwater=1
 } else {
     underwater=0

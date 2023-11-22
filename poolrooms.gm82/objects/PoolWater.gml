@@ -8,10 +8,11 @@ flip=0
 
 time=irandom(10000)
 distortion=24
+colorto=$4d7d08
 
 x=-32
 image_xscale=room_width/32+32
-image_yscale=room_height/32
+image_yscale=(room_height/32)*2
 
 onwater=savedata("onwater")
 submerged=savedata("submerged")
@@ -155,7 +156,7 @@ texture_set_stage_repeat("Water",tr_clamp,tr_clamp,0)
 texture_set_stage("Manifold",surface_get_texture(n))
 texture_set_stage_repeat("Manifold",tr_wrap,tr_wrap,0)
 texture_set_stage_interpolation("Manifold",1)
-shader_pixel_uniform_color("colorto",color_reverse($087d4d))
+shader_pixel_uniform_color("colorto",colorto)
 shader_pixel_uniform_f("distort",distortion/800,distortion/608)
 shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,dy/global.APPheight)
 
@@ -172,7 +173,7 @@ texture_set_interpolation(0)
 
 shader_reset()
 
-with (Player) if (hydrolitis>0 && !dead) draw_healthbar(x-view_xview-50,y-view_yview-30,x-view_xview+50,y-view_yview-20,hydrolitis*100,0,$408000,$408000,0,1,1)
+if (!instance_exists(Pirror)) with (Player) if (hydrolitis>0 && !dead) draw_healthbar(x-view_xview-50,y-view_yview-30,x-view_xview+50,y-view_yview-20,hydrolitis*100,0,$408000,$408000,0,1,1)
 
 if (flip) {
     surface_copy(s,0,0,application_surface)

@@ -263,9 +263,10 @@ setmap_read
 make_persistent
 opt_caption
 draw_window_caption
-script265
+
 sh_water
 
 sound_play_pitch
 inside_room
 recursive_nudge
+instance_create_pirror
