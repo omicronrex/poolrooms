@@ -255,9 +255,9 @@ if (!frozen) {
     baseGrav = baseGravDefault
 
     if (fucked) {
-        maxSpeed=0.5
+        maxSpeed=0.2
         jump=3
-        jump2=2
+        jump2=1
     }
 
     //the beamstate variable contains a bitmask of what beams are currently active
