@@ -180,7 +180,22 @@ draw_vertex_texture_color(-0.5+800,-0.5+dy+1216,1,2,$ff,1)
 draw_primitive_end()
 texture_set_interpolation(0)
 
+if (room==rmMenu) {
+    shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,272/global.APPheight)
+
+    draw_set_color($33)
+    draw_quad(96,272,128,160,-1,96/800,(0)/608,(96+128)/800,(160)/608)
+    draw_quad(336,272,128,160,-1,336/800,(0)/608,(336+128)/800,(160)/608)
+    draw_quad(576,272,128,160,-1,576/800,(0)/608,(576+128)/800,(160)/608)
+    draw_set_color($ffffff)
+}
+
 shader_reset()
+
+with (FileMenu) event_user(0)
+with (OptionsMenu) event_user(0)
+with (KeyboardMenu) event_user(0)
+with (JoystickMenu) event_user(1)
 
 if (!instance_exists(Pirror)) with (Player) if (hydrolitis>0 && !dead) draw_healthbar(x-view_xview-50,y-view_yview-30,x-view_xview+50,y-view_yview-20,hydrolitis*100,0,$408000,$408000,0,1,1)
 

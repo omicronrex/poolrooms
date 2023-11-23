@@ -91,7 +91,7 @@ if (!setting) for (i=0;i<key_sizeof;i+=1)
 ycursor=approach(ycursor,ydraw+sel*ysep+52,16*dt)
 
 if (!irandom(8)) instance_create(xdraw-20,ycursor-8,Bubbles)
-#define Draw_0
+#define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -110,8 +110,6 @@ for (i=0;i<=key_sizeof;i+=1) {
     draw_text(xdraw+xsep,ydraw+i*ysep+32,keytext[i])
 }
 
-draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
-
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
@@ -121,3 +119,10 @@ draw_text(766,556,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)
 
 draw_set_color($ffffff)
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)

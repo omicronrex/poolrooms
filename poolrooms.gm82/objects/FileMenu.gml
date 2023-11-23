@@ -162,7 +162,7 @@ if (global.savefile_thumbnails) {
         i+=1
     }
 }
-#define Draw_0
+#define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -176,6 +176,7 @@ draw_set_font(fntFileBig)
 draw_text(global.width/2,64,lang("filemenu"))
 draw_set_color($ffffff)
 
+d3d_transform_set_translation(0,32,0)
 for (i=0;i<3;i+=1) {
     savedata_select(i)
     draw_set_halign(1)
@@ -183,7 +184,7 @@ for (i=0;i<3;i+=1) {
     draw_text(x+i*240+64,y+96,lang("filegame")+string(i+1))
     draw_set_font(fntFileSmall)
 
-    if (global.savefile_thumbnails) draw_background_stretched(bgThumbDefault,x+i*240,y,128,96)
+    if (global.savefile_thumbnails) draw_background_stretched(bgThumbDefault,x+i*240,y-32,128,96)
 
     if (savedata("saved")) {
         draw_set_halign(0)
@@ -197,30 +198,21 @@ for (i=0;i<3;i+=1) {
 
         if (global.savefile_thumbnails) {
             if (savedata("room")==global.difficulty_room) {
-                draw_background(bgThumbDefault,x+i*240,y)
+                draw_background(bgThumbDefault,x+i*240,y-32)
             } else if (savedata("clear")) {
-                if (savedata("diff")==2) draw_background(bgThumbGod,x+i*240,y)
-                else draw_background(bgThumbClear,x+i*240,y)
+                if (savedata("diff")==2) draw_background(bgThumbGod,x+i*240,y-32)
+                else draw_background(bgThumbClear,x+i*240,y-32)
             } else {
                 if (thumb[i]!=noone) {
                     texture_set_interpolation(1)
-                    draw_background_stretched(thumb[i],x+i*240,y,128,96)
+                    draw_background_stretched(thumb[i],x+i*240,y-32,128,96)
                     texture_set_interpolation(0)
-                } else draw_background(bgThumbBroken,x+i*240,y)
+                } else draw_background(bgThumbBroken,x+i*240,y-32)
             }
         }
 
         draw_set_font(fntFileBig)
         draw_set_halign(0)
-
-        if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+256)
-        if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+256)
-        if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+256)
-        if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+256)
-        if (has_item("Item5")) draw_sprite(sprItem5,0,x+i*240+0,y+288)
-        if (has_item("Item6")) draw_sprite(sprItem6,0,x+i*240+32,y+288)
-        if (has_item("Item7")) draw_sprite(sprItem7,0,x+i*240+64,y+288)
-        if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+288)
     } else {
         draw_set_halign(1)
         if (state="new file" && select=i) draw_text(x+i*240+64,y+32+96,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")
@@ -228,10 +220,8 @@ for (i=0;i<3;i+=1) {
     }
 }
 draw_set_halign(0)
+d3d_transform_set_identity()
 
-draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
-draw_sprite(sprite_index,-1,dx,y+310+64)
-draw_sprite(sprFloater,0,dx-17,y+319+64)
 
 //option info
 draw_set_color(global.text_color)
@@ -244,3 +234,12 @@ draw_set_halign(2)
 draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)
 draw_set_color($ffffff)
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
+draw_sprite(sprite_index,-1,dx,y+310+32)
+draw_sprite(sprFloater,0,dx-17,y+319+32)

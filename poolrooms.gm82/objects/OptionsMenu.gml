@@ -55,7 +55,7 @@ applies_to=self
 */
 ///save settings
 settings_write()
-#define Draw_0
+#define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -74,8 +74,6 @@ for (i=0;i<numoptions;i+=1) {
     draw_text(xdraw+xsep,ydraw+(ysep*i),script_execute(ds_list_find_value(global.optlist,i),opt_value))
 }
 
-if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
-
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
@@ -87,3 +85,10 @@ draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang(
 draw_set_halign(0)
 
 draw_set_color($ffffff)
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)

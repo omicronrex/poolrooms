@@ -27,7 +27,7 @@ add_string("menuoptions","Options")
 add_string("menuaccept","Accept")
 
 //file menu
-add_string("filemenu","- Select Your Saved Game -")
+add_string("filemenu","- File Select -")
 add_string("filenodata","No Data")
 add_string("filegame","Game ")
 add_string("fileclear","Clear!")
