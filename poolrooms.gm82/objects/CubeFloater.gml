@@ -81,7 +81,7 @@ if (vspeed!=0) {
         } else vspeed=0
         stuck=10
     }
-    if (instance_place(x,y+vspeed,Player)) {
+    if (instance_place(x,y+vspeed+2,Player)) {
         sound_play("balloon_land")
         vspeed=min(0,Player.vspeed)-2
     }

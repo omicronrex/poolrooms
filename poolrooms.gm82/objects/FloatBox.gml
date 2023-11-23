@@ -50,7 +50,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    if (vspeed>2 && bbox_bottom<PoolWater.y) {
+    if (vspeed>1 && bbox_bottom<PoolWater.y) {
         sound_play_pitch(choose("thud1","thud2","thud3"))
     }
     move_contact_solid_hv(0,vspeed)

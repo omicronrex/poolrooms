@@ -50,7 +50,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    if (vspeed>2) {
+    if (vspeed>1) {
         sound_play_pitch("debris_stone_hard_07")
     }
     move_contact_solid_hv(0,vspeed)

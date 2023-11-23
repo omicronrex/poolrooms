@@ -94,7 +94,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
 if (vspeed!=0) if (!place_free(x,y+vspeed)) {
-    if (vspeed>2) {
+    if (vspeed>1) {
         sound_play_pitch("Breakbone_03")
         if (bbox_bottom<PoolWater.y) repeat (60) instance_create_moving(random_range(bbox_left,bbox_right),bbox_bottom,WaterSplashDrop,random(4),random_range(0,180))
     }

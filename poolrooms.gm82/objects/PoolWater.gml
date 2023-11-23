@@ -50,6 +50,15 @@ with (Brock) {
         }
     }
 }
+with (Clown) {
+    repeat (room_height/32) {
+        yo=y
+        y+=32
+        if (!place_free(x,y)) {
+            y=yo break
+        }
+    }
+}
 with (Sponge) {
     repeat (room_height/32) {
         yo=y

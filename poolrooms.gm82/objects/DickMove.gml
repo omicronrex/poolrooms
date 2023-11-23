@@ -26,7 +26,7 @@ if (!active) if (Player.vspeed<0 && instance_place(xstart,y-Player.vspeed+1,Play
     seen=1
     savedatap("dickmove"+string(room)+"_"+string(xstart)+"_"+string(y),1)
     sound_play("bump")
-    instance_create(x,y-32,DickCoin)
+    instance_create(x+16,y-16,DickCoin)
     with (Player) {y+=vspeed move_outside_solid(270,abs(vspeed)) vspeed=0}
 }
 
