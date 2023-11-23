@@ -1,7 +1,7 @@
-sprite=sprController
+sprite=sprTourney
 visible=1
 solid=0
 persistent=0
-depth=1000
+depth=0
 parent=
 mask=

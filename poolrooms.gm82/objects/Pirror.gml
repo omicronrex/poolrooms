@@ -47,7 +47,7 @@ if (active==2) {
     }
     if (t==50) PoolWater.visible=0
     if (t==590) {
-        instance_create(400,304,Flare)
+        instance_create(400,320,Flare)
     }
     if (t==600) {
         savedatap("clear",true)
