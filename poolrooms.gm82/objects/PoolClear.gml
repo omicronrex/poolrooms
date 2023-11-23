@@ -5,8 +5,8 @@ action_id=603
 applies_to=self
 */
 with (TextDraw) {
-    text+="##Game clear!#Time: "+format_time(savedatap("time"))+
-    "#Deaths: "+string(savedatap("deaths"))
+    text+="###You have found yourself and escaped the Poolrooms!#Time: "+format_time(savedatap("time"))+
+    "#Resets: "+string(savedatap("deaths"))
 }
 
 savedatap("clear",true)

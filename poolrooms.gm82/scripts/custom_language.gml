@@ -1,7 +1,7 @@
 //you can replace all the default engine text here
 
 //globals
-add_string("deaths","Deaths")
+add_string("deaths","Resets")
 add_string("time","Time")
 
 //volume check

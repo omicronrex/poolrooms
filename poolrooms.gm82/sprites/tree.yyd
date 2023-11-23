@@ -357,7 +357,6 @@
 +pool
 	|sprPartRing
 	|sprPartSphere
-	|sprLensFlare
 	|sprBox
 	|sprValve
 	|sprValveLever
@@ -390,3 +389,4 @@
 	|sprTourney
 	|sprEyeVeins
 	|sprPlayerEyes
+	|sprLensFlare

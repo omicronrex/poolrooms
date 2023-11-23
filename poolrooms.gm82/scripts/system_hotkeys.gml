@@ -10,6 +10,7 @@ if (global.key_pressed[key_restart]) {
             room_restart()
             exit
         }
+        savedatap("deaths",savedatap("deaths")+1)
         savedata_load()
     }
 }

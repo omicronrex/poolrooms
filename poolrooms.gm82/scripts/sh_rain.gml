@@ -1,375 +1,190 @@
 return shader_pixel_create_base64("
-    eJztWV2InUcZfr7/75z9+Ta7ySZbRBfjX/yJTRYrkd1kk26lYhRtc0CkEmITcSV1
-    YxLvFOaYiwpeGL2R5EJnbW48CxVL6kVpTRWsChusEAi1N0HORXKRsKAVA9JPnnln
-    vm/O2bP5EbW9cMMhM+/M+zvvM+/MfIjK8s1yJx4+tP/AOwCcAYCoLEMA7CMAvgVg
-    AUCIGAHGcYh0AEcNLUGASRy3tMOLjx07tXT8m6cXl76OlZWVABHk58YPLT51DCsw
-    NP6TvxOnDs8cfhCfWXzy5NKppa+cnv7AYzumHz34+MHpx7965Oixk9MPLz11YvH4
-    sZPTe3bu3rNzz8d275zZtWsXPg8kQKEBtQ+YfxmY3n/+3Lm9pAco9NL4mU80r25/
-    EYD62sW/P0J6iEL/buhHB3Y88en9wqf3kx6h0M9+9uYBAPsurx7ce3n14D7SUxT6
-    6jNr8zue+Pk8bZ2Z+auhZ0YvLlkZ8+QhPUeh//SDh+fO3H73XsqamZkx8xso9OvF
-    H+ZfLz71MvB76jH2N1Ho5+PhT4re1bnm1WdmSR9CoY9uX1hYezpfEFnKyB9GoZ9s
-    P31x+fk/fvyFxi9fuND54BzpIyj0Rz/8xiOU++vnspeANePXKArdvLp9lnQXC9IL
-    FPrmji9f+sZPfvYr8QPGzjGJ515Lm7+8umr0bkKhz5+b2jfXvLr3xdMTRh7p4yj0
-    5dXV2YeOhHMufqRPoNDf/80bL1Ef9V448W1D32zjeeHEl/YDJw4A+gDpW+w6OhsB
-    NU/6pKGv7afch458Z/b8udcukb5V/Jrbc/E6bTV/pG9DoWnLKz9+bvbM7Z/OOXum
-    qjzhn7rk4vCA9dfneVDyao057v+RHqBYSwbQQxRr7xxAj1Cs7e6jvwsIE+NjdDYh
-    GBCpGF0NdM+mhBViFQOaYwFiBXQU7ZWxQMVo2bHc0IGWCk1/WAXoqszyci55Od/x
-    cn5g2qHKKjmRAroqwC07lqgMXSsjNDISQHMsRKZydHUMxMCwoYdYUCE6asLwDhtZ
-    bpztBqAbaOn3Gv5KXsR2iJbKUBrZESLa35Z2rHKUOjc2xCpC1/wyIIyN3yIjRmbo
-    MUpje4REAVesPJEvPsWqgVK/z+xq3TWJV6gitNpAx/gjfca6XA7QUjsQh/w/APRH
-    kISMV4bW8ocAcKyBjqYdtfxOzzyfTh7qiJBxrRXl0m7awTnsU9b7zb7aa5vLA2ub
-    sTVB0GMreVIUKsI5FWBRSz9RKbqVfwlSleJvhifFNcOTIFMJum3m4xdtDBLcMD/G
-    i/EmjToSO1/aXU/nd9UouibmGaIqzgG6ay6umfEXOkJLT3gy3Tjbfp7knk6O52Yd
-    SsObIzBj1J9h1MgO8ajxMcMwc7dHl6P5476uhrGvU+lq9OgKK105IsaT+a9qvnIg
-    3yD/InR0hNKsJ+0gLcdCj11AawXAik/L0OE6WHsileGW9V3Gcyy03dpxLEVXp+ho
-    N4c63J5Qyyw1eULkhoc/t96khSjNfuPatMe1Q5TLITp6CIgiSyOv72sT0M3/wFr3
-    83K/AdAmzR93mAnQahN/02Z/yR2uPHyXpo8+e3K0dI7OPdob9NhL/3PArqOMUU8G
-    GDwHdt0G4SK/T1ww53zdfs6lHi5yjBrZNS5SleMffbhIPVykG+BiI1113FOLixS3
-    1N3wdDdcUBZplMc5TraPC0fzcUH7U7zaY0+GGxUuxL4aF5yT4UaFi5qnxoXlectw
-    cae1fjviojEAFw2LC4eZyGLF1TnmLHGSA23Zr1w9+YX+X+GmcQfc5Gb/7K0njuaP
-    +7qaxr46/5s9uup1aZgcJK/UE+ErB/LdDTe0Q3xe6LHLx42j+bihDbmtJ7UvdT3h
-    mI8bzqEOh5taZo0b8vD3f9z8d3AT2HUbhIvGfeKCOefr9nPO1TLJ1VEju8ZFqhp9
-    9YS0GhfpBrjYSFeNC54h5Ywi9eROeLr7OUvqSV3nogHnrGjAOYv1UOqJG8+9esJ+
-    7zmLOKrrSS3TP2ex/9bVkzut9duxnjQH4KJpceEwE1ms1PWE90aQZu6RPKek1T0y
-    qGp65t2HXf2XO/Z1Iz8xd6crKkHre7zrTFTzJQZyL0bb9w/3iT13hnL+pQPWw493
-    0+aa6GZOt+w9fL1uR/PH+3WT5u74vm4339NldH/BkzUF6Cm0DM2d2aZwXU/hZo+N
-    aWWDxFpoEnNg3Nx5myhNHrkYEjNOhsszrmWCXCXmPUN0JrhpeCNzX5WzQ4BZNYTP
-    GX6+a8jdRrDPPt9HhgymXJyF5o+7OLm3EdLcnNTU2QU1DOhhG39HY14NWwz00sp1
-    NO4Tvk6enemn7C/M7a4aAfRIlUukSe4LD9QIOpqyJM+dnZzLvaZlakNo3zrkPMt8
-    FfukT8xyjynNWwf/D+y7BWVwr+l/9/DP19Tv6yMG6/ckqAx/WXG4I4YKXLExrd6h
-    lORU3afO+u2K9onPqXnn6aht6Opt1R0k8+4J0vZznDWFuebumC4XeeZkHQJay7zf
-    1HNdbsm9R96lOtWdgu811FGfU3+otuCCPacOq8K+i+UoVIZ/qgfQ1TneNHsHaayH
-    kpfUD+/uwfcfqC027xvWlym8avYtzucZkb/My4XUazu5bE/Y3MrNW93tdedg6vbr
-    sTtnNG1MWOfrua7uxuatw70/MZ6NATHincr5ma3zI65qoPhBvzvWD2kLH/0w74n2
-    zMlYX1ATeK16C6NdzhbGK+/LDdIYLzcu8euthawbbA9ZX1xdGbJxYDzquZIbjElz
-    gN9y1nFvYuv99uvOxn6HPX7zrZA5F+DPA98A/x1MNDxMNPswMWj9fUz0r3fkYUL2
-    JfNmq8YAPVbtW7V/ru3yPrJ9l/fOXz9u/rvvxnGL18WNOMjQbd9JjmCPczv2DVne
-    ZyXmnXaMbvs9Zm8QmpPFvYzvqkPV2afj7Vuudso9zvW57/r8xEA/v9TA2PCOVOc8
-    sXUMHT3Wp8P54HDPX3/f3yN6eWVfrfdeYtudRUZUjCtqExbsd4NQxZWuEcsvd1a+
-    scPzNUJLbbJ1Iex5iycG5Z0ftrbIHGmzVkW2Vrmzrvs+wTf+wNw1zB0ois03EK6X
-    +x7Avvjq2qxn8u0Dqr+G0e8YoyrANSMzxFn7LWGTmT8O6I3kyhs42/VemGDU9Lfh
-    bIVD0rjObpzt/vNX4tWe+lzD9xDBYdozXq6rTXyzlzd8fj+6UeGQ30e4nvRtDJ1l
-    R4v7sOlolOHaDpuJ+QZVVti03wkqbHI++5LLtax0A7nEZuL1++dKnCKz7uO4ocer
-    OEZeHKMN4ii5zHWRc2xrmTkq4+SRbxusKy5ODq9yzv+tmsIr5uzFWHNOgutmjr9W
-    Yn/vWZn92O6hsg4ttRldnVXnMp59pB4zptx7t6BcruWlKsE1tdneiRIrT2In7QSt
-    tqyh9P1zvq/ftfvjE9+D7a692eS05GJs9iqoSUBPVvqYF/U4274+wUanR+YkOh7/
-    vdkrOSf2Tto7NOe7nHN3aCdDcsmPnfmmau4OQxVmqUvWXeYaPHu+SF66O5t8q2Nb
-    6oPwCfbJK/sn8xdqq7kvyzdI7mnEnruTyh7L/ULwCltP2C/s/ly3ZX+Wtnz7lb2V
-    e2BXbUVLj1JsLjzSFh5pC4/ZZ3M5l5cl8C8dSBWt
+    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
+    D+B/JoKwew==
 ")
 
 /*
-
-
-    #define MARCH_STEPS 100
-    #define RAIN_STEPS 50
-    #define SHAD_STEP 30
-
-    #define time iTime
-
-    float PI = acos(-1.0);
-
-    float sph(vec3 p, float r) {
-      return length(p)-r;
+    float rand(vec2 p){
+        p+=.2127+p.x+.3713*p.y;
+        vec2 r=4.789*sin(789.123*(p));
+        return fract(r.x*r.y);
     }
 
-    float cyl(vec2 p, float r) {
-      return length(p)-r;
-    }
-
-    float box(vec3 p, vec3 s) {
-      vec3 ap = abs(p)-s;
-      return length(max(vec3(0), ap)) + min(0.0, max(ap.x, max(ap.y,ap.z)));
-    }
-
-    mat2 rot(float a) {
-      float ca=cos(a);
-      float sa=sin(a);
-      return mat2(ca,sa,-sa,ca);
-    }
-
-    vec3 tunnel(vec3 p) {
-      //return vec3(0.0);
-      vec3 off = vec3(0.0);
-      off.x += sin(p.z*0.2) + sin(p.z*0.137)*3.0;
-      off.y += sin(p.z*0.5)*0.2 + p.z*0.3;
-      return off;
-    }
-
-    float smin(float a, float b, float h) {
-      float k = clamp((a-b)/h*0.5+0.5,0.0,1.0);
-      return mix(a, b, k) - k*(1.0-k)*h;
-    }
-
-    float map(vec3 p) {
-
-      float water = 10.0-p.y-p.z*0.3;
-
-        return water;
-      p += tunnel(p);
-
-      vec3 rp = p;
-      float sizerepeat = 2.0;
-      rp.z = (fract(rp.z/sizerepeat-0.5)-0.5)*sizerepeat;
-
-      rp.yz *= rot(-rp.z*0.2);
-      float bridge = box(rp + vec3(0,-1,0), vec3(1.0,0.2,2.0));
-
-
-      vec3 rp4 = rp + vec3(0,-0.8,0);
-      rp4.x += sin(p.z*8.0)*0.05;
-      rp4.y += cos(p.z*7.0)*0.05;
-      float size4 = 0.14;
-      rp4.xz = (fract(rp4.xz/size4-0.5)-0.5)*size4;
-      float bricks = box(rp4, vec3(0.05))-0.015;
-      bricks = max(bricks, bridge - 0.05);
-
-      bridge = smin(bridge, bricks, 0.09);
-
-
-      rp.x = abs(rp.x) - 1.0;
-
-      float bar = box(rp + vec3(0,-0.5,0), vec3(0.05,0.05,2.0));
-      vec3 rp2 = rp;
-      float size2 = 0.2;
-      rp2.z = (fract(rp2.z/size2-0.5)-0.5)*size2;
-      bar = min(bar, box(rp2 + vec3(0,-0.8,0), vec3(0.03,0.3,0.03)));
-
-      bridge = min(bridge, bar);
-
-      vec3 rp3 = p + vec3(1,0,1.0);
-      float size3 = sizerepeat * 2.0;
-      rp3.z = (fract(rp3.z/size3-0.5)-0.5)*size3;
-      float def = sin(rp3.y*17.0+2.0)*0.5+0.5;
-      def = sin(rp3.y*10.0 + def*3.0);
-      def = smoothstep(0.0,1.0,def);
-      def = smoothstep(0.0,1.0,def);
-      float lsize = 0.05 + (def)*0.02;
-      float lamp = max(cyl(rp3.xz + vec2(0,0), lsize), abs(rp3.y)-1.0);
-
-      vec3 lpos = rp3 + vec3(0,1,0);
-      float top = sph(lpos, 0.3);
-      top = max(top, -sph(lpos-vec3(0,0.3,0), 0.5));
-
-      lpos.y = max(abs(lpos.y)-0.1,0.0);
-      //lamp = min(lamp, sph(lpos, 0.12));
-
-      //lamp = min(lamp, top);
-      lpos = abs(lpos)-0.1;
-      lpos.xz *= rot(PI*0.25);
-      //lamp = max(lamp, -box(lpos, vec3(0.05,0.2,0.05)));
-      bridge = min(bridge, lamp);
-
-      bridge = min(bridge, water);
-
-      return bridge;
-
-    }
-
-
-    float lighting(vec3 p) {
-
-      p += tunnel(p);
-
-      float sizerepeat = 2.0;
-      vec3 rp3 = p + vec3(1,0,1.0);
-      float size3 = sizerepeat * 2.0;
-      rp3.z = (fract(rp3.z/size3-0.5)-0.5)*size3;
-
-      vec3 lpos = rp3 + vec3(0,1,0);
-      float top = sph(lpos, 0.3);
-      return sph(lpos, 0.12);
-    }
-
-    vec3 norm(vec3 p) {
-      vec2 off=vec2(0.01,0);
-      return normalize(map(p)-vec3(map(p-off.xyy), map(p-off.yxy), map(p-off.yyx)));
-    }
-
-    vec3 getlightdir(vec3 p) {
-      vec2 off=vec2(0.01,0);
-      return normalize(lighting(p)-vec3(lighting(p-off.xyy), lighting(p-off.yxy), lighting(p-off.yyx)));
-    }
-
-    float rnd(float t) {
-
-      return fract(sin(t*745.523)*7894.552);
-
-    }
-
-    float rain(vec3 p) {
-
-      p.y -= time*4.0;
-      p.xy *= 60.0;
-
-      p.y += rnd(floor(p.x))*80.0;
-
-      return clamp(1.0-length(vec2(cos(p.x * PI), sin(p.y*0.1) - 1.7)), 0.0, 1.0);
-    }
-
-    float ripple(vec3 p) {
-
-      float t2 = time*5.0;
-
-      float size3 = 0.2;
-      vec3 rp3 = p + vec3(1,0,1.0);
-
-      float id = dot(floor(rp3.xz/size3-0.5), vec2(7.52,5.48));
-      rp3.xz = (fract(rp3.xz/size3-0.5)-0.5)*size3;
-
-
-      float r = clamp(1.0-length(rp3.xz)*20.0, 0.0, 1.0);
-      float looplen = 0.5;
-      float off = rnd(id * 75.5238);
-      float fl = 1.0-fract(time*looplen + off);
-      fl = pow(fl,10.0);
-      //float il = floor(time*looplen);
-      float r2 = cos(r*10.0 + t2) * fl;
-
-
-      return r2*r;
-
-    }
-
-    float ripples(vec3 p) {
-
-      float r = 0.0;
-      for(int i=0; i<5; ++i) {
-        vec3 cur = p + vec3(rnd(float(i)), 0, rnd(float(i)+75.523));
-        cur *= rnd(float(i)+12.71)*0.2+0.8;
-        cur *= 3.0;
-        r += ripple(cur);
-      }
-      return r;
-    }
-
-    vec3 ripplenorm(vec3 n, vec3 p) {
-
-      vec2 off = vec2(0.01,0.0);
-
-      vec3 rn = normalize(vec3(ripples(p+off.xyy)-ripples(p-off.xyy), 1.9, ripples(p+off.yyx)-ripples(p-off.yyx)));
-      n.xz += rn.xz * (abs(n.y));
-      //n.y *= rn.y;
-      return n;
-
-    }
-
-    float rnd(vec2 uv) {
-      return fract(dot( sin(uv*vec2(784.553) + uv.yx*vec2(546.124)), vec2(7845.523) ));
-    }
-
-    float curve(float t, float r, float p) {
-      float g = t/r;
-      return mix(step(rnd(floor(g)), p), step(rnd(floor(g)+1.0), p), fract(g));
-    }
-
-    float shadow(vec3 s, vec3 r, float maxdist, float rn) {
-      float shad = 1.0;
-      int steps = SHAD_STEP;
-      vec3 raystep = r*maxdist/float(steps);
-      vec3 p = s + raystep*rn;
-      for(int i=0; i<steps; ++i) {
-        float d = map(p);
-        if(d<0.01) {
-          shad = 0.0;
-          break;
-        }
-        p += raystep;
-      }
-      return shad;
+    float sn(vec2 p){
+        vec2 i=floor(p-.5);
+        vec2 f=fract(p-.5);
+        f = f*f*f*(f*(f*6.0-15.0)+10.0);
+        float rt=mix(rand(i),rand(i+vec2(1.,0.)),f.x);
+        float rb=mix(rand(i+vec2(0.,1.)),rand(i+vec2(1.,1.)),f.x);
+        return mix(rt,rb,f.y);
     }
 
     void mainImage( out vec4 fragColor, in vec2 fragCoord )
     {
+        vec2 uv = fragCoord.xy / iResolution.y;
 
-      vec2 uv = vec2(fragCoord.x / iResolution.x, fragCoord.y / iResolution.y);
-      uv -= 0.5;
-      uv /= vec2(iResolution.y / iResolution.x, 1);
+        uv+=iMouse.xy/ iResolution.xy;
 
-      vec3 s = vec3(1,sin(time*0.3)*0.2,-3);
-      vec3 t = vec3(0,0,0);
+        vec2 p=uv.xy*vec2(3.,4.3);
+        float f =
+        .5*sn(p)
+        +.25*sn(2.*p)
+        +.125*sn(4.*p)
+        +.0625*sn(8.*p)
+        +.03125*sn(16.*p)+
+        .015*sn(32.*p)
+        ;
+
+        float newT = iTime*0.4 + sn(vec2(iTime*1.))*0.1;
+        p.x-=iTime*0.2;
+
+        p.y*=1.3;
+        float f2=
+        .5*sn(p)
+        +.25*sn(2.04*p+newT*1.1)
+        -.125*sn(4.03*p-iTime*0.3)
+        +.0625*sn(8.02*p-iTime*0.4)
+        +.03125*sn(16.01*p+iTime*0.5)+
+        .018*sn(24.02*p);
+
+        float f3=
+        .5*sn(p)
+        +.25*sn(2.04*p+newT*1.1)
+        -.125*sn(4.03*p-iTime*0.3)
+        +.0625*sn(8.02*p-iTime*0.5)
+        +.03125*sn(16.01*p+iTime*0.6)+
+        .019*sn(18.02*p);
+
+        float f4 = f2*smoothstep(0.0,1.,uv.y);
+
+        vec3 clouds = mix(vec3(-0.3,-0.3,-0.2),vec3(1.4,1.4,1.3),f4*f);
+        float lightning = sn((f3)+vec2(pow(sn(vec2(iTime*4.5)),6.)));
+
+        lightning *= smoothstep(0.0,1.,uv.y+0.5);
+
+        lightning = smoothstep(0.76,1.,lightning);
+        lightning=lightning*2.;
+
+        vec2 moonp = vec2(0.5,0.8);
+        float moon = smoothstep(0.95,0.956,1.-length(uv-moonp));
+        vec2 moonp2 = moonp + vec2(0.015, 0);
+        moon -= smoothstep(0.93,0.956,1.-length(uv-moonp2));
+        moon = clamp(moon, 0., 1.);
+        moon += 0.3*smoothstep(0.80,0.956,1.-length(uv-moonp));
+
+        clouds+= pow(1.-length(uv-moonp),1.7)*0.3;
+
+        clouds*=0.8;
+        clouds += lightning + moon +0.2;
+
+        vec2 newUV = uv;
+        newUV.x-=iTime*0.3;
+        newUV.y+=iTime*3.;
+        float strength = sin(iTime*0.5+sn(newUV))*0.1+0.15;
+
+        float rain = sn( vec2(newUV.x*20.1, newUV.y*40.1+newUV.x*400.1-20.*strength ));
+        float rain2 = sn( vec2(newUV.x*45.+iTime*0.5, newUV.y*30.1+newUV.x*200.1 ));
+        rain = strength-rain;
+        rain+=smoothstep(0.2,0.5,f4+lightning+0.1)*rain;
+        rain += pow(length(uv-moonp),1.)*0.1;
+        rain+=rain2*(sin(strength)-0.4)*2.;
+        rain = clamp(rain, 0.,0.5)*0.5;
 
 
-      vec3 r = normalize(vec3(-uv,0.7));
+        vec3 painting = (clouds + rain)+clamp(rain*(strength-0.1),0.,1.);
 
+        float r=1.-length(max(abs(fragCoord.xy / iResolution.xy*2.-1.)-.5,0.));
+        painting*=r;
 
-
-      vec3 p = s;
-      float dd=0.0;
-      for(int i=0; i<MARCH_STEPS; ++i) {
-        float d = map(p);
-        if(d<0.001) {
-          break;
-        }
-        if(dd>100.0) {
-          dd=100.0;
-          break;
-        }
-        p+=r*d;
-        dd+=d;
-      }
-
-      vec3 col = vec3(0.0);
-      vec3 n = norm(p);
-
-      n = ripplenorm(n, p);
-
-
-      float lightning = curve(time, 0.2, 0.1);
-      //float idlightning = floor(time/0.4-0.5);
-      float idlightning = 0.0;
-
-      float fog = 1.0-pow(clamp(dd/50.0,0.0,1.0),0.2);
-      vec3 lmoon = normalize(vec3(-8,-3,-3.0 + sin(idlightning)*3.0));
-
-      float shad = shadow(p + n * 0.02, lmoon, 3.0, rnd(uv));
-
-      col += lightning * 5.0 * max(0.0, dot(n, lmoon)) * fog * shad;
-
-      vec3 l = -getlightdir(p);
-      float ldist = lighting(p);
-
-      vec3 h = normalize(l-r);
-
-      //col += fract(length(light-p)*10.5);
-      //vec3 l = normalize(light-p);
-      //float ldist = dot(light-p, light-p);
-      col += max(0.0, dot(n, l)) * fog * 10.0 * (0.4 + 2.0*pow(max(0.0, dot(n,h)),30.0) )/(ldist*ldist*ldist*ldist);
-
-      float at = 0.0;
-      vec3 raining = vec3(0.0);
-      int steps = RAIN_STEPS;
-      float stepsize = 30.0 / float(steps);
-      vec3 raystep = r * stepsize / r.z;
-      //vec3 raypos = s + raystep;
-      for(int i=0; i<steps; ++i) {
-        vec3 raypos = s + raystep * (float(i)+1.0);
-        float tot = length(raypos-s);
-
-        if(tot>dd) break;
-        float fog2 = 1.0-pow(clamp(tot/40.0,0.0,1.0),0.5);
-
-
-        vec3 ldir = getlightdir(raypos);
-        float l2dist = lighting(raypos);
-        float curlight = 1.0/pow(l2dist,2.0);
-
-        vec3 rainpos = raypos;
-        rainpos.xy *= rot(sin(float(i)*0.2)*0.01 + sin(time)*0.009);
-        rainpos.xy += rnd(float(i))*vec2(7.52,13.84);
-        raining += rain(rainpos) * fog2 * (lightning*0.5 + pow(curlight,2.0));
-
-        //vec3 ldir = light-raypos;
-        at += 0.04*curlight * fog2;
-        //raypos += raystep;
-      }
-      col += at;
-      col += raining;
-
-      //col = ripplenorm(n, vec3(-uv.x,0.0,-uv.y));
-
-      col = pow(col, vec3(0.4545));
-
-      fragColor = vec4(col, 1);
+        fragColor = vec4(painting, 1.);
     }
 */

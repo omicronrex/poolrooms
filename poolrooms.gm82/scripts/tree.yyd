@@ -256,8 +256,8 @@
 	|shader_rainbow
 +pool
 	|sh_water
+	|sh_rain
 	|sound_play_pitch
 	|recursive_nudge
 	|instance_create_pirror
-	|sh_rain
 	|stack_check
