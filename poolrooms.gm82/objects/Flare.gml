@@ -17,3 +17,5 @@ draw_sprite_ext(sprite_index,0,x,y,0.2+alpha*0.7,0.2+alpha,alpha*180,$ffffff,alp
 draw_sprite_ext(sprite_index,0,x,y,0.2+alpha*0.7,0.2+alpha,-alpha*70,$ffffff,alpha)
 draw_sprite_ext(sprEyeVeins,0,x,y,2,1.8,0,$8000ff,alpha-1.2)
 draw_set_blend_mode(0)
+
+sound_global_volume(1-alpha)

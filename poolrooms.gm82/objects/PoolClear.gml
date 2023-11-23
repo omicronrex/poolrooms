@@ -26,3 +26,10 @@ t+=0.02
 shader_draw_shadertoy(global.shader_rain,0,0,800,608,t)
 
 texture_set_interpolation(1)
+#define Trigger_Draw End
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_rect(0,0,800,608,0,1-t)

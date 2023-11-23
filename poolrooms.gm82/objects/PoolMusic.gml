@@ -37,8 +37,12 @@ clowned=0
 with (Clown) if (clowning) clowned=1
 
 if (clowned) {
+    sound_resume(sndClown)
     honk=approach(honk,1,0.2)
-} else honk=approach(honk,0,0.2)
+} else {
+    honk=approach(honk,0,0.2)
+    if (honk==0) sound_pause(sndClown)
+}
 
 sound_volume(sndClown,honk)
 
@@ -69,6 +73,7 @@ if (global.music!="pool" || sound_background_instance()!=global.music_instance) 
     sndDrown=sound_loop_ex("SO_SFX-Pulse",0)
     sndEar=sound_loop_ex("rainRumble1",0)
     sndClown=sound_loop_ex_layer("clown",0)
+    sound_pause(sndClown)
 }
 
 global.music="pool"

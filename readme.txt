@@ -24,7 +24,6 @@ Title and prerendered background art by:
 
 Miscellaneous art from:
     - Primalmania
-    - Undertale
     - Super Mario 64
     - LittleBigPlanet
     - Portrait of God

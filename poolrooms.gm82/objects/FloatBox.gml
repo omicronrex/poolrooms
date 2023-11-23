@@ -18,6 +18,8 @@ applies_to=self
 */
 ygo=PoolWater.y-16+choose(-2,2)
 
+with (Pirror) if (active==2 || active==3) other.ygo=999
+
 if (y<ygo) vspeed+=0.15 else vspeed=vspeed*0.98-0.08
 
 vspeed=median(-7,vspeed,7)

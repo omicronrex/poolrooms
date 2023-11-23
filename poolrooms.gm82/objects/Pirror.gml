@@ -29,7 +29,7 @@ if (active==1) {
         PoolWater.vspeed=max(-0.3,PoolWater.vspeed-0.002)
         global.water_level=PoolWater.y
     }
-    if (t>3500) {
+    if (t>3700) {
         room_goto(rmClear)
     }
 }
@@ -40,7 +40,6 @@ if (active==2) {
     else if (t<200) t+=0.5
     else t+=1
 
-    sound_volume(sndDrown,(t-200)/200)
     if (t<50) {
         PoolWater.distortion=max(0,PoolWater.distortion-0.5)
         PoolWater.colorto=merge_color($4d7d08,$ffffff,t/50)
@@ -94,6 +93,9 @@ applies_to=self
 */
 active=2
 
+sound_volume(sndDrown,0)
+sound_play("pulse")
+
 x=Player.x+Player.facing*3
 y=Player.y-5
 
@@ -132,13 +134,21 @@ if (active==1) {
 if (active==2) {
     draw_clear(0)
     scale=cosine(0,1,t/600)
-    alpha=t/600
+    alpha=t/500
     mouth=cosine(0,100,max(0,t-400)/200)
-    draw_sprite_ext(sprGod,0,lerp(x,400,scale),lerp(y,330,scale)-mouth/2,scale+0.01,scale+0.01,0,$ffffff,1)
-    draw_sprite_ext(sprGod,1,lerp(x,400,scale),lerp(y,330,scale)-mouth/2,scale+0.01,scale+0.01,0,$ffffff,(alpha-0.5)*2)
-    draw_sprite_ext(sprGod,2,lerp(x,400,scale),lerp(y,330,scale)+mouth,scale+0.01,scale+0.01,0,$ffffff,(alpha-0.5)*2)
 
-    draw_sprite_ext(sprPlayerEyes,1,lerp(x,400,scale)+10*scale,lerp(y,330,scale),Player.facing*(scale*45+1),scale*48+1,0,$ffffff,(0.3-alpha)*4)
+    godx=lerp(x,400,scale)
+    gody=lerp(y,330,scale)
+    godscale=scale+0.02
+    eyescale=1+scale*10
+    eyeoff=0.5-0.5*eyescale
+
+    draw_sprite_ext(sprGod,0,godx,gody-mouth/3,godscale,godscale,0,$ffffff,1)
+    draw_sprite_ext(sprGod,1,godx,gody-mouth/3,godscale,godscale,0,$ffffff,(alpha-0.5)*2)
+    draw_sprite_ext(sprGod,2,godx,gody+mouth*2,godscale,godscale,0,$ffffff,(alpha-0.5)*2)
+
+    draw_sprite_ext(sprPlayerEyes,1,godx-77*godscale+eyeoff,gody-131*godscale+eyeoff,eyescale,eyescale,0,$ffffff,(0.4-alpha)*4)
+    draw_sprite_ext(sprPlayerEyes,1,godx+55*godscale+eyeoff,gody-140*godscale+eyeoff,eyescale,eyescale,0,$ffffff,(0.4-alpha)*4)
 
     with (Flare) event_user(0)
 }
