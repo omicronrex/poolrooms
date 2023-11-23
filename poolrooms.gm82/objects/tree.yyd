@@ -423,50 +423,52 @@
 		|Light
 		|ShadowVolume
 +pool
-	|PoolMusic
-	|PoolWater
-	|PoolBackground
-	|WaterBullet
-	|PoolBgCube
-	|PoolBgCyl
+	+ctrl and ui
+		|PoolMusic
+		|PoolWater
+		|PoolBackground
+		|Grassrooms
+		|Powered
+		|Toworney
+		|Bourney
+		|FadeIn
+		|Pirror
+		|Flare
+		|PoolClear
+		|EndKid
+	+effects
+		|WaterBullet
+		|PoolBgCube
+		|PoolBgCyl
+		|WaterSplash1
+		|WaterSplash2
+		|WaterSplashDrop
+		|Bubbles
+		|FloaterFragment
+		|DickCoin
+		|Blink
 	|NextLevel
-	|WaterSplash1
-	|WaterSplash2
-	|WaterSplashDrop
-	|Bubbles
+	|OutsideBlock
 	|FloatBox
 	|Brock
+	|Sponge
+	|Clown
+	|DickMove
+	|SavePool
 	|Floater
 	|CubeFloater
-	|FloaterFragment
 	|Valve
+	|ValveLever
+	|Butten
+	|Elevator
 	|FloatSpike
 	|PoolSpikeR
 	|PoolSpikeL
 	|FallSpike
-	|SavePool
 	|PoolLadder
 	|PoolLadderTop
 	|PoolStraight
 	|Plank
-	|DickMove
-	|DickCoin
-	|ValveLever
-	|Blink
-	|Sponge
-	|Grassrooms
-	|Butten
-	|Elevator
-	|OutsideBlock
-	|Clown
-	|Powered
-	|Toworney
-	|Bourney
-	|FadeIn
-	|Pirror
-	|Flare
-	|EndKid
-	|PoolClear
 |PlayerStart
 |Block
 |Platform

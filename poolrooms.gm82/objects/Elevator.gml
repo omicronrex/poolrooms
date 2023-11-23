@@ -15,8 +15,10 @@ applies_to=self
 */
 if (go) {
     if (y>ystart) {
-        y-=1
-        recursive_nudge()
+        if (stack_check()) {
+            y-=1
+            recursive_nudge()
+        }
     }
 } else {
      if (y<ystart+32) y+=1

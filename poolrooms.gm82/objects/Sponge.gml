@@ -82,10 +82,14 @@ if (bbox_top>PoolWater.y) {
 hspeed=0
 if (!place_free(x,y+1)) {
     xmove=Player.input_h*!Player.dead
+    with (FloatBox) if (y>ygo) x-=999
+    with (CubeFloater) if (y>ygo) x-=999
     if (instance_place(x-xmove,y,Player)) if (place_free(x+xmove,y) && !instance_place(x,y-1,MovingSolid)) {
         hspeed=xmove
         if (!sndd) sndd=sound_loop_ex("drag",1,0.7)
     }
+    with (FloatBox) if (y>ygo) x+=999
+    with (CubeFloater) if (y>ygo) x+=999
 }
 
 if (hspeed!=0) {if (!place_free(x+hspeed,y)) {

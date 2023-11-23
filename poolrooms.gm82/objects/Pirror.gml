@@ -133,6 +133,7 @@ if (active==1) {
 
 if (active==2) {
     draw_clear(0)
+
     scale=cosine(0,1,t/600)
     alpha=t/500
     mouth=cosine(0,100,max(0,t-400)/200)
@@ -140,12 +141,17 @@ if (active==2) {
     godx=lerp(x,400,scale)
     gody=lerp(y,330,scale)
     godscale=scale+0.02
+    godalpha=0.7*(alpha-0.5)*2
     eyescale=1+scale*10
     eyeoff=0.5-0.5*eyescale
 
-    draw_sprite_ext(sprGod,0,godx,gody-mouth/3,godscale,godscale,0,$ffffff,1)
-    draw_sprite_ext(sprGod,1,godx,gody-mouth/3,godscale,godscale,0,$ffffff,(alpha-0.5)*2)
-    draw_sprite_ext(sprGod,2,godx,gody+mouth*2,godscale,godscale,0,$ffffff,(alpha-0.5)*2)
+    draw_set_blend_mode(bm_add)
+    repeat (2) {
+        draw_sprite_ext(sprGod,0,godx,gody-mouth/3,godscale,godscale,0,$ffffff,0.7)
+        draw_sprite_ext(sprGod,1,godx,gody-mouth/3,godscale,godscale,0,$ffffff,godalpha)
+        draw_sprite_ext(sprGod,2,godx,gody+mouth*2,godscale,godscale,0,$ffffff,godalpha)
+    }
+    draw_set_blend_mode(0)
 
     draw_sprite_ext(sprPlayerEyes,1,godx-77*godscale+eyeoff,gody-131*godscale+eyeoff,eyescale,eyescale,0,$ffffff,(0.4-alpha)*4)
     draw_sprite_ext(sprPlayerEyes,1,godx+55*godscale+eyeoff,gody-140*godscale+eyeoff,eyescale,eyescale,0,$ffffff,(0.4-alpha)*4)
