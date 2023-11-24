@@ -256,6 +256,7 @@
 	|shader_rainbow
 +pool
 	|sh_water
+	|sh_gameover
 	|sh_rain
 	|sound_play_pitch
 	|recursive_nudge
