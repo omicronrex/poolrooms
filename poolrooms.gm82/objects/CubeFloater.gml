@@ -30,7 +30,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ygo=PoolWater.y-16+choose(-1,1)+2*!!ballon
+ygo=PoolWater.y-16+choose(-1,1)
 
 if (y<ygo) vspeed+=0.1 else vspeed=vspeed*0.95-0.15
 
