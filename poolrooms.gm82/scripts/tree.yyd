@@ -259,5 +259,5 @@
 	|sh_rain
 	|sound_play_pitch
 	|recursive_nudge
-	|instance_create_pirror
 	|stack_check
+	|instance_create_pirror

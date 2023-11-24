@@ -30,7 +30,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ygo=PoolWater.y-16+choose(-1,1)
+ygo=PoolWater.y-16+choose(-1,1)+2*!!ballon
 
 if (y<ygo) vspeed+=0.1 else vspeed=vspeed*0.95-0.15
 
@@ -71,9 +71,9 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     hspeed=0
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
-if (instance_place(x,y+vspeed+2,Player)) {
+if (instance_place(x,y+vspeed+2-Player.vspeed,Player)) {
     sound_play("balloon_land")
-    vspeed=min(0,Player.vspeed)-2
+    vspeed=max(-4,min(0,Player.vspeed)-2)
 }
 
 if (vspeed!=0) {

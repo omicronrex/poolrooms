@@ -27,6 +27,7 @@ Miscellaneous art from:
     - Super Mario 64
     - LittleBigPlanet
     - Portrait of God
+    - Patrick Reece (reecpj)
 
 Music by:
     - Zerofuturism: https://linktr.ee/zerofuturism

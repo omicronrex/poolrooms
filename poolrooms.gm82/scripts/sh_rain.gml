@@ -179,7 +179,6 @@ return shader_pixel_create_base64("
         rain+=rain2*(sin(strength)-0.4)*2.;
         rain = clamp(rain, 0.,0.5)*0.5;
 
-
         vec3 painting = (clouds + rain)+clamp(rain*(strength-0.1),0.,1.);
 
         float r=1.-length(max(abs(fragCoord.xy / iResolution.xy*2.-1.)-.5,0.));
