@@ -55,8 +55,8 @@ if (is_ingame() && !global.pause) {
     }
 
     if (camera_s && camera_initialised) {
-        view_xcenter=(view_xcenter*4+nx+w/2)/5
-        view_ycenter=(view_ycenter*4+ny+h/2)/5
+        view_xcenter=(view_xcenter*29+nx+w/2)/30
+        view_ycenter=(view_ycenter*29+ny+h/2)/30
         view_angle+=angle_difference(view_angle,-camera_a)/5
     } else {
         view_xcenter=nx+w/2

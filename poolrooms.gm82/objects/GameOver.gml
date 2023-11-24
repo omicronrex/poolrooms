@@ -33,7 +33,9 @@ if (active) {
     texture_set_stage_interpolation("Manifold",1)
     shader_pixel_uniform_f("distort",distortion/535,distortion/90)
 
+    texture_set_interpolation(1)
     draw_self()
+    texture_set_interpolation(0)
 
     shader_reset()
 }
