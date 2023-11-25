@@ -65,7 +65,11 @@ if (!place_free(x,y) && free) {
     image_yscale=1+soak
     y=floor(obot-32*image_yscale)
 }
-if (place_free(x,y-1)) move_outside_solid(90,1)
+if (!place_free(x,y)) {
+    yo=y
+    move_outside_solid(90,4)
+    if (!place_free(x,y)) y=yo
+}
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
 if (bbox_top>PoolWater.y) {
