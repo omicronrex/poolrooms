@@ -1,4 +1,4 @@
 //gm82 fields begin
-text="v0.5"
+text="v1.0"
 font=fntFileBig
 //gm82 fields end

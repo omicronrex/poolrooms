@@ -2,7 +2,7 @@
 
     I Wanna Explore The Pool Rooms
     ==============================
-    Version 0.4 - 22 November 2023
+    Version 1.0 - 25 November 2023
 
     
   A game by renex for the Second Edition of the I Wanna Tourney
@@ -10,13 +10,6 @@
   Tested by LaWatson, MajokkoMetis, Cocoa and my family
   
   
---------------------------------------------------------------------------------
- 
-todo
-
-- make final room
-
-
 --------------------------------------------------------------------------------
 
 Title and prerendered background art by:
