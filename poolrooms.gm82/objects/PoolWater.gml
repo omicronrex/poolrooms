@@ -80,6 +80,8 @@ with (Floater) {
 
 with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
 with (FallSpike) y=median(ystart-32,PoolWater.y-16,ystart)
+
+texTile=background_get_texture(tilePool)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
@@ -159,7 +161,7 @@ surface_set_target(application_surface)
 
 shader_pixel_set(global.shader_water)
 
-texture_set_stage("Brick",background_get_texture(tilePool))
+texture_set_stage("Brick",texTile)
 texture_set_stage_interpolation("Brick",1)
 texture_set_stage("Water",surface_get_texture(s))
 texture_set_stage_interpolation("Water",1)
@@ -171,6 +173,7 @@ shader_pixel_uniform_color("colorto",colorto)
 shader_pixel_uniform_f("distort",distortion/800,distortion/608)
 shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,dy/global.APPheight)
 shader_pixel_uniform_f("outsideoff",-view_xview/global.APPwidth,-view_yview/global.APPheight)
+shader_pixel_uniform_f("cropmode",room!=rmTitle)
 
 texture_set_interpolation(1)
 draw_primitive_begin(pr_trianglestrip)
@@ -187,9 +190,9 @@ if (room==rmMenu) {
     shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,272/global.APPheight)
 
     draw_set_color($33)
-    draw_quad(96,272,128,160,-1,96/800,(0)/608,(96+128)/800,(160)/608)
-    draw_quad(336,272,128,160,-1,336/800,(0)/608,(336+128)/800,(160)/608)
-    draw_quad(576,272,128,160,-1,576/800,(0)/608,(576+128)/800,(160)/608)
+    draw_quad(96,272,128,192,-1,96/800,(0)/608,(96+128)/800,(192)/608)
+    draw_quad(336,272,128,192,-1,336/800,(0)/608,(336+128)/800,(192)/608)
+    draw_quad(576,272,128,192,-1,576/800,(0)/608,(576+128)/800,(192)/608)
     draw_set_color($ffffff)
 }
 

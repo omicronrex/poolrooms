@@ -240,6 +240,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+for (i=0;i<3;i+=1) {
+    savedata_select(i)
+    if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+288)
+    if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+288)
+    if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+288)
+    if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+288)
+}
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
-draw_sprite(sprite_index,-1,dx,y+310+32)
-draw_sprite(sprFloater,0,dx-17,y+319+32)
+draw_sprite(sprite_index,-1,dx,y+310+64)
+draw_sprite(sprFloater,0,dx-17,y+319+64)
