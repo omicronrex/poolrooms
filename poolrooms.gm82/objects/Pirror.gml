@@ -19,6 +19,7 @@ if (active==0) if (distance_to_object(Player)<24) {
 }
 
 if (active==1) {
+    //good ending
     t+=1
     if (t<200) sound_set_music_volume(1-t/100)
     if (t==200) {
@@ -35,6 +36,7 @@ if (active==1) {
 }
 
 if (active==2) {
+    //bad ending
     if (t<50) t+=0.125
     else if (t<100) t+=0.25
     else if (t<200) t+=0.5
@@ -53,6 +55,7 @@ if (active==2) {
         savedata("diff",2)
         savedatap("diff",2)
         difficulty=2
+        savedatap("time",savedatap("time")+50*60*60*3)
         autosave_asap()
         savedata_write()
         settings_write()
