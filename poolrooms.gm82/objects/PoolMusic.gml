@@ -86,3 +86,6 @@ applies_to=self
 damp=0
 
 sound_stop("drag")
+
+sound_volume(sndDrown,0)
+sound_volume(sndEar,0)

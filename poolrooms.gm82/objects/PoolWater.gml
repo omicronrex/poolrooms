@@ -159,6 +159,8 @@ surface_set_target(application_surface)
 
 shader_pixel_set(global.shader_water)
 
+texture_set_stage("Brick",background_get_texture(tilePool))
+texture_set_stage_interpolation("Brick",1)
 texture_set_stage("Water",surface_get_texture(s))
 texture_set_stage_interpolation("Water",1)
 texture_set_stage_repeat("Water",tr_clamp,tr_clamp,0)
@@ -168,6 +170,7 @@ texture_set_stage_interpolation("Manifold",1)
 shader_pixel_uniform_color("colorto",colorto)
 shader_pixel_uniform_f("distort",distortion/800,distortion/608)
 shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,dy/global.APPheight)
+shader_pixel_uniform_f("outsideoff",-view_xview/global.APPwidth,-view_yview/global.APPheight)
 
 texture_set_interpolation(1)
 draw_primitive_begin(pr_trianglestrip)

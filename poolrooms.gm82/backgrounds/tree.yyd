@@ -32,6 +32,7 @@
 	|bgTeapot
 +Pool
 	|tilePool
+	|tilePool90
 	|tilePoolFlip
 	|bgTitle
 	|bgTitleMask

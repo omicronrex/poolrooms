@@ -6,15 +6,47 @@ var width,height;
 width=argument0
 height=argument1
 
-//example: draw a simple repeating texture
-/*
-    texture_set_repeat(1)
-    draw_primitive_begin_texture(pr_trianglestrip,background_get_texture(bgFunnySlopeFill))
+if (room==rmCapcom || room=rmClear) exit
 
-    draw_vertex_texture(0,0,0,0)
-    draw_vertex_texture(width,0,width/32,0)
-    draw_vertex_texture(0,height,0,height/32)
-    draw_vertex_texture(width,height,width/32,height/32)
+var tex,w,r;
 
-    draw_primitive_end()
-*/
+tex=background_get_texture(tilePool)
+tex90=background_get_texture(tilePool90)
+w=global.woffset
+r=32*(height/608)
+
+d3d_set_projection_simple(0.5,0.5,width,height,0,0.3,-100,0,100,0)
+
+texture_set_interpolation(settings("filter"))
+
+d3d_draw_floor(w,0,-32,0,height,-32,tex,-w/r,height/r)
+d3d_draw_wall(w,height,-32,w,0,0,tex90,height/r,1)
+
+d3d_draw_floor(w,0,0,width-w,height,0,tex,round((width-w*2)/r),height/r)
+
+d3d_draw_floor(width-w,0,-32,width,height,-32,tex,w/r,height/r)
+d3d_draw_wall(width-w,height,-32,width-w,0,0,tex90,height/r,-1)
+
+texture_set_interpolation(0)
+
+var a;
+
+a=0
+
+with (Pirror) {
+    if (active==1) a=PoolWater.y/-200
+    if (active==2) a=1
+    if (active==3) a=Player.hydrolitis
+}
+
+with (FadeIn) a=alpha
+
+d3d_set_projection_ortho(0,0,width,height,0)
+draw_rect(0,0,width,height,0,a)
+
+draw_set_blend_mode(bm_subtract)
+d3d_set_color_mask(1,1,1,0)
+draw_rectangle_color(0,0,w,height,$dddddd,0,0,$dddddd,0)
+draw_rectangle_color(width-w,0,width,height,0,$dddddd,$dddddd,0,0)
+draw_set_blend_mode(0)
+d3d_set_color_mask(1,1,1,1)
