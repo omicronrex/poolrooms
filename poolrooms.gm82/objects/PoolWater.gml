@@ -23,59 +23,61 @@ if (savedata("wlevelRoom")==room) {
 
 with (Elevator) y+=32
 
-with (FloatBox) {
-    do {
-        yo=y
-        y=approach(y,PoolWater.y-16,32)
-        if (!place_free(x,y)) {
-            y=yo break
-        }
-    } until (abs(y-(PoolWater.y-16))<16)
-}
-with (CubeFloater) {
-    do {
-        yo=y
-        y=approach(y,PoolWater.y-16,32)
-        if (!place_free(x,y)) {
-            y=yo break
-        }
-    } until (abs(y-(PoolWater.y-16))<16)
-}
-with (Brock) {
-    repeat (room_height/32) {
-        yo=y
-        y+=32
-        if (!place_free(x,y)) {
-            y=yo break
+repeat (2) {
+    with (FloatBox) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
+    with (CubeFloater) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
+    with (Brock) {
+        repeat (room_height/32) {
+            yo=y
+            y+=32
+            if (!place_free(x,y)) {
+                y=yo break
+            }
         }
     }
-}
-with (Clown) {
-    repeat (room_height/32) {
-        yo=y
-        y+=32
-        if (!place_free(x,y)) {
-            y=yo break
+    with (Clown) {
+        repeat (room_height/32) {
+            yo=y
+            y+=32
+            if (!place_free(x,y)) {
+                y=yo break
+            }
         }
     }
-}
-with (Sponge) {
-    repeat (room_height/32) {
-        yo=y
-        y+=32
-        if (!place_free(x,y)) {
-            y=yo break
+    with (Sponge) {
+        repeat (room_height/32) {
+            yo=y
+            y+=32
+            if (!place_free(x,y)) {
+                y=yo break
+            }
         }
     }
-}
-with (Floater) {
-    do {
-        yo=y
-        y=approach(y,PoolWater.y-16,32)
-        if (!place_free(x,y)) {
-            y=yo move_contact_solid(180-90*sign(y-(PoolWater.y-16)),32) break
-        }
-    } until (abs(y-(PoolWater.y-16))<16)
+    with (Floater) {
+        do {
+            yo=y
+            y=approach(y,PoolWater.y-16,32)
+            if (!place_free(x,y)) {
+                y=yo move_contact_solid(180-90*sign(y-(PoolWater.y-16)),32) break
+            }
+        } until (abs(y-(PoolWater.y-16))<16)
+    }
 }
 
 with (FloatSpike) y=median(ystart,PoolWater.y-16,ystart+32)
