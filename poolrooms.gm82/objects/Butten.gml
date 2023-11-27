@@ -41,6 +41,8 @@ applies_to=self
 
 event_step()
 
+elevator.going=elevator.go
+
 vpress=press
 vside=side
 #define Draw_0

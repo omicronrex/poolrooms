@@ -15,6 +15,7 @@ applies_to=self
 if (!active) {
     freeze_player()
     savedata("woohoo",1)
+    savedatap("woohoo",1)
     angle=0
     rot=0
     active=1
