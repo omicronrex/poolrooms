@@ -175,6 +175,20 @@ shader_pixel_uniform_f("surface",-view_xview/global.APPwidth,dy/global.APPheight
 shader_pixel_uniform_f("outsideoff",-view_xview/global.APPwidth,-view_yview/global.APPheight)
 shader_pixel_uniform_f("cropmode",room!=rmTitle)
 
+var a;
+
+a=0
+
+with (Pirror) {
+    if (active==1) a=PoolWater.y/-200
+    if (active==2) a=1
+    if (active==3) a=Player.hydrolitis
+}
+
+with (FadeIn) a=alpha
+
+shader_pixel_uniform_f("cropfade",saturate(a))
+
 texture_set_interpolation(1)
 draw_primitive_begin(pr_trianglestrip)
 draw_vertex_texture_color(-0.5,-0.5+dy,0,0,$33,1)

@@ -1,18 +1,19 @@
 return shader_pixel_create_base64("
-    eJxtk7tuE0EUhv+Z3XVGKGJpUSJhiYZIyFKCghSJxLJDQZEUkKxCgRQZX2CFk43W
-    Tj95grgEqnFrN34ARCREQeF0dDQU+wCUVCw6Z8Y3ggvrnO9c559ZIfP8Tx5j97BS
-    XQVwKgAh81wBIB8CeCOATwA8eOTiK3EA35lJZj8d+8VMMPvtmBKAtK1wh/4AFJn5
-    zB469oSZrX3q2CEzb4EdM5MLrJrG9XcYDn0scweHsV87jVtJu4HhzdhRrdtM/1NT
-    T9pJ2k0geK4342lydpI0mtRrcspJrBF3uknadfl2N/ol591O3GgmrRY652mrVm/i
-    rHO8cfwa+3E9TTpJq1t88GKt+GzvYK948LbWaKbF3eTkLG430+JWaWOrtLW5UXq0
-    vr6O4XMgCBAaAGUAV9fj8c7pj8dl4gXm3yrA+8rHD3c/02ziSwjN9q2jncsvm+W1
-    V5fbE64QmuvxmHwN6CtAl+/Za9KAN5rZoufsnlChmdhyzvZUaCQJAqkBjCTQt1cu
-    NBCNAo55Gsh0ABiKCRvT1uY6XeW8kPOkygz5AqEWzp/NiEYSEfvURwA6cD7gU69e
-    gIEJpv5AB8hdvp1F+Ta+zHGBFdrNxcmPeE8JpRVgfMCnGHGJ/EIg0rN+dI6Zb+2o
-    /xLwJe8faYXIKAxMhT4vhJr6yblZ1MPuT7qAzzTv0773p5rC1ZOdU65xurM+EtA0
-    i+Y7vcjvK7cTaWJzoj7xOV15n7m6i8UcqiOWu95W25t9BnN3K/jOJ/V0Lh+Y7uHq
-    WZt/5hqKWU09LZFpD1nf3pHHb6KAxTfiuTdD+lK+UBn3pLjVN+M85fYkewkZ3+1E
-    1wIGfBeW3Z7qS+/Dar7EeUBmgJUL+y6Y9ag/sMLnhrI75TnwF4bt5U4=
+    eJxtk7FuE0EQhv/dO9sXK+JqFCQsQUGaSAkEKUUSnDQUiQSEU0BCiozPFhZJzpwv
+    NeuKjrgEqnVrN34CIlFROBIlEu0VPAA1h2Z2bZ8TXFg738z8MzuzJ2SW/c3eYfd5
+    decWgI8CEDLLFgCQDQF8EMAPAA4cMvGTOIDfzCSzP5a5gphgtkh/pCMAaaRw17IH
+    zArMHln2hJk7x14yM3qhZQkzZ469Zybn2E7cqr/FcOhikRUsxn7ttNWMjkMMr/sO
+    a0kj/k9OPTqO4iSC4LrOjMdRu1kLG6Q1uXnedxKFDYStThLFCcWYXNMn/aKzpNMK
+    G1Gzic5Z3KzVG2h3jtaOXmO/VY+jTtRMKveeLVce7x3sVQ7e1MJGXNmNTtqt40Zc
+    2VhZ21jZWF9bub+6uorhU6BQhK8BbAO4uByPt05/PdwmXmL+vQp8qn75fPMr1Sbu
+    wdeb5cOt82/r28uvzjcnfMHo5H6Kdcrw9eV4THEKUBfEb5v1KsAZzc6iZ8894fl6
+    cpa5s+P5WtLQIBWAkQT65qkIBQSjAvscBaSqCGjyCeNT5sx5aofjfI6TXqrJFvCV
+    sPasRjCSCNgmHQGoorUBl7R6RQx0YWoPVBGZjTe1KN74F9kvsKQKUz/ZAfcp4aky
+    oF3+JCRziawrEKiZHt1jZptz0H8BuJL7D1QZgS5joKv0WcJXpCdztUjD9E9zAd8p
+    b1O/d6Yzhc2nc0ax2s6d5yMBRbWovp0X2f2y7YlmYmKCPvHcXLmfXF53PobyiGVW
+    28z2us4gt1vBO5/k071coH8lX1/pl+pq8pmZOkoiVQ7SvtmRw2+ihPk34tg3Q/Ol
+    eGHfjGP83QWkdo8+7Vo7FIOU70vM7MAwz97FnE3eZPYlDHhfht2Y7oDekNlLieOA
+    VANLXVOTWY/0gSWeDTzTd5YB/wCya/SM
 ")
 
 /*
@@ -36,6 +37,7 @@ return shader_pixel_create_base64("
     uniform float2 surface;
     uniform float2 outsideoff;
     uniform float cropmode;
+    uniform float cropfade;
 
     PS_OUTPUT main(PS_INPUT input) {
         PS_OUTPUT output;
@@ -57,7 +59,7 @@ return shader_pixel_create_base64("
         float2 coord=input.uv+offset;
         float4 diffuse = tex2D(Water,coord);
         if ((coord.x<0.0 || coord.x>=1.0 || coord.y>1.0) && cropmode>0.5)
-            diffuse = tex2D(Brick,(coord-outsideoff)*float2(25.0,19.0));
+            diffuse = lerp(tex2D(Brick,(coord-outsideoff)*float2(25.0,19.0)),float4(0,0,0,1),cropfade);
 
         //get luminance for fade effect                        add caustics
         float gray = dot(diffuse.rgb,float3(0.21,0.71,0.07)) + abs(noise.r-0.5+noise2.r-0.5)*-0.15;
