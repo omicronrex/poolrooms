@@ -436,6 +436,7 @@
 		|Flare
 		|PoolClear
 		|EndKid
+		|EndBullet
 	+effects
 		|WaterBullet
 		|PoolBgCube

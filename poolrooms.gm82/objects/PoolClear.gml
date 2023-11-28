@@ -4,10 +4,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-with (TextDraw) {
-    text+="###You have found yourself and escaped the Poolrooms!#Time: "+format_time(savedatap("time"))+
-    "#Resets: "+string(savedatap("deaths"))
-}
+//field thingy: instance
+//field dingy: instance
+
+var bepis;bepis="##You have found yourself and#escaped the Poolrooms!##Time: "
++format_time(savedatap("time"))+" - Resets: "+string(savedatap("deaths"))
+
+thingy.text+=bepis
+dingy.text+=bepis
 
 savedatap("clear",true)
 savedata("diff",3)

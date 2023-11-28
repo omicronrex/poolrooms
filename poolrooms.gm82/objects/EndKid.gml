@@ -1,3 +1,19 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+main=0
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (main) if (global.key_pressed[key_shoot]) {
+    instance_create(x,y-8,EndBullet)
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -5,6 +21,7 @@ action_id=603
 applies_to=self
 */
 //field image_speed: number
+//field main: bool
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
