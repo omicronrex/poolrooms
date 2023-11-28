@@ -2,7 +2,7 @@
 
     I Wanna Explore The Pool Rooms
     ==============================
-    Version 1.0 - 26 November 2023
+    Version 1.0 - 28 November 2023
 
     
   A game by renex for the Second Edition of the I Wanna Tourney
