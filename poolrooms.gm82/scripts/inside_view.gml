@@ -1,6 +1,7 @@
 ///inside_view([border])
 
 var border;
+border=0
 
 if (argument_count) border=argument[0]
 
