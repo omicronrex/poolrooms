@@ -2,12 +2,12 @@
 
     I Wanna Explore The Poolrooms
     =============================
-    Version 1.0 RC5 - 29 Nov 2023
+    Version 1.0 RC6 - 1 Dec 2023
 
     
   A game by renex for the Second Edition of the I Wanna Tourney
   
-  Tested by LaWatson, Majokko, Koko and my family
+  Tested by LaWatson, Majokko, Koko, Arzztt and my family
   
   
 --------------------------------------------------------------------------------
