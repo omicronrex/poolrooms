@@ -6,12 +6,22 @@ var width,height;
 width=argument0
 height=argument1
 
-if (room==rmCapcom || room=rmClear) exit
+if (room==rmInit || room==rmCapcom || room=rmClear) exit
 
-var tex,w,r;
+var tex,w,r,s1,s2,v;
 
-tex=background_get_texture(tilePool)
-tex90=background_get_texture(tilePool90)
+v=view_yview
+
+if (global.flip_screen) v=-v
+
+s1=surface_set("border surf 1",32,32)
+draw_background_tiled(tilePool,0,-v)
+s2=surface_set("border surf 2",32,32)
+draw_background_tiled(tilePool90,v,0)
+surface_reset_target()
+
+tex=surface_get_texture(s1)
+tex90=surface_get_texture(s2)
 w=global.woffset
 r=32*(height/608)
 

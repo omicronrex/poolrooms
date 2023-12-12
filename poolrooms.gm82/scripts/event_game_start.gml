@@ -219,9 +219,4 @@ gizmolist=0
 add_gizmo(Trap)
 custom_traps()
 
-//let's go away
-if (settings("volcheck")) {
-    room_goto_next()
-} else {
-    instance_create(0,0,VolCheck)
-}
+instance_create(0,0,VolCheck)

@@ -70,7 +70,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-s=surface_set("hqbg",1600,1216)
+s=surface_set("hqbg",800*4,608*4)
 d3d_start()
 draw_clear(fogcol)
 
@@ -133,10 +133,16 @@ d3d_transform_set_identity()
 
 texture_set_interpolation(1)
 d3d_end()
+
+d3d_set_alphablend(0)
+
+s2=surface_set("hqbg_downscale",800*2,608*2)
+d3d_set_projection_ortho(0,0,800*2,608*2,0)
+draw_surface_stretched(s,0,0,800*2,608*2)
+
 surface_set_target(application_surface)
 d3d_set_projection_ortho(0,0,800,608,0)
-d3d_set_alphablend(0)
-draw_surface_stretched(s,0,0,800,608)
+draw_surface_stretched(s2,0,0,800,608)
 d3d_set_alphablend(1)
 texture_set_interpolation(0)
 

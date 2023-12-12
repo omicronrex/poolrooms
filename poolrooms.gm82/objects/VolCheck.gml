@@ -23,6 +23,8 @@ alpha=0
 volumedelay=25
 volumefpi=5
 volumetimer=0
+
+if (settings("volcheck")) {visible=0 alarm[1]=3}
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -32,6 +34,13 @@ applies_to=self
 alarm[0]=room_speed
 sound_play("sndShoot")
 effect_create_above(ef_ring,global.width/2,global.height/2,2,$808080)
+#define Alarm_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=222
+invert=0
+arg0=0
+*/
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

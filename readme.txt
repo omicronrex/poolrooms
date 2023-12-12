@@ -1,15 +1,23 @@
 
 
-    I Wanna Explore The Poolrooms
-    =============================
-    Version 1.0 RC6 - 1 Dec 2023
+    I Wanna Escape The Poolrooms
+    ============================
+    v1.0 RC8 11 Dec 2023
 
-    
+
   A game by renex for the Second Edition of the I Wanna Tourney
-  
+
   Tested by LaWatson, Majokko, Koko, Arzztt and my family
-  
-  
+
+
+--------------------------------------------------------------------------------
+
+    An experimental puzzle game I made based on readings of the Backrooms Wiki.
+
+    I highly recommend playing this game in Fullscreen, with the Smooth
+    filtering mode set for the intended experience.
+
+
 --------------------------------------------------------------------------------
 
 Title and prerendered background art by:

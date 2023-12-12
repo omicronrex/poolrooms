@@ -6,7 +6,7 @@ settings("sfxvol",0.5)
 settings("l+r behavior",lr_right)
 
 settings("blood",3)
-settings("filter",1)
+settings("filter",2)
 settings("anim",1)
 
 settings("valign",1)

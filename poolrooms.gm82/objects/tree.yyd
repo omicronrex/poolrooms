@@ -470,6 +470,7 @@
 	|PoolLadderTop
 	|PoolStraight
 	|Plank
+	|EndBlockMarker
 |PlayerStart
 |Block
 |Platform

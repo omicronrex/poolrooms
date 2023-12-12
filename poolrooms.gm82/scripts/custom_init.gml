@@ -17,3 +17,5 @@ d3d_model_floor(m,0,0,0,32,32,0,1,-1)
 d3d_model_floor(m,0,32,16,32,0,16,1,-1)
 d3d_model_cylinder(m,10,10,16,22,22,32,-0.03,-0.03,0,4)
 global.mod_pisten=m
+
+global.flip_screen=0

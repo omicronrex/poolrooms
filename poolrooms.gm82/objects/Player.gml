@@ -255,7 +255,7 @@ if (!frozen) {
     baseGrav = baseGravDefault
 
     if (fucked) {
-        maxSpeed=0.2
+        maxSpeed=0.5
         jump=3
         jump2=1
     }

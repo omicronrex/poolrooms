@@ -1,4 +1,4 @@
 //gm82 fields begin
-text="I Wanna Explore"
+text="I Wanna Escape"
 font=fntTitle
 //gm82 fields end

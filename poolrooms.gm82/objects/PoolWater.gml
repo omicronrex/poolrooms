@@ -122,9 +122,11 @@ applies_to=self
 */
 //field flip: bool
 
+global.flip_screen=0
 if (flip) {
     PoolBackground.tex=background_get_texture(tilePoolFlip)
     flip_player(-1)
+    global.flip_screen=1
 }
 #define Other_5
 /*"/*'/**//* YYD ACTION

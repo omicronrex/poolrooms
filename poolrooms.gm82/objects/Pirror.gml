@@ -81,6 +81,8 @@ if (other.owner==Player.id && !active) {
 
     Player.fucked=1
 
+    with (EndBlockMarker) instance_create(x,y,Block)
+
     window_set_showicons(0)
 
     i=instance_create(x,y,BloodEmitter)
