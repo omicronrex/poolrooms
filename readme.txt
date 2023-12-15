@@ -2,7 +2,7 @@
 
     I Wanna Escape The Poolrooms
     ============================
-    v1.1.2 - 15 Dec 2023
+    v1.1.3 - 15 Dec 2023
 
 
   A game by renex for the Second Edition of the I Wanna Tourney
@@ -33,6 +33,13 @@
     Update v1.1.2
     
     - fixed a room layout issue i accidentally reverted on git
+
+
+--------------------------------------------------------------------------------
+
+    Update v1.1.3
+    
+    - fixed a skip
 
 
 --------------------------------------------------------------------------------
