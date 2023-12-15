@@ -112,6 +112,13 @@ draw_set_blend_mode(0)
 surface_reset()
 
 y=approach(lerp(y,global.water_level,1/100),global.water_level,1/10)
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+global.poolwatery=y
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

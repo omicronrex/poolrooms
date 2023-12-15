@@ -19,3 +19,4 @@ d3d_model_cylinder(m,10,10,16,22,22,32,-0.03,-0.03,0,4)
 global.mod_pisten=m
 
 global.flip_screen=0
+global.poolwatery=608

@@ -52,7 +52,9 @@ d3d_set_color_mask(1,1,1,1)
 
 if (global.flip_screen) d3d_set_projection_ortho(0,height,width,-height,0)
 
-dy=clamp((PoolWater.y-view_yview)*(height/608),-height,height)
+
+
+dy=clamp((global.poolwatery-view_yview)*(height/608),-height,height)
 texture_set_interpolation(1)
 draw_set_color($aabb99)
 draw_quad(0,dy,width,height*2,bt,0,1/8,0,7/8)
@@ -66,7 +68,7 @@ var a;
 a=0
 
 with (Pirror) {
-    if (active==1) a=PoolWater.y/-200
+    if (active==1) a=global.poolwatery/-200
     if (active==2) a=1
     if (active==3) a=Player.hydrolitis
 }
