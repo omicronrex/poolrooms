@@ -29,7 +29,10 @@ else {
     }
 }
 
-if (input_anykey()) room_goto(rmTitle)
+if (input_anykey()) {
+    instance_create(0,0,FadeIn)
+    room_goto(rmTitle)
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

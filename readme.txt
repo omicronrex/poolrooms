@@ -2,7 +2,7 @@
 
     I Wanna Escape The Poolrooms
     ============================
-    v1.0 RC8 11 Dec 2023
+    v1.1 - 15 Dec 2023
 
 
   A game by renex for the Second Edition of the I Wanna Tourney
@@ -16,6 +16,8 @@
 
     I highly recommend playing this game in Fullscreen, with the Smooth
     filtering mode set for the intended experience.
+    
+    Tourney rules: Fewest Resets, Items Not Required.
 
 
 --------------------------------------------------------------------------------

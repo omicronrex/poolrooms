@@ -14,8 +14,6 @@ x=-32
 image_xscale=room_width/32+32
 image_yscale=(room_height/32)*2
 
-onwater=savedata("onwater")
-submerged=savedata("submerged")
 if (savedata("wlevelRoom")==room) {
     global.water_level=savedata("wlevel")
     y=global.water_level

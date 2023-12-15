@@ -13,6 +13,10 @@ if (file_exists(global.setfile)) {
     
     //we still want some defaults set
     settings("volcheck",false)
+    settings("filter",2)
+    settings("fullscreen",1)
+    settings("musvol",0.75)
+    settings("sfxvol",0.75)
 } else {
     //initialize a new settings file
     settings_write()

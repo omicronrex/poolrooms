@@ -1011,6 +1011,14 @@ newspr=oldspr
 deathlist=0
 flashing=0
 
+onwater=0
+submerged=0
+
+if (instance_exists(PoolWater)) {
+    if (bbox_bottom>PoolWater.y) onwater=1
+    if (bbox_top+3>PoolWater.y) submerged=1
+}
+
 earsnd=onwater
 #define Other_5
 /*"/*'/**//* YYD ACTION

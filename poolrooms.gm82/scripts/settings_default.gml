@@ -1,7 +1,7 @@
 //defaults for the options the player can change
 
-settings("musvol",0.5)
-settings("sfxvol",0.5)
+settings("musvol",0.75)
+settings("sfxvol",0.75)
 
 settings("l+r behavior",lr_right)
 

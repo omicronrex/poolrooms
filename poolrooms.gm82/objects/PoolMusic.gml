@@ -46,7 +46,7 @@ if (clowned) {
 
 sound_volume(sndClown,honk)
 
-if (submerged) damp=min(0.9,damp+0.05) else damp=max(0,damp-0.05)
+if (submerged || room==rmOptions) damp=min(0.9,damp+0.05) else damp=max(0,damp-0.05)
 
 sound_effect_options(e1,1,lerp(-1000,-2000,damp))
 sound_effect_options(e1,3,lerp(14,1,damp))
@@ -83,8 +83,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-damp=0
-
 sound_stop("drag")
 
 sound_volume(sndDrown,0)

@@ -8,10 +8,11 @@ height=argument1
 
 if (room==rmInit || room==rmCapcom || room=rmClear) exit
 
-var tex,w,r,s1,s2,v;
+var tex,w,r,s1,s2,v,bt;
+
+bt=background_get_texture(bgFadeTexture)
 
 v=view_yview
-
 if (global.flip_screen) v=-v
 
 s1=surface_set("border surf 1",32,32)
@@ -39,6 +40,27 @@ d3d_draw_wall(width-w,height,-32,width-w,0,0,tex90,height/r,-1)
 
 texture_set_interpolation(0)
 
+d3d_set_projection_ortho(0,0,width,height,0)
+
+
+draw_set_blend_mode(bm_subtract)
+d3d_set_color_mask(1,1,1,0)
+draw_rectangle_color(0,0,w,height,$dddddd,0,0,$dddddd,0)
+draw_rectangle_color(width-w,0,width,height,0,$dddddd,$dddddd,0,0)
+draw_set_blend_mode(0)
+d3d_set_color_mask(1,1,1,1)
+
+if (global.flip_screen) d3d_set_projection_ortho(0,height,width,-height,0)
+
+dy=clamp((PoolWater.y-view_yview)*(height/608),-height,height)
+texture_set_interpolation(1)
+draw_set_color($aabb99)
+draw_quad(0,dy,width,height*2,bt,0,1/8,0,7/8)
+draw_set_color($ffffff)
+texture_set_interpolation(0)
+
+d3d_set_projection_ortho(0,0,width,height,0)
+
 var a;
 
 a=0
@@ -50,13 +72,4 @@ with (Pirror) {
 }
 
 with (FadeIn) a=alpha
-
-d3d_set_projection_ortho(0,0,width,height,0)
 draw_rect(0,0,width,height,0,a)
-
-draw_set_blend_mode(bm_subtract)
-d3d_set_color_mask(1,1,1,0)
-draw_rectangle_color(0,0,w,height,$dddddd,0,0,$dddddd,0)
-draw_rectangle_color(width-w,0,width,height,0,$dddddd,$dddddd,0,0)
-draw_set_blend_mode(0)
-d3d_set_color_mask(1,1,1,1)
