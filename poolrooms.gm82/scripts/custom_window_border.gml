@@ -74,4 +74,5 @@ with (Pirror) {
 }
 
 with (FadeIn) a=alpha
+with (PauseMenu) a=0.55
 draw_rect(0,0,width,height,0,a)
