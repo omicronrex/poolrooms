@@ -52,8 +52,6 @@ d3d_set_color_mask(1,1,1,1)
 
 if (global.flip_screen) d3d_set_projection_ortho(0,height,width,-height,0)
 
-
-
 dy=clamp((global.poolwatery-view_yview)*(height/608),-height,height)
 texture_set_interpolation(1)
 draw_set_color($aabb99)

@@ -15,6 +15,7 @@ if (file_exists(global.setfile)) {
     settings("volcheck",false)
     settings("filter",2)
     settings("fullscreen",1)
+    settings("caption visible",0)
     settings("musvol",0.75)
     settings("sfxvol",0.75)
 } else {
