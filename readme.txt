@@ -28,8 +28,10 @@
     - added a small chance for cube floaters to have your windows accent color
     - added secret items to the clear screen
     - added a diagetic tutorial that stones can lay on cube floaters
+    - added a visual effect for sponges soaking up
     - changed the good ending to require at least one secret item
     - changed the layout of four rooms to reduce confusion and precision
+    - changed one easter egg to disallow restarting
     - fixed blocks stacked on top of sponges getting stuck in them
     - fixed stones and sponges getting stuck on top of cube floaters
     - fixed deaths counting as 2 resets
@@ -39,6 +41,8 @@
     - fixed depth order for valves against 3d objects
     - fixed file menu lag caused by statistics reloading
     - fixed sponges jittering vertically at specific soak levels
+    - fixed texture shading of kaizo blocks
+    - fixed sponges moving sideways when soaking up while stood on
 
     
 --------------------------------------------------------------------------------
