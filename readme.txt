@@ -30,8 +30,8 @@
     - added a diagetic tutorial that stones can lay on cube floaters
     - added a visual effect for sponges soaking up
     - changed the good ending to require at least one secret item
-    - changed the layout of four rooms to reduce confusion and precision
-    - changed one easter egg to disallow restarting
+    - changed the layout of some rooms to reduce confusion and precision
+    - changed one easter egg to disallow restarting during the surprise
     - fixed blocks stacked on top of sponges getting stuck in them
     - fixed stones and sponges getting stuck on top of cube floaters
     - fixed deaths counting as 2 resets
