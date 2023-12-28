@@ -24,7 +24,7 @@
 
     Update v1.2.1
     
-    - added a silly easter egg
+    - added two silly easter eggs
     - added a small chance for cube floaters to have your windows accent color
     - added secret items to the clear screen
     - added a diagetic tutorial that stones can lay on cube floaters
@@ -33,6 +33,7 @@
     - fixed blocks stacked on top of sponges getting stuck in them
     - fixed stones and sponges getting stuck on top of cube floaters
     - fixed deaths counting as 2 resets
+    - fixed being able to bounce cube floaters from above
     - fixed saving while the water level is changing causing softlocks
     - fixed spikes moving through solid objects
     - fixed depth order for valves against 3d objects

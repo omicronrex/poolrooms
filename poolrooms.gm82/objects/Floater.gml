@@ -9,6 +9,8 @@ stuck=1
 ballon=0
 
 image_speed=0
+
+flamingo=egg(128)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
@@ -81,5 +83,5 @@ applies_to=self
 */
 angle=8*sin(time/7)*cos(time/11)
 if (stuck) angle=0
-draw_sprite_ext(sprite_index,1,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,cor,1)
-draw_sprite_ext(sprite_index,2,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,$ffffff,1)
+draw_sprite_ext(sprite_index,1+flamingo*3,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,cor,1)
+draw_sprite_ext(sprite_index,2+flamingo*3,x+16+pivot_pos_x(-16,-16,angle),y+16+pivot_pos_y(-16,-16,angle),1,1,angle,$ffffff,1)

@@ -15,7 +15,7 @@ unsoaking=0
 underwater=0
 checksolid=0
 
-bob=egg()
+bob=egg(4096)
 sponge=0
 #define Step_0
 /*"/*'/**//* YYD ACTION

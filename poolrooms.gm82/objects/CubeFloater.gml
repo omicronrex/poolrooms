@@ -87,7 +87,7 @@ if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     hspeed=0
 }} else if (sndd) {sound_stop(sndd) sndd=0}
 
-if (instance_place(x,y+vspeed+2-Player.vspeed,Player)) {
+if (instance_place(x,y+vspeed+2-Player.vspeed,Player)) if (Player.y>y+16) {
     sound_play("balloon_land")
     vspeed=max(-4,min(0,Player.vspeed)-2)
 }
