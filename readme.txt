@@ -16,6 +16,8 @@
 
     I highly recommend playing this game in Fullscreen, with the Smooth
     filtering mode set for the intended experience.
+    
+    Source code available at: https://github.com/omicronrex/poolrooms
 
 
 --------------------------------------------------------------------------------
