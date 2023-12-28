@@ -124,7 +124,7 @@ with (Sponge) {
     w=32*image_xscale
     h=32*image_yscale
     draw_set_color(image_blend)
-    d3d_draw_block(x,round(y),0,x+w,round(y)+h,32,tex,1,1)
+    d3d_draw_block(x,floor(y),0,x+w,round(y)+h,32,tex,1,1)
 }
 draw_set_color($ffffff)
 texture_set_interpolation(0)
