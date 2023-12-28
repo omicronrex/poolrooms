@@ -96,7 +96,7 @@ if (bbox_top>PoolWater.y) {
 }
 
 hspeed=0
-if (!place_free(x,y+1)) {
+if (!place_free(x,y+1) && Player.bbox_bottom>bbox_top+1) {
     xmove=Player.input_h*!Player.dead
     with (FloatBox) if (y>ygo) x-=999
     with (CubeFloater) if (y>ygo) x-=999
