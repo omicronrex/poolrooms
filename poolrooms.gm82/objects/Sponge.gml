@@ -84,6 +84,8 @@ if (!place_free(x,y)) {
 }
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
+if (soak>oldsoak) instance_create(irandom_range(bbox_left,bbox_right),irandom_range(max(bbox_top,PoolWater.y),bbox_bottom),Bubbles)
+
 if (bbox_top>PoolWater.y) {
     if (underwater==1) instance_create(mean(bbox_left,bbox_right),PoolWater.y,WaterSplash1)
     underwater=2
