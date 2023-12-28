@@ -5,6 +5,7 @@ with (Pirror) if (active==2 || active==3) exit
 //restart
 if (global.key_pressed[key_restart]) {
     if (is_ingame() && !global.pause) {
+        with (Grassrooms) if (active) exit
         if (room==global.difficulty_room) {
             Player.dead=1
             room_restart()
