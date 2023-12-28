@@ -30,11 +30,27 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+var xo,succeed,succeed_vspeed;
+
 ygo=PoolWater.y-16+choose(-1,1)
 
-if (y<ygo) vspeed+=0.1 else vspeed=vspeed*0.95-0.15
+with (MovingSolid) solidcheck=0
 
-vspeed=median(-7,vspeed,7)
+with (Brock) if (instance_place(x,y+4,other.id)) solidcheck=1
+with (Sponge) if (instance_place(x,y+4,other.id)) solidcheck=1
+
+xo=x
+x=-999
+succeed=0
+succeed_vspeed=-7
+
+with (MovingSolid) if (solidcheck) if (place_free(x,y+1)) {succeed=1 succeed_vspeed=vspeed}
+
+x=xo
+
+if (y<ygo || succeed) vspeed+=0.1 else vspeed=vspeed*0.95-0.15
+
+vspeed=median(succeed_vspeed,vspeed,7)
 
 if (instance_place(x,y-2,Player) && Player.vspeed>=-0.5 && !Player.dead) {
     if (!ballon) ballon=6

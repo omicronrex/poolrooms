@@ -84,7 +84,7 @@ action_id=603
 applies_to=self
 */
 ///schedule save
-if (image_index==0 && (PoolWater.y>y+32)) {
+if (image_index==0 && global.water_level>y+32 && PoolWater.y>y+32) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
         save=1

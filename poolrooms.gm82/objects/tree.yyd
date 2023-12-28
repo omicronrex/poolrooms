@@ -433,6 +433,7 @@
 		|Bourney
 		|FadeIn
 		|Pirror
+		|Pitem
 		|Flare
 		|PoolClear
 		|EndKid
@@ -472,6 +473,7 @@
 	|Plank
 	|EndBlockMarker
 	|EmergencyCorrector
+	|InfiniteBalloons
 |PlayerStart
 |Block
 |Platform

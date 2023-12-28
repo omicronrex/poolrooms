@@ -8,6 +8,7 @@ time=random(100)
 stuck=10
 sndd=0
 underwater=0
+checksolid=0
 
 tex=sprite_get_texture(sprite_index,0)
 #define Step_0
@@ -36,13 +37,13 @@ if (bbox_top>PoolWater.y) {
 }
 
 hspeed=0
-if (!place_free(x,y+1) && PoolWater.y>y+32 && !instance_place(x,y-2,MovingSolid)) {
+if (!place_free(x,y+1)) {stuck=10 if (PoolWater.y>y+32 && !instance_place(x,y-2,MovingSolid)) {
     xmove=Player.input_h*!Player.dead
         if (instance_place(x-xmove,y,Player)) if (place_free(x+xmove,y)) {
         hspeed=xmove
         if (!sndd) sndd=sound_loop("drag")
     }
-}
+}}
 
 if (hspeed!=0) {if (!place_free(x+hspeed,y)) {
     move_contact_solid_hv(hspeed,0)
@@ -59,6 +60,14 @@ if (vspeed!=0) if (!place_free(x,y+vspeed)) {
 }
 
 if (stuck) stuck-=1
+
+if (checksolid) {
+    if (!place_free(x,y)) {
+        move_outside_solid(90,1)
+        move_outside_solid(270,1)
+        vspeed=0
+    } else checksolid-=1
+}
 
 time+=1
 

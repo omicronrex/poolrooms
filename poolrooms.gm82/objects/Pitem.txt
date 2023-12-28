@@ -1,7 +1,7 @@
 sprite=sprItem1
-visible=1
+visible=0
 solid=0
 persistent=0
-depth=1
-parent=DisplayItem
+depth=0
+parent=
 mask=

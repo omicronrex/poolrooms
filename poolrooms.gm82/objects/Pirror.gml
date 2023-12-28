@@ -7,6 +7,7 @@ applies_to=self
 image_speed=0
 active=0
 t=0
+love=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -14,13 +15,23 @@ action_id=603
 applies_to=self
 */
 if (active==0) if (distance_to_object(Player)<24) {
-    lock_controls()
-    active=1
+    if (has_item("Item1") || has_item("Item2") || has_item("Item3") || has_item("Item4")) {
+        lock_controls()
+        active=1
+    }
 }
 
 if (active==1) {
     //good ending
     t+=1
+    if (t==50) {
+        sound_play("item get 1")
+        if (has_item("Item1")) (instance_create(Player.x,y-8,Pitem)).i=1
+        if (has_item("Item2")) (instance_create(Player.x,y-8,Pitem)).i=2
+        if (has_item("Item3")) (instance_create(Player.x,y-8,Pitem)).i=3
+        if (has_item("Item4")) (instance_create(Player.x,y-8,Pitem)).i=4
+    }
+    if (t>150) love=lerp(love,3,1/30)
     if (t<200) sound_set_music_volume(1-t/100)
     if (t==200) {
         sound_play_music("interlude",0)
@@ -62,6 +73,13 @@ if (active==2) {
         game_end()
     }
 }
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+Player.x=min(Player.x,400-10)
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -123,6 +141,8 @@ image_index=Player.image_index
 image_xscale=-(Player.image_xscale)
 
 draw_self()
+
+draw_sprite_ext(sprLove,0,400,y-32,love,love,0,$ffffff,1)
 #define Trigger_Draw End
 /*"/*'/**//* YYD ACTION
 lib_id=1

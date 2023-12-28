@@ -13,6 +13,10 @@ tex=sprite_get_texture(sprite_index,0)
 soak=0
 unsoaking=0
 underwater=0
+checksolid=0
+
+bob=egg()
+sponge=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -53,6 +57,11 @@ if (bbox_bottom>PoolWater.y) {
 if (spong>5) {
     spong=1
     sound_play("sponge"+string(irandom(3)))
+    if (bob && !sponge) {
+        sponge=1
+        sound_play("spongebob")
+        tex=sprite_get_texture(sprBob,1)
+    }
 }
 if (spong==0 && snd) sound_stop(snd)
 
@@ -60,15 +69,18 @@ free=place_free(x,y)
 obot=y+32*image_yscale
 image_yscale=1+soak
 y-=y+32*image_yscale-obot
-if (!place_free(x,y) && free) {
+if ((!place_free(x,y) && free) || !stack_check()) {
     soak=oldsoak
     image_yscale=1+soak
     y=floor(obot-32*image_yscale)
+    recursive_nudge()
 }
 if (!place_free(x,y)) {
     yo=y
     move_outside_solid(90,4)
     if (!place_free(x,y)) y=yo
+    move_outside_solid(90,1)
+    recursive_nudge()
 }
 image_blend=merge_color($ffffff,$bbbbbb,soak)
 
@@ -110,6 +122,14 @@ if (vspeed!=0) if (!place_free(x,y+vspeed)) {
     move_contact_solid_hv(0,vspeed)
     vspeed=0
 }
+
+if (checksolid) {
+    if (!place_free(x,y)) {
+        move_outside_solid(90,1)
+        move_outside_solid(270,1)
+        vspeed=0
+    } else checksolid-=1
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -119,3 +139,11 @@ applies_to=self
 if (bbox_bottom>PoolWater.y) underwater=1
 if (bbox_top>PoolWater.y) underwater=2
 if (underwater && place_free(x,y-1)) soak=1
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (sponge) draw_sprite_ext(sprBob,0,x,floor(y),0.5,image_yscale/2,0,image_blend,1)
+else draw_sprite_ext(sprite_index,0,x,floor(y),image_xscale,image_yscale,0,image_blend,1)

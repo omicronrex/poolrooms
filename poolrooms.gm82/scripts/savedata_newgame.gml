@@ -10,8 +10,5 @@ savedata_default()
 if (argument_count==2) difficulty=argument[1]
 savedata("diff",difficulty)
 
-//reset stats
-global.statgridh=1
-
 //go
 savedata_load()

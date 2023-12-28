@@ -18,6 +18,15 @@ action_id=603
 applies_to=self
 */
 if (!savedata(itemid)) {
-    image_blend=0
-    image_alpha=0.5
+    instance_destroy()
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+i=texture_get_interpolation()
+texture_set_interpolation(1)
+draw_self()
+texture_set_interpolation(i)

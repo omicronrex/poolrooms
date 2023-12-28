@@ -64,8 +64,6 @@ else if (!dead) {
             Player.dead=true
 
             with (Pirror) if (active==3) event_user(0)
-
-            savedatap("deaths",savedatap("deaths")+1)
         }
     }
 }

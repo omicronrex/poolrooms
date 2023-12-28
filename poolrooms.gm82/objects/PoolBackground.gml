@@ -51,8 +51,14 @@ with (PoolBgCyl) {
     instance_destroy()
 }
 
-with (Floater) cor=make_color_hsv(irandom(255),255,255)
-with (CubeFloater) cor=make_color_hsv(irandom(255),255,255)
+with (Floater) {
+    if (!irandom(256)) cor=World.maxcolor1
+    else cor=make_color_hsv(irandom(255),255,255)
+}
+with (CubeFloater) {
+    if (!irandom(256)) cor=World.maxcolor1
+    else cor=make_color_hsv(irandom(255),255,255)
+}
 
 randomize()
 #define Other_5
@@ -153,6 +159,7 @@ with (FallSpike) draw_self()
 with (DickMove) draw_sprite(sprite_index,0,x,y+dy)
 with (Butten) event_draw()
 with (Elevator) draw_self()
+with (Sponge) event_draw()
 
 texture_set_repeat(1)
 d3d_model_draw(model3,-0.5,-0.5,0,tex)

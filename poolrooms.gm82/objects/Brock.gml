@@ -6,6 +6,7 @@ applies_to=self
 */
 sndd=0
 underwater=0
+checksolid=0
 
 tex=sprite_get_texture(sprite_index,0)
 image_speed=0
@@ -55,6 +56,14 @@ if (vspeed!=0) if (!place_free(x,y+vspeed)) {
     move_contact_solid_hv(0,vspeed)
     vspeed=0
     stuck=10
+}
+
+if (checksolid) {
+    if (!place_free(x,y)) {
+        move_outside_solid(90,1)
+        move_outside_solid(270,1)
+        vspeed=0
+    } else checksolid-=1
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION
