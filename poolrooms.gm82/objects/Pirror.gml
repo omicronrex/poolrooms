@@ -86,6 +86,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (has_item("Item1") || has_item("Item2") || has_item("Item3") || has_item("Item4")) exit
+
 if (other.owner==Player.id && !active) {
     instance_destroy_id(Bullet)
 
