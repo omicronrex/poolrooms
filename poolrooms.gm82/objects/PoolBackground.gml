@@ -128,9 +128,8 @@ with (Sponge) {
 }
 draw_set_color($ffffff)
 texture_set_interpolation(0)
-with (DickMove) if (seen) d3d_draw_block(xstart,y+dy,0,xstart+32,y+dy+32,32,tex,1,1)
-
 d3d_transform_set_rotation_x(90)
+with (DickMove) if (seen) d3d_draw_block(xstart,-32,y+dy,xstart+32,0,y+dy+32,tex,1,1)
 with (Brock) d3d_draw_block(x,-32,y,x+32,0,y+32,tex,1,1)
 d3d_transform_set_identity()
 
