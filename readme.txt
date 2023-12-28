@@ -2,7 +2,7 @@
 
     I Wanna Escape The Poolrooms
     ============================
-    v1.2 - 27 Dec 2023
+    v1.2.1 - 28 Dec 2023
 
 
     A game by renex for the Second Edition of the I Wanna Tourney
@@ -22,14 +22,14 @@
 
 --------------------------------------------------------------------------------
 
-    Update v1.2
+    Update v1.2.1
     
     - added a silly easter egg
     - added a small chance for cube floaters to have your windows accent color
     - added secret items to the clear screen
     - added a diagetic tutorial that stones can lay on cube floaters
     - changed the good ending to require at least one secret item
-    - changed the layout of two rooms to reduce confusion and precision
+    - changed the layout of four rooms to reduce confusion and precision
     - fixed blocks stacked on top of sponges getting stuck in them
     - fixed stones and sponges getting stuck on top of cube floaters
     - fixed deaths counting as 2 resets
@@ -37,6 +37,7 @@
     - fixed spikes moving through solid objects
     - fixed depth order for valves against 3d objects
     - fixed file menu lag caused by statistics reloading
+    - fixed sponges jittering vertically at specific soak levels
 
     
 --------------------------------------------------------------------------------
