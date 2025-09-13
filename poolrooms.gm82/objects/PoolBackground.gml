@@ -90,7 +90,6 @@ d3d_model_draw(model2,0,0,0,tex)
 d3d_transform_set_identity()
 d3d_model_draw(model1,0,0,0,tex)
 
-
 d3d_transform_set_rotation_x(90)
 
 with (Elevator) if (y<ystart+32) {

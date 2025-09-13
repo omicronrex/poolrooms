@@ -164,8 +164,8 @@ if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_t
 }
 
 if (global.test_run) {
-    live_roomeditor_start()
-    live_roomeditor_add_obj_exclusion(PlayerStart)
+    test_room_start()
+    test_room_exclude_object(PlayerStart)
 }
 
 custom_init()

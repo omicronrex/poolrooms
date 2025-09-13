@@ -41,6 +41,7 @@ if (keyboard_check_pressed(vk_escape) || scheduled_close_button) {
         } else {
             instance_activate_all_safe()
             if (global.gen_thumb) generate_save_thumbnail(1)
+            savedatap("deaths",savedatap("deaths")+1)
             savedata_write()
             room_goto(rmTitle)
         }
@@ -60,6 +61,7 @@ if (keyboard_check_pressed(vk_f2)) {
     instance_activate_all_safe()
     if (is_ingame()) {
         instance_destroy_id(PauseMenu)
+        savedatap("deaths",savedatap("deaths")+1)
         savedata_write()
         room_goto(rmTitle)
     } else room_goto(rmTitle)

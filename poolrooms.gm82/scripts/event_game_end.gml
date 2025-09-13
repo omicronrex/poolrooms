@@ -1,6 +1,10 @@
 //close game gracefully
 with (World) {
     if (!gameclosing) {
+        if (is_ingame()) {
+            savedatap("deaths",savedatap("deaths")+1)
+            savedata_write()
+        }
         settings_write()
         gameclosing=1
         if (global.closing_animation && !window_get_fullscreen() && !global.test_run) {

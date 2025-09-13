@@ -32,9 +32,11 @@
     - changed the good ending to require at least one secret item
     - changed the layout of some rooms to reduce confusion and precision
     - changed one easter egg to disallow restarting during the surprise
+    - changed the bad ending be impossible if you have all items
     - fixed blocks stacked on top of sponges getting stuck in them
     - fixed stones and sponges getting stuck on top of cube floaters
     - fixed deaths counting as 2 resets
+    - fixed f2 and esc not counting as resets
     - fixed being able to bounce cube floaters from above
     - fixed saving while the water level is changing causing softlocks
     - fixed spikes moving through solid objects

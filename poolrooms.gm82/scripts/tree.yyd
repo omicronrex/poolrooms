@@ -116,7 +116,6 @@
 	|move_player_object
 	|profiler_setup
 	|activate_objects
-	|room_find
 	|autotile_type
 	|autotile
 	|instance_activate_all_safe
