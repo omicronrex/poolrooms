@@ -2,7 +2,7 @@
 
     I Wanna Escape The Poolrooms
     ============================
-    v1.2.1 - 28 Dec 2023
+    v1.2.2 - 17 Dec 2025
 
 
     A game by renex for the Second Edition of the I Wanna Tourney
@@ -19,6 +19,15 @@
     
     Source code available at: https://github.com/omicronrex/poolrooms
 
+
+--------------------------------------------------------------------------------
+
+    Update v1.2.2
+    
+    - removed a required stone on balloon
+    - adjusted some layouts to remove unintended cheese strategies
+    - simplified a step in one of the longer puzzles
+    - prevented an unintentional softlock
 
 --------------------------------------------------------------------------------
 
